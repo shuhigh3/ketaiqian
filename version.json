@@ -1,6 +1,6 @@
 {
-  "versionCode": 50,
-  "versionName": "1.16.4",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.4/ketai-1.16.4.apk",
-  "notes": "进入应用自动检查更新（多源读清单），发现新版本弹窗，可立即更新或稍后"
+  "versionCode": 51,
+  "versionName": "1.16.5",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.5/ketai-1.16.5.apk",
+  "notes": "进入应用自动检查更新（多源读清单，默认走 Pages），发现新版本弹窗，可立即更新或稍后"
 }
