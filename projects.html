@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>我的项目 · shuigh3</title>
+<meta name="description" content="shuigh3 的两个自用项目：课态签（Android 校园助手）与罗德岛攻略检索终端（明日方舟关卡攻略检索）。" />
+<meta name="theme-color" content="#0B0F1A" />
+<style>
+  :root{
+    --bg:#0B0F1A;
+    --line:rgba(255,255,255,.10);
+    --line-strong:rgba(255,255,255,.18);
+    --text:#F2F5FC;
+    --text-2:#B4BED4;
+    --text-3:#8892A8;
+    --action:#6F7FF7;
+    --brand-1:#4A63F0;
+    --brand-2:#7B5CF0;
+    --content:1100px;
+    --gutter:24px;
+    --r-sm:8px;
+    --r-md:14px;
+    --r-lg:20px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 520px at 10% -6%, rgba(74,99,240,.28), transparent 62%),
+      radial-gradient(820px 480px at 92% 2%, rgba(123,92,240,.22), transparent 60%),
+      linear-gradient(180deg,#0B0F1A 0%,#0A0E18 62%,#090C15 100%);
+    color:var(--text);
+    font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC","Segoe UI",system-ui,-apple-system,sans-serif;
+    font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    min-height:100vh;
+  }
+  a{color:inherit}
+  .wrap{width:100%;max-width:var(--content);margin:0 auto;padding:0 var(--gutter)}
+  header.nav{position:sticky;top:0;z-index:40;background:rgba(11,15,26,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;letter-spacing:.02em}
+  .mark{
+    width:28px;height:28px;border-radius:9px;display:grid;place-items:center;
+    background:linear-gradient(315deg,#4A63F0,#5B5CF0 55%,#6C4CE0);color:#fff;font-size:14px;font-weight:800;
+  }
+  .nav nav{display:flex;gap:22px;font-size:14px;color:var(--text-2)}
+  .nav nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+  .nav nav a:hover{color:var(--text);border-bottom-color:var(--action)}
+  .nav nav a[aria-current="page"]{color:var(--text);border-bottom-color:var(--action)}
+  .nav .dl{
+    text-decoration:none;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;
+    background:linear-gradient(315deg,var(--brand-1),var(--brand-2));color:#fff;
+  }
+  main{padding:64px 0 72px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--text-2);
+    border:1px solid var(--line-strong);background:rgba(255,255,255,.04);
+    padding:6px 12px;border-radius:999px;
+  }
+  .eyebrow i{width:7px;height:7px;border-radius:50%;background:#6EE7B7;box-shadow:0 0 0 4px rgba(110,231,183,.14)}
+  h1{margin:18px 0 10px;font-size:clamp(30px,4.6vw,46px);line-height:1.16;letter-spacing:-.01em}
+  .lead{margin:0;max-width:56ch;color:var(--text-2);font-size:16px}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:38px}
+  .card{
+    position:relative;display:flex;flex-direction:column;gap:12px;
+    padding:22px;border-radius:var(--r-lg);border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.022));
+    text-decoration:none;transition:border-color .25s ease, transform .25s ease, background .25s ease;
+  }
+  .card:hover,.card:focus-visible{border-color:rgba(111,127,247,.6);transform:translateY(-3px);background:linear-gradient(180deg,rgba(111,127,247,.14),rgba(255,255,255,.03))}
+  .card .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .card .tag{font-size:12px;color:var(--text-3);letter-spacing:.08em}
+  .card .dot{width:8px;height:8px;border-radius:50%}
+  .card h2{margin:0;font-size:21px}
+  .card p{margin:0;color:var(--text-2);font-size:14px}
+  .card ul{margin:0;padding-left:16px;color:var(--text-3);font-size:13px}
+  .card li{margin:4px 0}
+  .card .go{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#fff;font-weight:700}
+  .card .go::after{content:"↗";font-size:13px;color:var(--text-2)}
+  .card.soon{opacity:.6;pointer-events:none}
+  .author{
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+    margin-top:34px;padding:20px 22px;border-radius:var(--r-md);
+    border:1px solid var(--line);background:rgba(255,255,255,.03);
+  }
+  .author b{font-size:15px}
+  .author span{display:block;color:var(--text-3);font-size:13px}
+  .author .mail{color:var(--text-2);text-decoration:none;border-bottom:1px dashed var(--line-strong)}
+  .author .mail:hover{color:#fff}
+  footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--text-3);font-size:13px}
+  footer p{margin:6px 0}
+  footer a{color:var(--text-2)}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.68,.24,1),transform .7s cubic-bezier(.22,.68,.24,1);transition-delay:var(--d,0ms)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
+  @media (max-width:767px){
+    :root{--gutter:20px}
+    .nav nav{display:none}
+    main{padding:44px 0 56px}
+    .grid{grid-template-columns:1fr;gap:14px}
+  }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">课</span><span>课态签</span></a>
+    <nav aria-label="站点导航">
+      <a href="index.html">内容</a>
+      <a href="index.html#flow">使用说明</a>
+      <a href="index.html#limits">免责声明</a>
+      <a href="index.html#download">下载</a>
+      <a href="projects.html" aria-current="page">我的项目</a>
+    </nav>
+    <a class="dl" href="index.html#download">立即下载</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="eyebrow reveal"><i aria-hidden="true"></i>shuigh3 · 两个自用项目</span>
+    <h1 class="reveal">自己写的两样东西，<br />都只在自己设备上跑</h1>
+    <p class="lead reveal">一个是手机上替你上课签到的校园助手，一个是筛《明日方舟》关卡作业的检索终端。没有账号体系，也没有云端后台。</p>
+
+    <div class="grid" data-stagger>
+      <a class="card reveal" href="https://shuhigh3.github.io/ketaiqian/">
+        <div class="top"><span class="tag">ANDROID · 校园助手</span><span class="dot" style="background:#6EE7B7"></span></div>
+        <h2>课态签</h2>
+        <p>导入课表后按节次提醒，上课前自动改微信状态，晚上到点查寝签到，学习通与知到可同时挂课。</p>
+        <ul>
+          <li>课表、登录态与密码只留本机</li>
+          <li>固定签名，覆盖升级不丢数据</li>
+          <li>覆盖升级不丢课表与设置</li>
+        </ul>
+        <span class="go">进入官网</span>
+      </a>
+
+      <a class="card reveal" href="https://shuhigh3.github.io/arknights-guide/">
+        <div class="top"><span class="tag">WEB · 明日方舟攻略</span><span class="dot" style="background:#A9C4FF"></span></div>
+        <h2>罗德岛攻略检索终端</h2>
+        <p>按关卡把 B 站上的作业视频整理到一起，能识别开场干员、过滤掉别的游戏的视频，登录后可收藏自己常用的作业。</p>
+        <ul>
+          <li>单文件网页，打开即用</li>
+          <li>多主题切换，支持手机浏览</li>
+          <li>森空岛扫码登录（可选）</li>
+        </ul>
+        <span class="go">进入终端</span>
+      </a>
+    </div>
+
+    <div class="author reveal">
+      <div>
+        <b>作者：兰理工 刘禹畅</b>
+        <span>两个项目都是个人自用工具，按现状提供，不承诺可用性。</span>
+        <span>联系方式：<a class="mail" href="mailto:shuigh3@163.com">shuigh3@163.com</a> · 微信 shuigh3</span>
+      </div>
+      <a class="btn" href="https://github.com/shuhigh3" style="text-decoration:none;font-size:14px;padding:9px 16px;border-radius:999px;border:1px solid var(--line-strong);color:var(--text-2)">GitHub @shuhigh3</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>本站只是两个项目的入口页，具体说明与下载都在各自站点里。</p>
+    <p>联系方式：<a href="mailto:shuigh3@163.com">shuigh3@163.com</a> · 微信 shuigh3 · <a href="index.html">课态签官网</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.reveal'));
+  [].slice.call(document.querySelectorAll('[data-stagger]')).forEach(function(group){
+    [].slice.call(group.children).forEach(function(child,i){
+      if(!child.classList.contains('reveal')){child.classList.add('reveal');items.push(child);}
+      child.style.setProperty('--d',Math.min(i,6)*90+'ms');
+    });
+  });
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches){
+    items.forEach(function(el){el.classList.add('in');});
+  }else{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');}
+        else if(e.target.getBoundingClientRect().top<0){e.target.classList.remove('in');}
+      });
+    },{rootMargin:'0px 0px -10% 0px',threshold:[0,.15]});
+    items.forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>
