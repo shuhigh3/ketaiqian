@@ -5,7 +5,7 @@
 
 - 下载页（推荐从这里开始）：<https://shuhigh3.github.io/ketaiqian/>
 - 最新版本：<https://github.com/shuhigh3/ketaiqian/releases/latest>
-- 当前版本：**1.16.7**（versionCode 53，Android 8.0+）
+- 当前版本：**1.16.8**（versionCode 54，Android 8.0+）
 
 ## 它做什么
 
@@ -53,9 +53,9 @@
 
 ```json
 {
-  "versionCode": 53,
-  "versionName": "1.16.7",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.7/ketai-1.16.7.apk",
+  "versionCode": 54,
+  "versionName": "1.16.8",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.8/ketai-1.16.8.apk",
   "notes": "换新图标：白色课表格+对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标"
 }
 ```
@@ -64,6 +64,7 @@
 
 | 版本 | versionCode | 主要改动 |
 | --- | --- | --- |
+| 1.16.8 | 54 | 签到结果按服务端 code 与 message 判定，失败（含验签失败）不再显示成成功；验签失败时丢弃缓存密钥、重新协商后重试一次；签到密钥加 10 分钟有效期；日志记录 code、服务端原文与提交次数 |
 | 1.16.7 | 53 | 查寝会话持久化：登录后把 cookies、UA 与登录主机存到应用私有目录，重启先直连业务接口，通了就不再走登录页、不再等短信动态码；CAS 表单补交 rememberMe；换账号或退出登录清会话；未新增任何权限 |
 | 1.16.6 | 52 | 换用新图标：白色课表格 + 右下折角 + 对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标 |
 | 1.16.5 | 51 | 默认清单地址改成 GitHub Pages；手动入口预填 Pages，与自动提示结果一致 |
