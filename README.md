@@ -5,7 +5,7 @@
 
 - 下载页（推荐从这里开始）：<https://shuhigh3.github.io/ketaiqian/>
 - 最新版本：<https://github.com/shuhigh3/ketaiqian/releases/latest>
-- 当前版本：**1.16.8**（versionCode 54，Android 8.0+）
+- 当前版本：**1.16.9**（versionCode 55，Android 8.0+）
 
 ## 它做什么
 
@@ -53,9 +53,9 @@
 
 ```json
 {
-  "versionCode": 54,
-  "versionName": "1.16.8",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.8/ketai-1.16.8.apk",
+  "versionCode": 55,
+  "versionName": "1.16.9",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.9/ketai-1.16.9.apk",
   "notes": "换新图标：白色课表格+对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标"
 }
 ```
@@ -64,6 +64,7 @@
 
 | 版本 | versionCode | 主要改动 |
 | --- | --- | --- |
+| 1.16.9 | 55 | 签到提交按安卓 first_v4 在 body 里带 md5 签名（urlencode 表单 + bodyString + 密钥）；被拒时按 android / ios / 占位签名 / 第二段密钥的候选阶梯重试，最多 5 次，并记录每次的 code 与服务端原文 |
 | 1.16.8 | 54 | 签到结果按服务端 code 与 message 判定，失败（含验签失败）不再显示成成功；验签失败时丢弃缓存密钥、重新协商后重试一次；签到密钥加 10 分钟有效期；日志记录 code、服务端原文与提交次数 |
 | 1.16.7 | 53 | 查寝会话持久化：登录后把 cookies、UA 与登录主机存到应用私有目录，重启先直连业务接口，通了就不再走登录页、不再等短信动态码；CAS 表单补交 rememberMe；换账号或退出登录清会话；未新增任何权限 |
 | 1.16.6 | 52 | 换用新图标：白色课表格 + 右下折角 + 对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标 |
