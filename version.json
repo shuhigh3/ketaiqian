@@ -1,6 +1,6 @@
 {
-  "versionCode": 55,
-  "versionName": "1.16.9",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.9/ketai-1.16.9.apk",
-  "notes": "签到提交补上 md5 签名，验签失败会按候选阶梯自动重试"
+  "versionCode": 57,
+  "versionName": "1.16.11",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.11/ketai-1.16.11.apk",
+  "notes": "刷课卡死修复（自动重试+卡住检测+进度不回退）、查寝失败静默、菜单配色修复，新增代跑入口"
 }
