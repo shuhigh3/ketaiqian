@@ -5,7 +5,7 @@
 
 - 下载页（推荐从这里开始）：<https://shuhigh3.github.io/ketaiqian/>
 - 最新版本：<https://github.com/shuhigh3/ketaiqian/releases/latest>
-- 当前版本：**1.16.5**（versionCode 51，Android 8.0+）
+- 当前版本：**1.16.6**（versionCode 52，Android 8.0+）
 
 ## 它做什么
 
@@ -53,10 +53,10 @@
 
 ```json
 {
-  "versionCode": 51,
-  "versionName": "1.16.5",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.5/ketai-1.16.5.apk",
-  "notes": "进入应用自动检查更新（多源读清单，默认走 Pages），发现新版本弹窗，可立即更新或稍后"
+  "versionCode": 52,
+  "versionName": "1.16.6",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.6/ketai-1.16.6.apk",
+  "notes": "换新图标：白色课表格+对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标"
 }
 ```
 
@@ -64,6 +64,7 @@
 
 | 版本 | versionCode | 主要改动 |
 | --- | --- | --- |
+| 1.16.6 | 52 | 换用新图标：白色课表格 + 右下折角 + 对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标 |
 | 1.16.5 | 51 | 默认清单地址改成 GitHub Pages；手动入口预填 Pages，与自动提示结果一致 |
 | 1.16.4 | 50 | 自动检查改为多源读清单（Pages / jsDelivr / raw），取最高版本号，避免单镜像缓存误判「已是最新」 |
 | 1.16.3 | 49 | 进入应用即自动检查更新，发现新版本弹窗（立即更新 / 稍后），同一版本每次运行只提示一次 |
