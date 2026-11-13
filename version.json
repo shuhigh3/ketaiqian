@@ -1,6 +1,6 @@
 {
-  "versionCode": 52,
-  "versionName": "1.16.6",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.6/ketai-1.16.6.apk",
-  "notes": "换新图标：白色课表格+对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标"
+  "versionCode": 53,
+  "versionName": "1.16.7",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.7/ketai-1.16.7.apk",
+  "notes": "查寝登录会保存会话，重启后直接用 cookie 复用，不再每次都要短信动态码"
 }
