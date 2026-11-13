@@ -1,6 +1,6 @@
 {
-  "versionCode": 54,
-  "versionName": "1.16.8",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.8/ketai-1.16.8.apk",
-  "notes": "签到结果按服务端原文判定，验签失败会换新密钥重试一次，不再显示成成功"
+  "versionCode": 55,
+  "versionName": "1.16.9",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.9/ketai-1.16.9.apk",
+  "notes": "签到提交补上 md5 签名，验签失败会按候选阶梯自动重试"
 }
