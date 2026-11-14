@@ -1,6 +1,6 @@
 {
-  "versionCode": 75,
-  "versionName": "1.16.29",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.29/ketai-1.16.29.apk",
-  "notes": "看门狗阈值 90 秒改为 5 分钟，长步骤补心跳，卡住时日志带出当前动作"
+  "versionCode": 76,
+  "versionName": "1.16.30",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.30/ketai-1.16.30.apk",
+  "notes": "刷课日志接进界面：长按状态可看；启动、拉课程、进入课程、跳过课程都记账"
 }
