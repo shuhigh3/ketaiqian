@@ -1,6 +1,6 @@
 {
-  "versionCode": 73,
-  "versionName": "1.16.27",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.27/ketai-1.16.27.apk",
-  "notes": "查寝页新增「自动代签」：调起今日校园按界面点签到，结果按页面文字判定"
+  "versionCode": 74,
+  "versionName": "1.16.28",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.28/ketai-1.16.28.apk",
+  "notes": "关闭静默随机暂停，进度上报只增不减，中断前补报不再倒退"
 }
