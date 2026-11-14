@@ -1,6 +1,6 @@
 {
-  "versionCode": 77,
-  "versionName": "1.16.31",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.31/ketai-1.16.31.apk",
-  "notes": "验证码拦下时不再报「已刷完」，改为失败并提示先手动完成验证再重开"
+  "versionCode": 78,
+  "versionName": "1.16.32",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.32/ketai-1.16.32.apk",
+  "notes": "验证码接力（自动开知到、验证完自动续跑）+ 可调节奏 + 跳过验证码（需声明，默认关）"
 }
