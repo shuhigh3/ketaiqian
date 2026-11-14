@@ -501,11 +501,11 @@
           也能托管学习通与知到的刷课。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">下载课态签 1.16.26</a>
+          <a class="btn btn-primary" href="#download">下载课态签 1.16.27</a>
           <a class="btn btn-ghost" href="#flow">先看怎么用</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.16.26</b>（72）</span>
+          <span>当前版本 <b>1.16.27</b>（73）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -523,7 +523,7 @@
                alt="课态签首页：今日概览按课程列出高等数学、大学物理、程序设计基础，分别标注已结束、进行中与 44 分钟后；下方刷课、查寝、远程三张卡收缩为状态点与名称" />
         </div>
         <div class="device-cap">
-          <span class="pill">v1.16.26</span>
+          <span class="pill">v1.16.27</span>
           <span>首页截图 · 真机 1080×2340</span>
         </div>
       </div>
@@ -682,10 +682,10 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.16.26</h2>
+            <h2>下载课态签 1.16.27</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.26/ketai-1.16.26.apk">下载安装包（99.8 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.27/ketai-1.16.27.apk">下载安装包（99.8 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -704,7 +704,8 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
-              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.26" style="text-decoration:none">v1.16.26 · 换请求家族</a></div>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.27" style="text-decoration:none">v1.16.27 · 自动代签</a></div>
+              <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.26" style="text-decoration:none">v1.16.26 · 换请求家族</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.25" style="text-decoration:none">v1.16.25 · 版本与协议变体</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.24" style="text-decoration:none">v1.16.24 · 自动重登换票</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.23" style="text-decoration:none">v1.16.23 · 复用会话补领票据</a></div>
@@ -747,6 +748,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.16.27<small>versionCode 73</small></div><p>协议层已穷尽（版本 9.9.22→11.0.0、协议 first_v4/v5/v6、明文/头部签名/加密三种形态都是 code=4），所以换路线：查寝页新增「自动代签」，直接调起今日校园按界面点签到，位置由本应用提供。签到结果由页面文字判定（成功 / 不在时间 / 失败），需要无线调试或 Shizuku 命令通道。</p></li>
           <li><div class="v">1.16.26<small>versionCode 72</small></div><p>换方向：版本号（9.9.22→11.0.0）与协议版本（first_v4→first_v5/first_v6）都试尽仍报「版本过低」，说明服务端认的不是这些字段。这一版把「请求家族」摆到候选最前面：字段平铺的明文 JSON（老协议）、头部发真签名的加密请求，各试一次，再回落到现有加密写法；cat 密钥只在末尾兜底。</p></li>
           <li><div class="v">1.16.25<small>versionCode 71</small></div><p>票据这条线已通，剩余阻塞收窄到「版本过低」：cpdaily 密钥能过验签却一律回 code=4。本轮把版本取值抬到 9.9.99 / 10.9.9 / 11.0.0，并新增协议版本变体（body 的 first_v5 / first_v6），用一轮日志区分服务端到底按 App 版本还是按协议版本判定。cat 那一路的写法全部只在末尾兜底，不再占主要名额。</p></li>
           <li><div class="v">1.16.24<small>versionCode 70</small></div><p>两处修正：一是门户入口把我们赶回登录页时，存量 cookie 只能过业务接口、换不来票据，现在会直接用保存的账号密码自动重登一次，从登录跳转链拿新票据，不再拿 CAS 票据顶替；二是版本号比较是逐段数字比大小，9.9.x 永远小于 9.10.x，所以候选跨到 9.10.0/9.10.5/9.11.0/10.0.0。</p></li>
