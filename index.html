@@ -501,11 +501,11 @@
           也能托管学习通与知到的刷课。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">下载课态签 1.16.21</a>
+          <a class="btn btn-primary" href="#download">下载课态签 1.16.22</a>
           <a class="btn btn-ghost" href="#flow">先看怎么用</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.16.21</b>（67）</span>
+          <span>当前版本 <b>1.16.22</b>（68）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -523,7 +523,7 @@
                alt="课态签首页：今日概览按课程列出高等数学、大学物理、程序设计基础，分别标注已结束、进行中与 44 分钟后；下方刷课、查寝、远程三张卡收缩为状态点与名称" />
         </div>
         <div class="device-cap">
-          <span class="pill">v1.16.21</span>
+          <span class="pill">v1.16.22</span>
           <span>首页截图 · 真机 1080×2340</span>
         </div>
       </div>
@@ -682,10 +682,10 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.16.21</h2>
+            <h2>下载课态签 1.16.22</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.21/ketai-1.16.21.apk">下载安装包（99.8 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.22/ketai-1.16.22.apk">下载安装包（99.8 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -704,7 +704,8 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
-              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.21" style="text-decoration:none">v1.16.21 · 门户会话票据取准</a></div>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.22" style="text-decoration:none">v1.16.22 · 日志瘦身</a></div>
+              <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.21" style="text-decoration:none">v1.16.21 · 门户会话票据取准</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.20" style="text-decoration:none">v1.16.20 · 密钥前置与版本阶梯</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.17" style="text-decoration:none">v1.16.17 · 版本号贯穿密钥协商</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.16" style="text-decoration:none">v1.16.16 · 更新下载加镜像回退</a></div>
@@ -742,6 +743,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.16.22<small>versionCode 68</small></div><p>日志瘦身：一次签到失败原来逐次打「正在提交／参与签名字段／提交尝试」，14 次就是四十多行；现在只留两行——「提交 N 次未通过：原因 code」加一行明细（写法+密钥 · 版本区间 → 返回码 · 原因），并去掉重复的「签到响应」与多行堆栈。失败提示也不再堆版本清单，改成「试了 N 次，明细见日志」。</p></li>
           <li><div class="v">1.16.21<small>versionCode 67</small></div><p>以兰州理工网关（fdm.lut.edu.cn）实测定位到提交头里会话票据取错：自建门户是 /iap/login 302 到 cas-paas，service 里带 iap/loginSuccess?sessionToken=… 的 32 位票据，而此前只从 cookie 取 MOD_AUTH_CAS 顶替。现在登录跳转时就抓票、随会话落盘复用，提交头的 sessionTokenKey 用的就是它。同时给提交侧 CpdailyInfo 补上 cpdailyVersion（此前只有协商密钥那步带，提交时缺失，正好对上「版本过低」）；实测 getSecretKey 与版本无关，换版本不再重复协商。</p></li>
           <li><div class="v">1.16.20<small>versionCode 66</small></div><p>日志显示同一版本下 fkey_cat 的六种写法全返 2210060000，而 fkey_cpdaily 能进到版本校验——说明只有 cpdaily 密钥解得开 bodyString。现在 cpdaily 前置并吃满版本阶梯（9.9.22→9.9.26→9.9.30→9.9.35→9.9.40），cat 保留为后备；失败提示仍带 code、已试版本与写法。</p></li>
           <li><div class="v">1.16.19<small>versionCode 65</small></div><p>修复提交路径 `name 'plan' is not defined` 崩溃：失败不再被异常盖住，会带回 code 与原文。签名候选新增「参数排序后 md5」与「只签 bodyString」两种写法并各配两把密钥；失败提示统一为「原文（code=…，已试版本：…，写法：…）」，提交前记录 bodyString 长度、sign 前 8 位与参与签名字段，便于对照服务端拒绝原因。</p></li>
