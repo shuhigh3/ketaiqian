@@ -1,6 +1,6 @@
 {
-  "versionCode": 61,
-  "versionName": "1.16.15",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.15/ketai-1.16.15.apk",
-  "notes": "查寝提交恢复头部 sign=1 并补「不带 body 签名」候选，继续修验证码验签失败"
+  "versionCode": 62,
+  "versionName": "1.16.16",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.16/ketai-1.16.16.apk",
+  "notes": "更新下载增加国内镜像回退，直连超时后自动换 gh-proxy / ghproxy 重试"
 }
