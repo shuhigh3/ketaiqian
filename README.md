@@ -5,7 +5,7 @@
 
 - 下载页（推荐从这里开始）：<https://shuhigh3.github.io/ketaiqian/>
 - 最新版本：<https://github.com/shuhigh3/ketaiqian/releases/latest>
-- 当前版本：**1.16.13**（versionCode 59，Android 8.0+）
+- 当前版本：**1.16.14**（versionCode 60，Android 8.0+）
 
 ## 它做什么
 
@@ -53,9 +53,9 @@
 
 ```json
 {
-  "versionCode": 59,
-  "versionName": "1.16.13",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.13/ketai-1.16.13.apk",
+  "versionCode": 60,
+  "versionName": "1.16.14",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.14/ketai-1.16.14.apk",
   "notes": "换新图标：白色课表格+对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标"
 }
 ```
@@ -64,6 +64,7 @@
 
 | 版本 | versionCode | 主要改动 |
 | --- | --- | --- |
+| 1.16.14 | 60 | 刷课看门狗（线程消失判失败、90 秒不动自动重启本轮）、新增「连续失败 N 次跳过课时」设置与提示、新增「打开软件自动开始刷课」开关；代跑仍为内置安装包 |
 | 1.16.13 | 59 | 刷课收尾不再假装刷完：有小节重试 3 次仍失败就报「托管失败：有 N 个小节没刷完」；中断前补报已看进度、上报间隔 30s→20s，再次开始不从 1% 重来 |
 | 1.16.12 | 58 | 查寝客户端版本逐档自适应（版本过低自动换高版本并记住可用版本）；使用声明弹窗内容可滚动、按钮固定可见；代跑安装包内置（离线解包安装，不再联网下载）；代跑页补四步引导与 404 说明；学习通悬浮窗 WebView 按屏宽自适应、拖动不出屏；安装包 99.8 MB |
 | 1.16.11 | 57 | 知到托管自恢复（小节重试 3 次 + 整课重试 + 卡住检测）、同小节进度只进不退、进度文案标「本小节」；查寝失败不再弹通知栏；底部导航改为课表 / 查寝 / 刷课 / 代跑，设置移入右上角菜单；菜单弹窗改浅底深字；新增「代跑」页接入 Neko-SportsWorld-Tool（下载 / 安装 / 打开，无新增权限） |
