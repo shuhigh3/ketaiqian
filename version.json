@@ -1,6 +1,6 @@
 {
-  "versionCode": 78,
-  "versionName": "1.16.32",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.32/ketai-1.16.32.apk",
-  "notes": "验证码接力（自动开知到、验证完自动续跑）+ 可调节奏 + 跳过验证码（需声明，默认关）"
+  "versionCode": 79,
+  "versionName": "1.16.33",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.33/ketai-1.16.33.apk",
+  "notes": "慢步骤补心跳与失败日志，刷课状态栏显示当前动作，不再一片安静"
 }
