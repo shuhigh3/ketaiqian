@@ -1,6 +1,6 @@
 {
-  "versionCode": 80,
-  "versionName": "1.16.34",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.34/ketai-1.16.34.apk",
-  "notes": "401/403 识别为登录失效：托管前预检、提示重新扫码、登录后自动续跑"
+  "versionCode": 81,
+  "versionName": "1.16.35",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.35/ketai-1.16.35.apk",
+  "notes": "预检按正式握手来、失败不拦路，修复「刚登录就报失效」的误判"
 }
