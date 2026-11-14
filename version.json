@@ -1,6 +1,6 @@
 {
-  "versionCode": 70,
-  "versionName": "1.16.24",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.24/ketai-1.16.24.apk",
-  "notes": "门户会话失效时自动重登换票；版本候选跨到 9.10/9.11/10.0"
+  "versionCode": 71,
+  "versionName": "1.16.25",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.25/ketai-1.16.25.apk",
+  "notes": "版本取值抬到 11.0.0、新增 first_v5/first_v6 协议变体；cat 写法退居兜底"
 }
