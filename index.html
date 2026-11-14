@@ -501,11 +501,11 @@
           也能托管学习通与知到的刷课。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">下载课态签 1.16.28</a>
+          <a class="btn btn-primary" href="#download">下载课态签 1.16.29</a>
           <a class="btn btn-ghost" href="#flow">先看怎么用</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.16.28</b>（74）</span>
+          <span>当前版本 <b>1.16.29</b>（75）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -523,7 +523,7 @@
                alt="课态签首页：今日概览按课程列出高等数学、大学物理、程序设计基础，分别标注已结束、进行中与 44 分钟后；下方刷课、查寝、远程三张卡收缩为状态点与名称" />
         </div>
         <div class="device-cap">
-          <span class="pill">v1.16.28</span>
+          <span class="pill">v1.16.29</span>
           <span>首页截图 · 真机 1080×2340</span>
         </div>
       </div>
@@ -682,10 +682,10 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.16.28</h2>
+            <h2>下载课态签 1.16.29</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.28/ketai-1.16.28.apk">下载安装包（99.8 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.29/ketai-1.16.29.apk">下载安装包（99.8 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -704,7 +704,8 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
-              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.28" style="text-decoration:none">v1.16.28 · 刷课不再静默暂停</a></div>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.29" style="text-decoration:none">v1.16.29 · 看门狗阈值与心跳</a></div>
+              <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.28" style="text-decoration:none">v1.16.28 · 刷课不再静默暂停</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.27" style="text-decoration:none">v1.16.27 · 自动代签</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.26" style="text-decoration:none">v1.16.26 · 换请求家族</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.25" style="text-decoration:none">v1.16.25 · 版本与协议变体</a></div>
@@ -749,6 +750,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.16.29<small>versionCode 75</small></div><p>看门狗只看进度条：90 秒不动就重启，可「取上下文→取地址→拉弹题」每步都有 10 秒超时，连着几次慢就凑够 90 秒，正常在做事也会被判卡住。现在阈值放到 5 分钟，并在这几步里报心跳；日志会带出卡住时正在做什么。</p></li>
           <li><div class="v">1.16.28<small>versionCode 74</small></div><p>刷课「到某进度自动停住、没有错误」的根因是上游自带的随机暂停：每秒 0.25% 概率停一分钟，长视频里每几分钟就来一次，期间进度冻结、不报错；暂停结束还会把播放位置拽回上次上报点，重开托管就从更早的位置续，看起来像进度回退。现在默认关闭该暂停，并把上报改成只增不减（含中断前补报）。</p></li>
           <li><div class="v">1.16.27<small>versionCode 73</small></div><p>协议层已穷尽（版本 9.9.22→11.0.0、协议 first_v4/v5/v6、明文/头部签名/加密三种形态都是 code=4），所以换路线：查寝页新增「自动代签」，直接调起今日校园按界面点签到，位置由本应用提供。签到结果由页面文字判定（成功 / 不在时间 / 失败），需要无线调试或 Shizuku 命令通道。</p></li>
           <li><div class="v">1.16.26<small>versionCode 72</small></div><p>换方向：版本号（9.9.22→11.0.0）与协议版本（first_v4→first_v5/first_v6）都试尽仍报「版本过低」，说明服务端认的不是这些字段。这一版把「请求家族」摆到候选最前面：字段平铺的明文 JSON（老协议）、头部发真签名的加密请求，各试一次，再回落到现有加密写法；cat 密钥只在末尾兜底。</p></li>
