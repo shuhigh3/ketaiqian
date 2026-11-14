@@ -501,11 +501,11 @@
           也能托管学习通与知到的刷课。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">下载课态签 1.16.13</a>
+          <a class="btn btn-primary" href="#download">下载课态签 1.16.14</a>
           <a class="btn btn-ghost" href="#flow">先看怎么用</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.16.13</b>（59）</span>
+          <span>当前版本 <b>1.16.14</b>（60）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -523,7 +523,7 @@
                alt="课态签首页：今日概览按课程列出高等数学、大学物理、程序设计基础，分别标注已结束、进行中与 44 分钟后；下方刷课、查寝、远程三张卡收缩为状态点与名称" />
         </div>
         <div class="device-cap">
-          <span class="pill">v1.16.13</span>
+          <span class="pill">v1.16.14</span>
           <span>首页截图 · 真机 1080×2340</span>
         </div>
       </div>
@@ -682,10 +682,10 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.16.13</h2>
+            <h2>下载课态签 1.16.14</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.13/ketai-1.16.13.apk">下载安装包（99.8 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.14/ketai-1.16.14.apk">下载安装包（99.8 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -704,7 +704,8 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
-              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.13" style="text-decoration:none">v1.16.13 · 刷课中断不再假装刷完</a></div>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.14" style="text-decoration:none">v1.16.14 · 刷课看门狗与跳课开关</a></div>
+              <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.13" style="text-decoration:none">v1.16.13 · 刷课中断不再假装刷完</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.12" style="text-decoration:none">v1.16.12 · 代跑内置与查寝版本自适应</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.11" style="text-decoration:none">v1.16.11 · 刷课自恢复与代跑入口</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.9" style="text-decoration:none">v1.16.9 · 提交补 md5 签名</a></div>
@@ -736,6 +737,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.16.14<small>versionCode 60</small></div><p>刷课加看门狗：托管线程意外结束时判失败并写明原因，不再停在「运行中」；进度 90 秒不动会自动重启这一轮。新增「同一课时连续失败 2/3/5 次就跳过该课时」设置，触发后界面提示已跳过。新增「打开软件后自动开始刷课」开关，进首页 3 秒后起托管。代跑仍为内置安装包（上游是 Rust 独立应用，无法并入进程）。</p></li>
           <li><div class="v">1.16.13<small>versionCode 59</small></div><p>修掉「进度停在 17% 却显示已完成」：某小节重试 3 次仍失败时，收尾状态改为「托管失败：有 N 个小节没刷完」，不再当作刷完。中断或失败前会把已看进度补报给服务端（以前只在每 30 秒定点上报，43 秒这种半路中断会丢），再次点开始时不再从 1% 重来；上报间隔从 30 秒收紧到 20 秒；同一小节内进度仍只进不退。</p></li>
           <li><div class="v">1.16.12<small>versionCode 58</small></div><p>查寝不再一律报「今日校园版本过低」：客户端版本改成逐档自适应，被拒就换更高版本重试，成功的版本记进配置。使用声明弹窗内容可滚动、底部按钮始终可见。代跑安装包改为内置在应用里，点一次离线解包安装，不再联网下载。代跑页补四步引导并说明上游「检查更新」404 属正常。学习通悬浮窗的网页按屏宽自适应，拖动不会滑出屏幕。安装包因内置代跑增至 99.8 MB。</p></li>
           <li><div class="v">1.16.11<small>versionCode 57</small></div><p>知到托管改成自恢复：单小节失败重试 3 次并刷新上下文，整门课失败再重试 1 次，播放进度长时间不动会判定卡住并重试；同小节内进度只进不退，文案改为「本小节 x / y 秒」。查寝失败不再弹通知栏，只写进常驻通知与页面状态。底部导航改成课表 / 查寝 / 刷课 / 代跑，设置移进右上角菜单；菜单弹窗换成浅底深字。新增「代跑」：接入运动世界校园的开源工具 Neko-SportsWorld-Tool，页内可下载、安装、打开，未新增权限。</p></li>
