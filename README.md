@@ -5,7 +5,7 @@
 
 - 下载页（推荐从这里开始）：<https://shuhigh3.github.io/ketaiqian/>
 - 最新版本：<https://github.com/shuhigh3/ketaiqian/releases/latest>
-- 当前版本：**1.16.17**（versionCode 63，Android 8.0+）
+- 当前版本：**1.16.18**（versionCode 64，Android 8.0+）
 
 ## 它做什么
 
@@ -53,9 +53,9 @@
 
 ```json
 {
-  "versionCode": 63,
-  "versionName": "1.16.17",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.17/ketai-1.16.17.apk",
+  "versionCode": 64,
+  "versionName": "1.16.18",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.18/ketai-1.16.18.apk",
   "notes": "换新图标：白色课表格+对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标"
 }
 ```
@@ -64,6 +64,7 @@
 
 | 版本 | versionCode | 主要改动 |
 | --- | --- | --- |
+| 1.16.18 | 64 | 查寝引擎日志接进界面（长按「状态」查看并复制）、进页清掉上一次失败结论、版本全拒时提示已试版本、取任务前记日志 |
 | 1.16.17 | 63 | 版本号贯穿密钥协商与提交：getSecretKey 的 CpdailyInfo/UA 不再写死 9.9.22，密钥按「学校+设备+版本」缓存；修复今日校园 9.9.26 仍被判版本过低 |
 | 1.16.16 | 62 | 更新下载加国内镜像回退（直连 → gh-proxy.com → ghproxy.net），解决「能读到清单但下载超时」；失败提示标明第几个源与原因 |
 | 1.16.15 | 61 | 查寝提交恢复请求头 sign: 1（与安卓原生一致）、新增「只发头不带 body 签名」候选，继续修「验证码验签失败」 |
