@@ -1,6 +1,6 @@
 {
-  "versionCode": 71,
-  "versionName": "1.16.25",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.25/ketai-1.16.25.apk",
-  "notes": "版本取值抬到 11.0.0、新增 first_v5/first_v6 协议变体；cat 写法退居兜底"
+  "versionCode": 72,
+  "versionName": "1.16.26",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.26/ketai-1.16.26.apk",
+  "notes": "换请求家族：明文平铺 JSON 与头部真签名各试一次，加密写法回落兜底"
 }
