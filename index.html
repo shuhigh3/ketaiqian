@@ -501,11 +501,11 @@
           也能托管学习通与知到的刷课。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">下载课态签 1.16.34</a>
+          <a class="btn btn-primary" href="#download">下载课态签 1.16.35</a>
           <a class="btn btn-ghost" href="#flow">先看怎么用</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.16.34</b>（80）</span>
+          <span>当前版本 <b>1.16.35</b>（81）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -523,7 +523,7 @@
                alt="课态签首页：今日概览按课程列出高等数学、大学物理、程序设计基础，分别标注已结束、进行中与 44 分钟后；下方刷课、查寝、远程三张卡收缩为状态点与名称" />
         </div>
         <div class="device-cap">
-          <span class="pill">v1.16.34</span>
+          <span class="pill">v1.16.35</span>
           <span>首页截图 · 真机 1080×2340</span>
         </div>
       </div>
@@ -682,10 +682,10 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.16.34</h2>
+            <h2>下载课态签 1.16.35</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.34/ketai-1.16.34.apk">下载安装包（99.8 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.35/ketai-1.16.35.apk">下载安装包（99.8 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -704,7 +704,8 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
-              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.34" style="text-decoration:none">v1.16.34 · 401 识别与重登续跑</a></div>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.35" style="text-decoration:none">v1.16.35 · 预检不再误判</a></div>
+              <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.34" style="text-decoration:none">v1.16.34 · 401 识别与重登续跑</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.33" style="text-decoration:none">v1.16.33 · 慢步骤不再静默</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.32" style="text-decoration:none">v1.16.32 · 验证码接力与节奏</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.31" style="text-decoration:none">v1.16.31 · 验证码不再报完成</a></div>
@@ -755,6 +756,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.16.35<small>versionCode 81</small></div><p>上一版刚登录就报「登录已失效」，是新增的预检自己误判：它没先装好会话（换票、Referer）就直接打学习接口，结果拿回 401 就当成登录过期。现在预检按正式流程的握手来，而且只作提示、不拦路，真失效仍由取上下文那一步判断。</p></li>
           <li><div class="v">1.16.34<small>versionCode 80</small></div><p>上次那句 401 Forbidden 是知到把网页会话判失效了：课程清单能拉、学习接口不通。现在开托管前先预检一发学习接口，401/403 直接认成「登录已失效」，提示你重新扫码；登录成功后自动接着刷，不用重新点开始。</p></li>
           <li><div class="v">1.16.33<small>versionCode 79</small></div><p>「准备小节上下文」之后像是卡死：这段里要连做取上下文、取凭据、取播放地址、三维课件几步，每步各有 10 秒超时，慢起来能到几十秒；而重试与失败只打到终端，界面完全看不到。现在每步都写日志、同一动作超 20 秒补一条「仍在…（已 N 秒）」，失败与重试也进日志，刷课页状态栏会显示当前动作。</p></li>
           <li><div class="v">1.16.32<small>versionCode 78</small></div><p>撞到验证码不再「直接结束」：自动切到「等待验证」并把知到拉到前台，你过完验证回到本应用就自动续跑。另加两项人工可控：设置里可下调倍速、给小节之间留间隔（默认 1.0× / 8 秒）；「跳过验证码」默认关闭，开启前会弹一次声明说清代价。</p></li>
