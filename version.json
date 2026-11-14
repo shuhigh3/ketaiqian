@@ -1,6 +1,6 @@
 {
-  "versionCode": 79,
-  "versionName": "1.16.33",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.33/ketai-1.16.33.apk",
-  "notes": "慢步骤补心跳与失败日志，刷课状态栏显示当前动作，不再一片安静"
+  "versionCode": 80,
+  "versionName": "1.16.34",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.34/ketai-1.16.34.apk",
+  "notes": "401/403 识别为登录失效：托管前预检、提示重新扫码、登录后自动续跑"
 }
