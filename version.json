@@ -1,6 +1,6 @@
 {
-  "versionCode": 62,
-  "versionName": "1.16.16",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.16/ketai-1.16.16.apk",
-  "notes": "更新下载增加国内镜像回退，直连超时后自动换 gh-proxy / ghproxy 重试"
+  "versionCode": 63,
+  "versionName": "1.16.17",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.17/ketai-1.16.17.apk",
+  "notes": "版本号贯穿密钥协商与提交，解决今日校园 9.9.26 仍被判版本过低"
 }
