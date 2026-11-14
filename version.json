@@ -1,6 +1,6 @@
 {
-  "versionCode": 69,
-  "versionName": "1.16.23",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.23/ketai-1.16.23.apk",
-  "notes": "复用会话时补领门户 sessionToken、不再用 CAS 票据冒充；版本阶梯扩到 9.9.90"
+  "versionCode": 70,
+  "versionName": "1.16.24",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.24/ketai-1.16.24.apk",
+  "notes": "门户会话失效时自动重登换票；版本候选跨到 9.10/9.11/10.0"
 }
