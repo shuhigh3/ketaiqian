@@ -1,6 +1,6 @@
 {
-  "versionCode": 59,
-  "versionName": "1.16.13",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.13/ketai-1.16.13.apk",
-  "notes": "刷课中断不再假装刷完：有失败小节就报失败，中断前补报已看进度，再次开始不从 1% 重来"
+  "versionCode": 60,
+  "versionName": "1.16.14",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.14/ketai-1.16.14.apk",
+  "notes": "刷课加看门狗与卡住自恢复，新增跳过课时阈值与启动自动刷课开关"
 }
