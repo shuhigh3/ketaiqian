@@ -1,6 +1,6 @@
 {
-  "versionCode": 64,
-  "versionName": "1.16.18",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.18/ketai-1.16.18.apk",
-  "notes": "查寝引擎日志接进界面（长按状态查看）、进页清旧结果、版本全拒时写明已试版本"
+  "versionCode": 65,
+  "versionName": "1.16.19",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.19/ketai-1.16.19.apk",
+  "notes": "修复提交路径 plan 未定义崩溃，签名候选增加排序参数与 bodyString 两种写法，失败提示带 code 与试过的版本"
 }
