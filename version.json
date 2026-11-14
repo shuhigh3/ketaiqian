@@ -1,6 +1,6 @@
 {
-  "versionCode": 72,
-  "versionName": "1.16.26",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.26/ketai-1.16.26.apk",
-  "notes": "换请求家族：明文平铺 JSON 与头部真签名各试一次，加密写法回落兜底"
+  "versionCode": 73,
+  "versionName": "1.16.27",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.27/ketai-1.16.27.apk",
+  "notes": "查寝页新增「自动代签」：调起今日校园按界面点签到，结果按页面文字判定"
 }
