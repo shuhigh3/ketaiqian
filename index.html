@@ -501,11 +501,11 @@
           也能托管学习通与知到的刷课。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">下载课态签 1.16.31</a>
+          <a class="btn btn-primary" href="#download">下载课态签 1.16.32</a>
           <a class="btn btn-ghost" href="#flow">先看怎么用</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.16.31</b>（77）</span>
+          <span>当前版本 <b>1.16.32</b>（78）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -523,7 +523,7 @@
                alt="课态签首页：今日概览按课程列出高等数学、大学物理、程序设计基础，分别标注已结束、进行中与 44 分钟后；下方刷课、查寝、远程三张卡收缩为状态点与名称" />
         </div>
         <div class="device-cap">
-          <span class="pill">v1.16.31</span>
+          <span class="pill">v1.16.32</span>
           <span>首页截图 · 真机 1080×2340</span>
         </div>
       </div>
@@ -682,10 +682,10 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.16.31</h2>
+            <h2>下载课态签 1.16.32</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.31/ketai-1.16.31.apk">下载安装包（99.8 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.32/ketai-1.16.32.apk">下载安装包（99.8 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -704,7 +704,8 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
-              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.31" style="text-decoration:none">v1.16.31 · 验证码不再报完成</a></div>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.32" style="text-decoration:none">v1.16.32 · 验证码接力与节奏</a></div>
+              <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.31" style="text-decoration:none">v1.16.31 · 验证码不再报完成</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.30" style="text-decoration:none">v1.16.30 · 刷课日志可见</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.29" style="text-decoration:none">v1.16.29 · 看门狗阈值与心跳</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.28" style="text-decoration:none">v1.16.28 · 刷课不再静默暂停</a></div>
@@ -752,6 +753,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.16.32<small>versionCode 78</small></div><p>撞到验证码不再「直接结束」：自动切到「等待验证」并把知到拉到前台，你过完验证回到本应用就自动续跑。另加两项人工可控：设置里可下调倍速、给小节之间留间隔（默认 1.0× / 8 秒）；「跳过验证码」默认关闭，开启前会弹一次声明说清代价。</p></li>
           <li><div class="v">1.16.31<small>versionCode 77</small></div><p>日志里那句 Captcha required 是真凶：验证码一出现，课程内的代码就地 return，整门课于是被当成「顺利跑完」，界面显示「托管结束：finished」。现在验证码会向上抛、不重试，状态直接置为失败并写清「先去知到网页/App 手动看一段完成验证，再重开托管」。</p></li>
           <li><div class="v">1.16.30<small>versionCode 76</small></div><p>「已开始托管」之后一片空白，是因为刷课日志只写在引擎内存里，界面从来没读过——能看到的只有界面自己那几行。现在给引擎加了日志读取，长按状态即可看到：托管启动、拉取课程列表、知到课程几门、进入课程、跳过课程、取播放地址等都会记，卡住时也能直接从日志看出停在哪一步。</p></li>
           <li><div class="v">1.16.29<small>versionCode 75</small></div><p>看门狗只看进度条：90 秒不动就重启，可「取上下文→取地址→拉弹题」每步都有 10 秒超时，连着几次慢就凑够 90 秒，正常在做事也会被判卡住。现在阈值放到 5 分钟，并在这几步里报心跳；日志会带出卡住时正在做什么。</p></li>
