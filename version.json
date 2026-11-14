@@ -1,6 +1,6 @@
 {
-  "versionCode": 65,
-  "versionName": "1.16.19",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.19/ketai-1.16.19.apk",
-  "notes": "修复提交路径 plan 未定义崩溃，签名候选增加排序参数与 bodyString 两种写法，失败提示带 code 与试过的版本"
+  "versionCode": 66,
+  "versionName": "1.16.20",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.20/ketai-1.16.20.apk",
+  "notes": "验签失败判别点改到密钥：cpdaily 前置并吃满版本阶梯，cat 转后备"
 }
