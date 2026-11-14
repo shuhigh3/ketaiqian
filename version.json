@@ -1,6 +1,6 @@
 {
-  "versionCode": 67,
-  "versionName": "1.16.21",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.21/ketai-1.16.21.apk",
-  "notes": "查寝会话票据改从门户 iap/loginSuccess 的 sessionToken 取；提交侧 CpdailyInfo 补 cpdailyVersion；密钥实测与版本无关，换版本不再重复协商"
+  "versionCode": 68,
+  "versionName": "1.16.22",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.22/ketai-1.16.22.apk",
+  "notes": "日志瘦身：一次签到失败只留两行（结论 + 写法/版本/返回码明细），去掉重复行与堆栈"
 }
