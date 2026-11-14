@@ -5,7 +5,7 @@
 
 - 下载页（推荐从这里开始）：<https://shuhigh3.github.io/ketaiqian/>
 - 最新版本：<https://github.com/shuhigh3/ketaiqian/releases/latest>
-- 当前版本：**1.16.19**（versionCode 65，Android 8.0+）
+- 当前版本：**1.16.20**（versionCode 66，Android 8.0+）
 
 ## 它做什么
 
@@ -53,9 +53,9 @@
 
 ```json
 {
-  "versionCode": 65,
-  "versionName": "1.16.19",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.19/ketai-1.16.19.apk",
+  "versionCode": 66,
+  "versionName": "1.16.20",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.20/ketai-1.16.20.apk",
   "notes": "换新图标：白色课表格+对勾，靛蓝→紫渐变底，补 Android 13 单色主题图标"
 }
 ```
@@ -64,6 +64,7 @@
 
 | 版本 | versionCode | 主要改动 |
 | --- | --- | --- |
+| 1.16.20 | 66 | 验签失败判别点移到密钥：fkey_cpdaily 前置并吃满版本阶梯（9.9.22→9.9.40），fkey_cat 转后备；依据是同一版本下 cat 六种写法全返 2210060000、cpdaily 能进到版本校验 |
 | 1.16.19 | 65 | 修复提交路径 `name 'plan' is not defined`；签名候选增加 android_sorted 与 body_only 两写法，失败提示带 code 与试过的版本/写法；提交前记录 bodyString 长度与 sign 前缀 |
 | 1.16.18 | 64 | 查寝引擎日志接进界面（长按「状态」查看并复制）、进页清掉上一次失败结论、版本全拒时提示已试版本、取任务前记日志 |
 | 1.16.17 | 63 | 版本号贯穿密钥协商与提交：getSecretKey 的 CpdailyInfo/UA 不再写死 9.9.22，密钥按「学校+设备+版本」缓存；修复今日校园 9.9.26 仍被判版本过低 |
