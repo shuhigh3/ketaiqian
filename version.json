@@ -1,6 +1,6 @@
 {
-  "versionCode": 57,
-  "versionName": "1.16.11",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.11/ketai-1.16.11.apk",
-  "notes": "刷课卡死修复（自动重试+卡住检测+进度不回退）、查寝失败静默、菜单配色修复，新增代跑入口"
+  "versionCode": 58,
+  "versionName": "1.16.12",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.12/ketai-1.16.12.apk",
+  "notes": "今日校园版本自适应、声明弹窗可滚动、代跑改为内置、代跑页补引导、学习通悬浮窗按屏宽自适应"
 }
