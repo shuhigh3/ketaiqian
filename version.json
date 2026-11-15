@@ -1,6 +1,6 @@
 {
-  "versionCode": 86,
-  "versionName": "1.16.40",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.40/ketai-1.16.40.apk",
-  "notes": "修：上报被拦不再放弃整节（降速 1.0×、间隔翻倍、第 3 次刷新上下文、第 6 次提示手动验证）；日志带上真实业务码与消息"
+  "versionCode": 87,
+  "versionName": "1.16.41",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.41/ketai-1.16.41.apk",
+  "notes": "新增应用内验证页：撞到验证码自动打开这门课的学习页（同一会话），过完点「完成，继续托管」"
 }
