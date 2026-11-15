@@ -1,6 +1,6 @@
 {
-  "versionCode": 89,
-  "versionName": "1.17.0",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.17.0/ketai-1.17.0.apk",
-  "notes": "学习通刷课改为接管手机学习通 App（网页端不记账）；完成判定只看播放进度与 App 完成标记，修复「无未完成任务却还有视频未看」的误报"
+  "versionCode": 90,
+  "versionName": "1.17.1",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.17.1/ketai-1.17.1.apk",
+  "notes": "学习通 App 刷课补上日志出口（长按状态行查看，同时写入执行日志）；页面文案改为 App 刷课说明"
 }
