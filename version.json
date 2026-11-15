@@ -1,6 +1,6 @@
 {
-  "versionCode": 87,
-  "versionName": "1.16.41",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.41/ketai-1.16.41.apk",
-  "notes": "新增应用内验证页：撞到验证码自动打开这门课的学习页（同一会话），过完点「完成，继续托管」"
+  "versionCode": 88,
+  "versionName": "1.16.42",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.42/ketai-1.16.42.apk",
+  "notes": "去掉设置里的两个验证码开关：撞到验证码一律直接提示并打开验证页；跳过验证码路径整段移除"
 }
