@@ -501,11 +501,11 @@
           也能托管学习通与知到的刷课。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">下载课态签 1.16.40</a>
+          <a class="btn btn-primary" href="#download">下载课态签 1.16.41</a>
           <a class="btn btn-ghost" href="#flow">先看怎么用</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.16.40</b>（86）</span>
+          <span>当前版本 <b>1.16.41</b>（87）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -523,7 +523,7 @@
                alt="课态签首页：今日概览按课程列出高等数学、大学物理、程序设计基础，分别标注已结束、进行中与 44 分钟后；下方刷课、查寝、远程三张卡收缩为状态点与名称" />
         </div>
         <div class="device-cap">
-          <span class="pill">v1.16.40</span>
+          <span class="pill">v1.16.41</span>
           <span>首页截图 · 真机 1080×2340</span>
         </div>
       </div>
@@ -682,10 +682,10 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.16.40</h2>
+            <h2>下载课态签 1.16.41</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.40/ketai-1.16.40.apk">下载安装包（99.8 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.41/ketai-1.16.41.apk">下载安装包（99.8 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -704,7 +704,7 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
-              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.40" style="text-decoration:none">v1.16.40 · 被拦不弃节、只退避</a></div>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.41" style="text-decoration:none">v1.16.41 · 验证码直接进验证页</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.36" style="text-decoration:none">v1.16.36 · 已看完不等于真看完</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.35" style="text-decoration:none">v1.16.35 · 预检不再误判</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.34" style="text-decoration:none">v1.16.34 · 401 识别与重登续跑</a></div>
@@ -758,7 +758,8 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
-          <div class="v">1.16.40<small>versionCode 86</small></div><p>「到十几就跳」还没好，是因为上一版只给了两次机会：上报每 20 秒一次，连拦两次就升级成放弃整节，按 1.25× 折算正好是 12～15% 的位置。现在上报被拦一律继续播：自动降到 1.0×、上报间隔翻倍（最高 60 秒），第 3 次刷新课程上下文，第 6 次提示去知到手动验证——小节不再因为上报被拦而中途换掉。另外日志会带上被拦的真实业务码与消息（原来只写「captcha required」），下次卡住能直接看出是风控还是会话问题。</p></li>
+          <li><div class="v">1.16.41<small>versionCode 87</small></div><p>撞到验证码不再只弹一句通知：直接打开应用内的验证页，把这门课的知到网页学习页用同一个会话加载出来，图形码/滑块就在页面上，过完点右上角「完成，继续托管」即可。验证码本身没有独立地址，只会在学习页上出现，所以跳的就是那一页；退出去也不会丢进度，托管停在等待验证，点状态行可以再进去。</p></li>
+          <li><div class="v">1.16.40<small>versionCode 86</small></div><p>「到十几就跳」还没好，是因为上一版只给了两次机会：上报每 20 秒一次，连拦两次就升级成放弃整节，按 1.25× 折算正好是 12～15% 的位置。现在上报被拦一律继续播：自动降到 1.0×、上报间隔翻倍（最高 60 秒），第 3 次刷新课程上下文，第 6 次提示去知到手动验证——小节不再因为上报被拦而中途换掉。另外日志会带上被拦的真实业务码与消息（原来只写「captcha required」），下次卡住能直接看出是风控还是会话问题。</p></li>
           <li><div class="v">1.16.39<small>versionCode 85</small></div><p>「每节到 10% 就跳下一节」的真因不在播放：上报进度那一发被知到风控回了验证码，旧逻辑把它当成整节失败，直接放弃该小节。现在上报遇验证码只算一次拦截，继续播放并把进度留到下一次上报（连拦 3 次才升级处理）。另修两处：跳过/失败的日志记到当前小节与所属课时，不再张冠李戴；点「停止托管」立即生效，播放、间隔等待、网络等待都会被同一信号打断，不再挂在「停止中」。</p></li>
           <li><div class="v">1.16.38<small>versionCode 84</small></div><p>节奏与提示集中改：开始托管不再先等 8 秒，间隔期间显示剩余秒数；通知栏改成「小节名 已播/总时长 百分比」；默认节奏改为快（1.25× / 5 秒）。另修：勾了「跳过验证码」却仍暂停——课程级取上下文时的验证码现在也走跳过。</p></li>
           <li><div class="v">1.16.37<small>versionCode 83</small></div><p>两处改动：小节不再因为 watchState=1 就当成「已看完」跳过，改成按真实进度判断（≥91% 才算），否则继续补看并写日志；验证码接力不再自动打开知到，先弹「现在去知到验证 / 稍后」由你决定。</p></li>
