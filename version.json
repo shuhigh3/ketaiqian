@@ -1,6 +1,6 @@
 {
-  "versionCode": 84,
-  "versionName": "1.16.38",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.38/ketai-1.16.38.apk",
-  "notes": "首节不再等间隔、间隔显示倒计时、通知含已播/总秒数与百分比、默认快节奏；跳过验证码覆盖课程级"
+  "versionCode": 85,
+  "versionName": "1.16.39",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.39/ketai-1.16.39.apk",
+  "notes": "修：上报进度遇验证码不再放弃整节（继续播放、下次再报，连拦 3 次才升级）；跳过与失败日志记到当前小节/课时；点停止托管立即生效"
 }
