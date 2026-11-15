@@ -515,11 +515,11 @@
           也能托管学习通与知到的刷课。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">下载课态签 1.18.0</a>
+          <a class="btn btn-primary" href="#download">下载课态签 1.18.1</a>
           <a class="btn btn-ghost" href="#flow">先看怎么用</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.18.0</b>（91）</span>
+          <span>当前版本 <b>1.18.1</b>（92）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -537,7 +537,7 @@
                alt="课态签首页：今日概览按课程列出高等数学、大学物理、程序设计基础，分别标注已结束、进行中与 44 分钟后；下方刷课、查寝、远程三张卡收缩为状态点与名称" />
         </div>
         <div class="device-cap">
-          <span class="pill">v1.18.0</span>
+          <span class="pill">v1.18.1</span>
           <span>首页截图 · 真机 1080×2340</span>
         </div>
       </div>
@@ -696,10 +696,10 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.18.0</h2>
+            <h2>下载课态签 1.18.1</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.18.0/ketai-1.18.0.apk">下载安装包（99.8 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.18.1/ketai-1.18.1.apk">下载安装包（99.8 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -718,7 +718,7 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
-              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.18.0" style="text-decoration:none">v1.18.0 · 学习通改为电脑端脚本</a></div>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.18.1" style="text-decoration:none">v1.18.1 · 知到记账核对与降速</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.34" style="text-decoration:none">v1.16.34 · 401 识别与重登续跑</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.33" style="text-decoration:none">v1.16.33 · 慢步骤不再静默</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.16.32" style="text-decoration:none">v1.16.32 · 验证码接力与节奏</a></div>
@@ -763,6 +763,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.18.1<small>versionCode 92</small></div><p>知到「本机进度条在涨、知到 App 里不涨」的原因没有报错也没有验证码提醒：上报被服务端静默丢弃。这一版在引擎里补了记账核对——每分钟重取一次课程上下文，读服务端已记录的学习时长，跟本地计时对比并写进日志；连续落后且本地多出 120 秒，就自动把倍速压到 1.0×，别再往上撞。默认倍速也从 1.25× 改为 1.0×。手机端长按状态行、电脑版控制台都能看到「服务端已记录 N 秒」。</p></li>
           <li><div class="v">1.18.0<small>versionCode 91</small></div><p>学习通刷课改到电脑上跑。手机上无论 App 还是浏览器都会遇到「手机浏览器无法记录学习信息」，能记账的是电脑浏览器里的学习通网页；未 root 手机也没有能在学习通 App 内跑脚本的方案（Xposed 模块要 root 或 LSPatch 重打包学习通，且只管答题）。所以这一版把手机端的无障碍接管整段删掉：学习通页只剩步骤指引与「复制脚本地址」，脚本在电脑的 Tampermonkey / 脚本猫里装，手机只负责看进度。</p></li>
           <li><div class="v">1.17.1<small>versionCode 90</small></div><p>补上学习通 App 刷课的日志出口：长按学习通页的状态行可以看这一轮做了什么，日志同时写进设置页的「执行日志」，出问题时不用重跑就能看清卡在哪一步。另外把页面上的旧文案换成 App 刷课的说明，无障碍权限按钮直接跳到系统设置。</p></li>
           <li><div class="v">1.17.0<small>versionCode 89</small></div><p>学习通刷课重建，不再走网页：网页端会直接提示「手机浏览器无法记录学习信息」，播完也不记账。现在改为接管手机学习通 App——你在 App 里打开课程→章节，托管按顺序逐节播放，播到片尾回章节页进下一节。顺带修掉「显示没有未完成的任务、实际还有视频没看」这个误报：完成判定只看播放进度与 App 自己的完成标记，读不到就记日志跳过，不再当成已完成。人脸识别与 App 内答题不做，遇到会停下并提示你本人处理。</p></li>
@@ -772,10 +773,10 @@
           <li><div class="v">1.16.39<small>versionCode 85</small></div><p>「每节到 10% 就跳下一节」的真因不在播放：上报进度那一发被知到风控回了验证码，旧逻辑把它当成整节失败，直接放弃该小节。现在上报遇验证码只算一次拦截，继续播放并把进度留到下一次上报（连拦 3 次才升级处理）。另修两处：跳过/失败的日志记到当前小节与所属课时，不再张冠李戴；点「停止托管」立即生效，播放、间隔等待、网络等待都会被同一信号打断，不再挂在「停止中」。</p></li>
           <li><div class="v">1.16.38<small>versionCode 84</small></div><p>节奏与提示集中改：开始托管不再先等 8 秒，间隔期间显示剩余秒数；通知栏改成「小节名 已播/总时长 百分比」；默认节奏改为快（1.25× / 5 秒）。另修：勾了「跳过验证码」却仍暂停——课程级取上下文时的验证码现在也走跳过。</p></li>
           <li><div class="v">1.16.37<small>versionCode 83</small></div><p>两处改动：小节不再因为 watchState=1 就当成「已看完」跳过，改成按真实进度判断（≥91% 才算），否则继续补看并写日志；验证码接力不再自动打开知到，先弹「现在去知到验证 / 稍后」由你决定。（连着两版并入：1.16.36 的「按真实进度判断」被本版的判定逻辑取代，1.16.35 修的是新增预检自己误判「登录已失效」。）</p></li>
-          <li><div class="v">1.16.34<small>versionCode 80</small></div><p>上次那句 401 Forbidden 是知到把网页会话判失效了：课程清单能拉、学习接口不通。现在开托管前先预检一发学习接口，401/403 直接认成「登录已失效」，提示你重新扫码；登录成功后自动接着刷，不用重新点开始。</p></li>
         </ul>
         <div id="versionsMore" hidden>
           <ul class="versions more">
+            <li><div class="v">1.16.34<small>versionCode 80</small></div><p>上次那句 401 Forbidden 是知到把网页会话判失效了：课程清单能拉、学习接口不通。现在开托管前先预检一发学习接口，401/403 直接认成「登录已失效」，提示你重新扫码；登录成功后自动接着刷，不用重新点开始。</p></li>
             <li><div class="v">1.16.33<small>versionCode 79</small></div><p>「准备小节上下文」之后像是卡死：这段里要连做取上下文、取凭据、取播放地址、三维课件几步，每步各有 10 秒超时，慢起来能到几十秒；而重试与失败只打到终端，界面完全看不到。现在每步都写日志、同一动作超 20 秒补一条「仍在…（已 N 秒）」，失败与重试也进日志，刷课页状态栏会显示当前动作。</p></li>
             <li><div class="v">1.16.32<small>versionCode 78</small></div><p>撞到验证码不再「直接结束」：自动切到「等待验证」并把知到拉到前台，你过完验证回到本应用就自动续跑。另加两项人工可控：设置里可下调倍速、给小节之间留间隔（默认 1.0× / 8 秒）；「跳过验证码」默认关闭，开启前会弹一次声明说清代价。</p></li>
             <li><div class="v">1.16.31<small>versionCode 77</small></div><p>日志里那句 Captcha required 是真凶：验证码一出现，课程内的代码就地 return，整门课于是被当成「顺利跑完」，界面显示「托管结束：finished」。现在验证码会向上抛、不重试，状态直接置为失败并写清「先去知到网页/App 手动看一段完成验证，再重开托管」。</p></li>
