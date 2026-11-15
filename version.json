@@ -1,6 +1,6 @@
 {
-  "versionCode": 81,
-  "versionName": "1.16.35",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.35/ketai-1.16.35.apk",
-  "notes": "预检按正式握手来、失败不拦路，修复「刚登录就报失效」的误判"
+  "versionCode": 83,
+  "versionName": "1.16.37",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.37/ketai-1.16.37.apk",
+  "notes": "小节按真实进度判「已看完」；验证码接力改为先询问再跳转"
 }
