@@ -1,6 +1,6 @@
 {
-  "versionCode": 88,
-  "versionName": "1.16.42",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.42/ketai-1.16.42.apk",
-  "notes": "去掉设置里的两个验证码开关：撞到验证码一律直接提示并打开验证页；跳过验证码路径整段移除"
+  "versionCode": 89,
+  "versionName": "1.17.0",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.17.0/ketai-1.17.0.apk",
+  "notes": "学习通刷课改为接管手机学习通 App（网页端不记账）；完成判定只看播放进度与 App 完成标记，修复「无未完成任务却还有视频未看」的误报"
 }
