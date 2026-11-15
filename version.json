@@ -1,6 +1,6 @@
 {
-  "versionCode": 83,
-  "versionName": "1.16.37",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.37/ketai-1.16.37.apk",
-  "notes": "小节按真实进度判「已看完」；验证码接力改为先询问再跳转"
+  "versionCode": 84,
+  "versionName": "1.16.38",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.16.38/ketai-1.16.38.apk",
+  "notes": "首节不再等间隔、间隔显示倒计时、通知含已播/总秒数与百分比、默认快节奏；跳过验证码覆盖课程级"
 }
