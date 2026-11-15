@@ -1,6 +1,6 @@
 {
-  "versionCode": 91,
-  "versionName": "1.18.0",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.18.0/ketai-1.18.0.apk",
-  "notes": "学习通刷课改到电脑端脚本：手机端移除无障碍接管，学习通页只留步骤指引与脚本地址"
+  "versionCode": 92,
+  "versionName": "1.18.1",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.18.1/ketai-1.18.1.apk",
+  "notes": "知到补记账核对：每分钟对比服务端已记录时长，落后自动降到 1.0×；默认倍速改为 1.0×"
 }
