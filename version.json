@@ -1,6 +1,6 @@
 {
-  "versionCode": 103,
-  "versionName": "1.20.0.7",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.7/ketai-1.20.0.7.apk",
-  "notes": "页面精简与重排；查寝只留甲子在线；电脑版学习通播完自动切下一节"
+  "versionCode": 104,
+  "versionName": "1.20.0.8",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.8/ketai-1.20.0.8.apk",
+  "notes": "电脑端启停修复与学习通入口修复；远程刷课新增复制钥匙串、学习通开始刷课、取消保存"
 }
