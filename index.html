@@ -696,10 +696,10 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.20.0</h2>
+            <h2>下载课态签 1.20.1</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0/ketai-1.20.0.apk">下载安装包（99.8 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.1/ketai-1.20.1.apk">下载安装包（99.8 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -718,6 +718,7 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.20.1" style="text-decoration:none">v1.20.1 · 甲子在线排到查寝页最前</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.20.0" style="text-decoration:none">v1.20.0 · 查寝改走甲子在线扫码与签到页直达</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.19.0" style="text-decoration:none">v1.19.0 · 刷课首页重排，学习通到电脑刷</a></div>
               <div class="rail-dot"><i style="background:var(--info)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.18.2" style="text-decoration:none">v1.18.2 · 滑块验证停下等人</a></div>
@@ -795,6 +796,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.20.1<small>versionCode 96</small></div><p>把「甲子在线」整块提到查寝页最前：先扫码或直达签到页，今日校园那组按钮退到后面并标明「今日校园·旧路径」。其余同 1.20.0：扫码页按应用名识别、签到页链接粘一次直达、自动点按只留拍照入口/拍摄键/确认提交三步，没有命令通道也能只打开页面自己点。另修说明文案：链接类型不再用占位式写法。</p></li>
           <li><div class="v">1.20.0<small>versionCode 95</small></div><p>查寝多一条不走无障碍的路：查寝页新增「甲子在线」卡片，一键拉起它自带的扫一扫，扫码即签到——不申请无障碍，也不需要无线调试或 Shizuku。签到页有链接就粘一次，之后按链接直达；先让甲子在线承接，接不住会明确提示落到了浏览器。自动点按只留拍照入口、拍摄键、确认提交三步，没有拍照的学校直接认签到按钮；没有命令通道也能用，最后两步自己点。今日校园的接口签到与界面代签保留，界面按钮改名为「界面代签（今日校园·旧路径）」。</p></li>
           <li><div class="v">1.19.0<small>versionCode 94</small></div><p>刷课首页重排：第一张卡换成「远程刷课」，填同一行配对串连上电脑，就能在这里看电脑端进度、改学习通选项。学习通不再在手机里托管——网页在手机上播完不记账，这一块改成「在电脑端操作」的步骤说明和电脑端下载页。连上后可以改倍速（1.0 / 1.25 / 1.5）与「进入学习通后自动开始」，电脑端收到即应用并回执，手机能看到是否生效。手机端整段删掉学习通托管链路：悬浮窗托管服务、定时刷课、学习通页一并移除。</p></li>
           <li><div class="v">1.18.2<small>versionCode 93</small></div><p>日志把原因说清楚了：上报一直返回 code=-12「需要弹出滑块验证」，降速、把间隔放到 60 秒、刷新课程上下文都没用，服务端始终停在 10 秒。这一版不再空转：连续 4 次被拦就停下，切成「等待滑块验证」，并给出「去验证」入口——打开这门课的学习页过掉滑块，回来点「验证完成，继续」接着刷，已经看过的节会自动跳过。手机端是自动拉起验证页，电脑端在控制台上点。</p></li>
@@ -804,10 +806,10 @@
           <li><div class="v">1.17.0<small>versionCode 89</small></div><p>学习通刷课重建，不再走网页：网页端会直接提示「手机浏览器无法记录学习信息」，播完也不记账。现在改为接管手机学习通 App——你在 App 里打开课程→章节，托管按顺序逐节播放，播到片尾回章节页进下一节。顺带修掉「显示没有未完成的任务、实际还有视频没看」这个误报：完成判定只看播放进度与 App 自己的完成标记，读不到就记日志跳过，不再当成已完成。人脸识别与 App 内答题不做，遇到会停下并提示你本人处理。</p></li>
           <li><div class="v">1.16.42<small>versionCode 88</small></div><p>设置里两个验证码开关都删了：撞到验证码现在一律直接弹提示并打开验证页，验证完点「完成，继续托管」；「跳过这一节」那条路径整段移除，不会再因为跳过把这一节的进度丢掉。版本列表也从这一版开始收进折叠区，默认只列最近 10 个，更早的点一下展开。</p></li>
           <li><div class="v">1.16.41<small>versionCode 87</small></div><p>撞到验证码不再只弹一句通知：直接打开应用内的验证页，把这门课的知到网页学习页用同一个会话加载出来，图形码/滑块就在页面上，过完点右上角「完成，继续托管」即可。验证码本身没有独立地址，只会在学习页上出现，所以跳的就是那一页；退出去也不会丢进度，托管停在等待验证，点状态行可以再进去。</p></li>
-          <li><div class="v">1.16.40<small>versionCode 86</small></div><p>「到十几就跳」还没好，是因为上一版只给了两次机会：上报每 20 秒一次，连拦两次就升级成放弃整节，按 1.25× 折算正好是 12～15% 的位置。现在上报被拦一律继续播：自动降到 1.0×、上报间隔翻倍（最高 60 秒），第 3 次刷新课程上下文，第 6 次提示去知到手动验证——小节不再因为上报被拦而中途换掉。另外日志会带上被拦的真实业务码与消息（原来只写「captcha required」），下次卡住能直接看出是风控还是会话问题。</p></li>
           </ul>
         <div id="versionsMore" hidden>
           <ul class="versions more">
+            <li><div class="v">1.16.40<small>versionCode 86</small></div><p>「到十几就跳」还没好，是因为上一版只给了两次机会：上报每 20 秒一次，连拦两次就升级成放弃整节，按 1.25× 折算正好是 12～15% 的位置。现在上报被拦一律继续播：自动降到 1.0×、上报间隔翻倍（最高 60 秒），第 3 次刷新课程上下文，第 6 次提示去知到手动验证——小节不再因为上报被拦而中途换掉。另外日志会带上被拦的真实业务码与消息（原来只写「captcha required」），下次卡住能直接看出是风控还是会话问题。</p></li>
             <li><div class="v">1.16.39<small>versionCode 85</small></div><p>「每节到 10% 就跳下一节」的真因不在播放：上报进度那一发被知到风控回了验证码，旧逻辑把它当成整节失败，直接放弃该小节。现在上报遇验证码只算一次拦截，继续播放并把进度留到下一次上报（连拦 3 次才升级处理）。另修两处：跳过/失败的日志记到当前小节与所属课时，不再张冠李戴；点「停止托管」立即生效，播放、间隔等待、网络等待都会被同一信号打断，不再挂在「停止中」。</p></li>
             <li><div class="v">1.16.38<small>versionCode 84</small></div><p>节奏与提示集中改：开始托管不再先等 8 秒，间隔期间显示剩余秒数；通知栏改成「小节名 已播/总时长 百分比」；默认节奏改为快（1.25× / 5 秒）。另修：勾了「跳过验证码」却仍暂停——课程级取上下文时的验证码现在也走跳过。</p></li>
             <li><div class="v">1.16.37<small>versionCode 83</small></div><p>两处改动：小节不再因为 watchState=1 就当成「已看完」跳过，改成按真实进度判断（≥91% 才算），否则继续补看并写日志；验证码接力不再自动打开知到，先弹「现在去知到验证 / 稍后」由你决定。（连着两版并入：前两版的「按真实进度判断」与「预检误判登录失效」都已由本版取代，各自未单独发版。）</p></li>
