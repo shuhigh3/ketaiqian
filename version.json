@@ -1,6 +1,6 @@
 {
-  "versionCode": 94,
-  "versionName": "1.19.0",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.19.0/ketai-1.19.0.apk",
-  "notes": "刷课首页重排：远程刷课置顶，学习通只在电脑上刷；连上电脑可改倍速与自动开始"
+  "versionCode": 95,
+  "versionName": "1.20.0",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0/ketai-1.20.0.apk",
+  "notes": "查寝改走甲子在线：一键打开扫一扫或签到页链接，不用无障碍；拍照提交仍可自动点"
 }
