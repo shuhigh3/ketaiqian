@@ -1,6 +1,6 @@
 {
-  "versionCode": 95,
-  "versionName": "1.20.0",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0/ketai-1.20.0.apk",
-  "notes": "查寝改走甲子在线：一键打开扫一扫或签到页链接，不用无障碍；拍照提交仍可自动点"
+  "versionCode": 96,
+  "versionName": "1.20.1",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.1/ketai-1.20.1.apk",
+  "notes": "查寝页把甲子在线放最前：一键扫一扫或签到页直达，不用无障碍；今日校园标为旧路径"
 }
