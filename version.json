@@ -1,6 +1,6 @@
 {
-  "versionCode": 99,
-  "versionName": "1.20.0.3",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.3/ketai-1.20.0.3.apk",
-  "notes": "查寝遇安全验证自动亮卡、聚焦输入框，验证通过后自动继续查任务"
+  "versionCode": 100,
+  "versionName": "1.20.0.4",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.4/ketai-1.20.0.4.apk",
+  "notes": "消息栏实时显示知到刷课小节与百分比；前台服务启动失败入日志；轮询停顿留证"
 }
