@@ -1,6 +1,6 @@
 {
-  "versionCode": 98,
-  "versionName": "1.20.0.2",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.2/ketai-1.20.0.2.apk",
-  "notes": "修知到停止状态误报、清除 fucking 数字、后台托管用前台服务保活"
+  "versionCode": 99,
+  "versionName": "1.20.0.3",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.3/ketai-1.20.0.3.apk",
+  "notes": "查寝遇安全验证自动亮卡、聚焦输入框，验证通过后自动继续查任务"
 }
