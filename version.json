@@ -1,6 +1,6 @@
 {
-  "versionCode": 104,
-  "versionName": "1.20.0.8",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.8/ketai-1.20.0.8.apk",
-  "notes": "电脑端启停修复与学习通入口修复；远程刷课新增复制钥匙串、学习通开始刷课、取消保存"
+  "versionCode": 105,
+  "versionName": "1.20.0.9",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.9/ketai-1.20.0.9.apk",
+  "notes": "新增刷题入口与远程答案；刷课首页后台保活提示；远程上报并入刷课主页；设置页分组"
 }
