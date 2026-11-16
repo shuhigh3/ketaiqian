@@ -1,6 +1,6 @@
 {
-  "versionCode": 101,
-  "versionName": "1.20.0.5",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.5/ketai-1.20.0.5.apk",
-  "notes": "今日校园签到 code=4：按日志证据改走 cat 身份的签名写法；另含通知合并"
+  "versionCode": 103,
+  "versionName": "1.20.0.7",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.7/ketai-1.20.0.7.apk",
+  "notes": "页面精简与重排；查寝只留甲子在线；电脑版学习通播完自动切下一节"
 }
