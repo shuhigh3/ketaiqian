@@ -1,6 +1,6 @@
 {
-  "versionCode": 100,
-  "versionName": "1.20.0.4",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.4/ketai-1.20.0.4.apk",
-  "notes": "消息栏实时显示知到刷课小节与百分比；前台服务启动失败入日志；轮询停顿留证"
+  "versionCode": 101,
+  "versionName": "1.20.0.5",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.5/ketai-1.20.0.5.apk",
+  "notes": "今日校园签到 code=4：按日志证据改走 cat 身份的签名写法；另含通知合并"
 }
