@@ -1,6 +1,6 @@
 {
-  "versionCode": 105,
-  "versionName": "1.20.0.9",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.9/ketai-1.20.0.9.apk",
-  "notes": "新增刷题入口与远程答案；刷课首页后台保活提示；远程上报并入刷课主页；设置页分组"
+  "versionCode": 106,
+  "versionName": "1.20.0.10",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.20.0.10/ketai-1.20.0.10.apk",
+  "notes": "悬浮窗默认收纳、可暂停/收起；远程刷课与远程上报合并为一张卡"
 }
