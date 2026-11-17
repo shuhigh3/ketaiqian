@@ -1,6 +1,6 @@
 {
-  "versionCode": 107,
-  "versionName": "1.21.0",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.21.0/ketai-1.21.0.apk",
-  "notes": "远程连接状态按电脑端是否真的在线判定；本机上报与电脑端进度分开；远程操作与远程答案收进首页「远程联机」浮层；代跑页内置包信息与滚动高度修正。"
+  "versionCode": 108,
+  "versionName": "1.21.1",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.21.1/ketai-1.21.1.apk",
+  "notes": "主页远程联机改为折叠卡，全部远程设置与学习通选项并入卡内展开区；刷课页重复的远程卡删除，不再有对话框浮层。"
 }
