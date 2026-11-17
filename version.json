@@ -1,6 +1,6 @@
 {
-  "versionCode": 109,
-  "versionName": "1.21.2",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.21.2/ketai-1.21.2.apk",
-  "notes": "提醒改静默通道、不再弹窗并在 30 分钟后自动消失；新增深色模式，默认跟随系统，可在设置固定浅色或深色。"
+  "versionCode": 112,
+  "versionName": "1.22.0",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.22.0/ketai-1.22.0.apk",
+  "notes": "安装包不再带口令：首次启动自动领 3 天试用，凭据由服务端签发；刷题页显示剩余天数，支持卡密激活与兑换码；到期限 AI 刷题，课表等功能不受影响。"
 }
