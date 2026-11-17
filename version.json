@@ -1,7 +1,7 @@
 {
-  "versionCode": 117,
-  "versionName": "1.26.1",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.1/ketai-1.26.1.apk",
+  "versionCode": 118,
+  "versionName": "1.26.2",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.2/ketai-1.26.2.apk",
   "minVersionCode": 116,
-  "notes": "清掉「未接入」提示：缺接口地址、缺模型名分别提示，答案面板与悬浮窗兜底改为「等待识别」；刷题改为账号凭据优先；D1 缺 is_admin 列时 Worker 自动补列；低于 116 的旧版强制更新。"
+  "notes": "修刷题一直等待识别：作答改成独立状态机，读屏刷新不再覆盖失败原因；去重键改为题目签名，同题只发一次、失败不自动重试、超时自动收尾；答案为空时显示正在作答或具体原因。顺带过滤状态栏与页码噪声。"
 }
