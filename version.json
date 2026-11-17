@@ -1,6 +1,7 @@
 {
-  "versionCode": 115,
-  "versionName": "1.25.0",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.25.0/ketai-1.25.0.apk",
-  "notes": "界面整体重绘：森空岛式渐变顶部栏与悬浮底部导航、自制图标、启动页与多色主题（浅色提亮、深色加深）；登录注册拆成互斥表单，新增账号找回与管理员管理页（发卡密、重置密码、开权限），管理员不受订阅限制。"
+  "versionCode": 116,
+  "versionName": "1.26.0",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.0/ketai-1.26.0.apk",
+  "minVersionCode": 116,
+  "notes": "修刷题「答案源未接入」的误判（改为账号凭据优先，缺项分别提示）；D1 缺 is_admin 列时由 Worker 自动补列与建找回表；新增强制更新：低于 minVersionCode 的旧版会被要求升级。"
 }
