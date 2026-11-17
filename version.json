@@ -1,7 +1,7 @@
 {
-  "versionCode": 118,
-  "versionName": "1.26.2",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.2/ketai-1.26.2.apk",
+  "versionCode": 119,
+  "versionName": "1.26.3",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.3/ketai-1.26.3.apk",
   "minVersionCode": 116,
-  "notes": "修刷题一直等待识别：作答改成独立状态机，读屏刷新不再覆盖失败原因；去重键改为题目签名，同题只发一次、失败不自动重试、超时自动收尾；答案为空时显示正在作答或具体原因。顺带过滤状态栏与页码噪声。"
+  "notes": "修「一直正在作答」：控制中心噪声不再当题目、题目签名稳定不重发；看门狗独立于读屏，90 秒超时收尾。悬浮窗新增「作答」按钮，设置可选立即作答 / 按下作答。"
 }
