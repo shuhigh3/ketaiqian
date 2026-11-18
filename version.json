@@ -1,7 +1,7 @@
 {
-  "versionCode": 128,
-  "versionName": "1.27.5",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.5/ketai-1.27.5.apk",
+  "versionCode": 129,
+  "versionName": "1.27.6",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.6/ketai-1.27.6.apk",
   "minVersionCode": 116,
-  "notes": "服务端把 429 的原始原因带回来了：区分「额度用尽」与「请求过快」，不再一句「额度可能用尽」；Worker 按账号按天统计调用次数，客户端刷题页显示「今日已用 N/上限 M，剩 R」，悬浮窗展开行同步。需先把 d1-usage-schema.sql 贴到 D1 并把新版 Worker 部署，客户端才会显示数字（未部署时静默不显示）。"
+  "notes": "作答变快：改为流式读取，收到「1. B」就先显示并断开，不再等整段生成完；输出上限 80 token、提示词只要答案不写理由，首字节 12 秒、整体 30 秒超时。同时减少限流误触发：上游判「请求过快」时不再接着打备用通道（额度类才换通道），客户端每题自动补发一次，响应带 retryAfter。需同时更新 Worker（同名文件替换后部署）。"
 }
