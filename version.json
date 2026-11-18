@@ -1,7 +1,7 @@
 {
-  "versionCode": 121,
-  "versionName": "1.26.5",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.5/ketai-1.26.5.apk",
+  "versionCode": 122,
+  "versionName": "1.26.6",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.6/ketai-1.26.6.apk",
   "minVersionCode": 116,
-  "notes": "软件内购买月卡：下单→付款→自动续期；收款走可配置的第三方聚合支付（auto/manual/off），回调验签与幂等开通，金额由服务端定。"
+  "notes": "主页显示账号档位：体验/会员/管理员/积分会员，各自到期时间精确到分钟；头像图标与顶部渐变栏随档位变化。"
 }
