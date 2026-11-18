@@ -1,7 +1,7 @@
 {
-  "versionCode": 130,
-  "versionName": "1.27.7",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.7/ketai-1.27.7.apk",
+  "versionCode": 131,
+  "versionName": "1.27.8",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.8/ketai-1.27.8.apk",
   "minVersionCode": 116,
-  "notes": "作答超时修复：流式请求 15 秒没等到首字节就自动改用普通请求再试一次，不再一个字都拿不到；整体仍 30 秒收尾。新增悬浮窗不透明度设置（设置 → 刷题，30–100%，收起与展开两态同时生效），识别到题目时悬浮窗背景变半透明绿色渐变，没题目回到深蓝。服务端无需更新。"
+  "notes": "修设置闪退：不透明度滑块步进与默认值不对齐，一进设置就崩；现改为步进 1、范围 20–100、默认 84%，旧值自动夹到区间。收起态更紧凑：214×46dp、内边距收到 8/4/6/4、作答键 50×36。默认更透：不透明度 94% → 84%，下限放到 20%，收起与展开同步。服务端无需更新。"
 }
