@@ -1,7 +1,7 @@
 {
-  "versionCode": 124,
-  "versionName": "1.27.1",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.1/ketai-1.27.1.apk",
+  "versionCode": 125,
+  "versionName": "1.27.2",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.2/ketai-1.27.2.apk",
   "minVersionCode": 116,
-  "notes": "个人主页与账号中心：头像/昵称、AI 订阅、卡密、兑换码与购买月卡统一到账号页；登录注册须勾选用户协议，协议明确损失与封号后果与本软件及开发者无关；顶栏上滑隐藏；刷课/远程/查寝合并为状态中心；管理端支持删号、加会员/试用天数与卡密删除。"
+  "notes": "刷题答案链路修复：判断题「A 对／B 错」这类选项不再漏识别，题干不再混入「温馨提示」与页脚按钮；同一道题失败后先冷静 15 秒且最多自动重试三次，不再一秒一请求把额度打光；重按「作答」后晚到的旧回包会被丢弃；失败原因直接显示在答案行（订阅到期、网络不通、接口超时各有提示）；接口增加硬超时，卡住的请求不会一直转圈。"
 }
