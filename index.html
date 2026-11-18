@@ -482,7 +482,7 @@
       <a href="#download">下载</a>
       <a href="projects.html">我的项目</a>
     </nav>
-    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.8/ketai-1.27.8.apk">手机端下载</a>
+    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.9/ketai-1.27.9.apk">手机端下载</a>
   </div>
 </header>
 
@@ -516,11 +516,11 @@
           自制图标与启动页，配色也从单一靛蓝换成多色体系。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.8/ketai-1.27.8.apk">手机端下载</a>
+          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.9/ketai-1.27.9.apk">手机端下载</a>
           <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases/download/pc-1.1.4/ketai-pc-1.1.4.exe">电脑端下载</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.27.8</b>（131）</span>
+          <span>当前版本 <b>1.27.9</b>（132）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -697,12 +697,12 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.27.8</h2>
+            <h2>下载课态签 1.27.9</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
-            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.8（131）· 95.3 MB。
+            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.9（132）· 95.3 MB。
             安装包从 GitHub Releases 直接下载；国内网络慢时，应用内「检查更新」会走版本清单的镜像。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.8/ketai-1.27.8.apk">下载安装包（95.3 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.9/ketai-1.27.9.apk">下载安装包（95.3 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -721,6 +721,7 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.9" style="text-decoration:none">v1.27.9 · 闪退修法改为步进 5 + 默认 85，收起态更紧</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.8" style="text-decoration:none">v1.27.8 · 修设置闪退，收起态更紧凑、默认更透</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.7" style="text-decoration:none">v1.27.7 · 超时回退普通请求，悬浮窗可调透明度与识别变绿</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.6" style="text-decoration:none">v1.27.6 · 流式出答案，请求过快不再重复打通道</a></div>
@@ -825,6 +826,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.27.9<small>versionCode 132</small></div><p>1.27.8 把滑块步进改成 1 来绕开崩溃，偏离了「默认值应落在 stepSize=5 档位上」。本版改回步进 5，范围仍 20–100，默认值取 85（在 20+5n 上，且比 94 更透），并新增吸附函数：任何旧值先按 20+5n 四舍五入再赋给滑块，94 会变 95、84 会变 85，越界钳到 20/100。收起态保持 214×46dp、内边距 8/4/6/4、作答键 50×36。328 项单测全过，包 1.27.9（132），签名与历版一致。</p></li>
           <li><div class="v">1.27.8<small>versionCode 131</small></div><p>修一处崩溃：1.27.7 的不透明度滑块步进是 5，而默认值 94 不在步进上，Slider 取值直接抛异常，所以点设置就闪退；现在步进改为 1、范围 20–100、默认 84，设置页再把旧值夹到区间后才赋给滑块。收起态收紧：248×58dp → 214×46dp，内边距 10/6/8/6 → 8/4/6/4，作答键 56×40 → 50×36、展开箭头 36×40 → 30×36，按钮仍够大。默认更透：不透明度 94% → 84%，下限 30% → 20%，收起与展开同步。327 项单测全过，包 1.27.8（131），签名与历版一致。</p></li>
           <li><div class="v">1.27.7<small>versionCode 130</small></div><p>修 1.27.6 引入的超时：流式请求 15 秒等不到首字节，就自动改用普通请求（等待窗口 28 秒）再试一次，不再直接判超时、一个字都拿不到；整体仍 30 秒收尾，文案仍是「30 秒没出答案」。外观：设置 → 刷题新增「悬浮窗不透明度」滑块（30–100%，默认 94%），收起 248×58dp 横条与展开 288dp 面板同时生效；识别到题目时悬浮窗背景换成半透明绿色渐变，没有题目时回到深蓝纯色，两种形态同步。325 项单测全过，包 1.27.7（130），签名与历版一致。</p></li>
           <li><div class="v">1.27.6<small>versionCode 129</small></div><p>作答提速。一是改流式读取：上游一边生成一边解析，凑到「1. B」这样完整的一行就先显示并断开，不再等整段写完；输出上限 80 token、temperature 0，提示词从「必要时附一句理由」收紧为只给答案，首字节 12 秒、整体 30 秒硬超时。二是减少限流误触发：上游判「请求过快」时说明同一账号已受限，换模型也一样，Worker 不再接着打备用通道（只有额度用尽才换），并回 retryAfter；客户端遇到「请求过快」每题自动补发一次，不用手动再点。服务端 8 项新增测试、客户端 319 项单测全过，包 1.27.6（129），签名与历版一致。</p></li>
