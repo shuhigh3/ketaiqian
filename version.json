@@ -1,7 +1,7 @@
 {
-  "versionCode": 131,
-  "versionName": "1.27.8",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.8/ketai-1.27.8.apk",
+  "versionCode": 132,
+  "versionName": "1.27.9",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.9/ketai-1.27.9.apk",
   "minVersionCode": 116,
-  "notes": "修设置闪退：不透明度滑块步进与默认值不对齐，一进设置就崩；现改为步进 1、范围 20–100、默认 84%，旧值自动夹到区间。收起态更紧凑：214×46dp、内边距收到 8/4/6/4、作答键 50×36。默认更透：不透明度 94% → 84%，下限放到 20%，收起与展开同步。服务端无需更新。"
+  "notes": "修设置闪退：不透明度滑块步进 5，默认值 94 不在档位上直接抛异常；现保留步进 5、范围 20–100、默认 85（仍比 94 更透），旧值自动吸附到 20+5n。收起态收紧到 214×46dp、内边距 8/4/6/4、作答键 50×36。服务端无需更新。"
 }
