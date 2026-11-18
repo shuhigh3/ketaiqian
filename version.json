@@ -1,7 +1,7 @@
 {
-  "versionCode": 122,
-  "versionName": "1.26.6",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.6/ketai-1.26.6.apk",
+  "versionCode": 123,
+  "versionName": "1.27.0",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.0/ketai-1.27.0.apk",
   "minVersionCode": 116,
-  "notes": "主页显示账号档位：体验/会员/管理员/积分会员，各自到期时间精确到分钟；头像图标与顶部渐变栏随档位变化。"
+  "notes": "个人主页与账号中心：头像/昵称、AI 订阅、卡密、兑换码与购买月卡统一到账号页；登录注册增加用户协议勾选；顶栏上滑隐藏；刷课/远程/查寝合并为状态中心；管理端支持删号、加会员/试用天数与卡密删除。"
 }
