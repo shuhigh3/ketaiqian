@@ -1,7 +1,7 @@
 {
-  "versionCode": 126,
-  "versionName": "1.27.3",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.3/ketai-1.27.3.apk",
+  "versionCode": 127,
+  "versionName": "1.27.4",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.4/ketai-1.27.4.apk",
   "minVersionCode": 116,
-  "notes": "界面修复：主页顶部栏展开时不再多画一条横线（细线只在顶栏收起后出现），顶部栏底部的 1dp 分割条已去掉；刷题页「开始/停止读屏」按钮改为跟读屏服务真实连接状态走，服务没开启时不会再显示「停止读屏」，点它会直接引导到系统无障碍设置。"
+  "notes": "刷题交互重做：去掉「立即作答」，只有点悬浮窗「作答」才发请求；收起态不再是一个圆点，而是一条 248×58dp 的横条，直接显示状态、答案摘要与「作答」按钮；展开后额外显示识别到的题干与选项，底部是通栏「作答」。设置页的作答方式改为固定规则说明。"
 }
