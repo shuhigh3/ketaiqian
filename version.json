@@ -1,7 +1,7 @@
 {
-  "versionCode": 119,
-  "versionName": "1.26.3",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.3/ketai-1.26.3.apk",
+  "versionCode": 120,
+  "versionName": "1.26.4",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.26.4/ketai-1.26.4.apk",
   "minVersionCode": 116,
-  "notes": "修「一直正在作答」：控制中心噪声不再当题目、题目签名稳定不重发；看门狗独立于读屏，90 秒超时收尾。悬浮窗新增「作答」按钮，设置可选立即作答 / 按下作答。"
+  "notes": "429 不再重试并立即切备用，限流提示写明免费额度与可选做法；客户端把 502 收敛成一句人话。配合作答按钮，日常请求量下降。"
 }
