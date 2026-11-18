@@ -482,7 +482,7 @@
       <a href="#download">下载</a>
       <a href="projects.html">我的项目</a>
     </nav>
-    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.4/ketai-1.27.4.apk">手机端下载</a>
+    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.5/ketai-1.27.5.apk">手机端下载</a>
   </div>
 </header>
 
@@ -516,11 +516,11 @@
           自制图标与启动页，配色也从单一靛蓝换成多色体系。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.4/ketai-1.27.4.apk">手机端下载</a>
+          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.5/ketai-1.27.5.apk">手机端下载</a>
           <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases/download/pc-1.1.4/ketai-pc-1.1.4.exe">电脑端下载</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.27.4</b>（127）</span>
+          <span>当前版本 <b>1.27.5</b>（128）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -697,12 +697,12 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.27.4</h2>
+            <h2>下载课态签 1.27.5</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
-            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.4（127）· 95.3 MB。
+            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.5（128）· 95.3 MB。
             安装包从 GitHub Releases 直接下载；国内网络慢时，应用内「检查更新」会走版本清单的镜像。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.4/ketai-1.27.4.apk">下载安装包（95.3 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.5/ketai-1.27.5.apk">下载安装包（95.3 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -721,6 +721,7 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.5" style="text-decoration:none">v1.27.5 · 429 分清额度与频率，客户端显示今日用量</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.4" style="text-decoration:none">v1.27.4 · 只认按钮作答，收起态留状态与答案</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.3" style="text-decoration:none">v1.27.3 · 顶部栏多余横线与读屏按钮文案修复</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.2" style="text-decoration:none">v1.27.2 · 刷题答案链路修复，失败原因直接可见</a></div>
@@ -821,6 +822,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.27.5<small>versionCode 128</small></div><p>把「额度到底用了多少」从猜变成看得见。服务端：429 时按上游原文分成 rate 与 quota 两类，reason 字段与 200 字原文一并带回，提示分别给出「等 10–30 秒再按作答」与「次日刷新或配备用通道」；新增 usage_daily 表按账号、按北京时间自然日记录成功与失败次数，开放 GET /usage/today 返回今日已用、失败数、上限（默认每天 2000、单模型 500）与剩余，成功响应头附 x-ketai-used-today；429 仍不重试。客户端：刷题页状态行显示「今日已用 N/上限 M，剩 R」，悬浮窗展开行同步，作答后自动刷新；服务端没升级时静默不显示，不影响作答。312 项单测与 24 项服务端测试全过，包 1.27.5（128），签名与历版一致。</p></li>
           <li><div class="v">1.27.4<small>versionCode 127</small></div><p>刷题交互重做。一是不再读屏就作答：识别结果只更新题目，只有点悬浮窗的「作答」才发请求，避免读屏刷新一路重发把额度打光；设置页的作答方式二选一改为固定规则说明。二是收起态不再是一个圆点，而是一条 248×58dp 横条，从左到右依次是状态（读屏中/已暂停/作答中/未读屏）、答案摘要（成功给结果、失败给短原因）、56×40dp 的「作答」按钮与展开箭头，拖动整条即可挪位置，点空白处展开。三是展开后除了状态与答案，还多出「识别到的文字」区，题干与选项原样展示、最高 140dp 可滚动，底部是通栏「作答」按钮。307 项单测全过，包 1.27.4（127），签名与历版一致。</p></li>
           <li><div class="v">1.27.3<small>versionCode 126</small></div><p>两处界面问题。一是主页顶部栏展开时下面多出一条横线：顶部栏自带 1dp 底边分割条，下面又有一条 3dp 档位渐变线，两条叠在一起看着像多画了一道；现在去掉了分割条，细线也只在顶部栏收起后才出现，收起一半就露一半。二是刷题页的「开始/停止读屏」按钮：以前只看进程里的开关，用户在系统设置里关掉读屏后开关还是开着的，进来就显示「停止读屏」，其实一个字都没读到；现在按钮跟着读屏服务真实连接状态走，读屏没开时显示「开始读屏」，点它直接打开系统无障碍设置，服务被系统收回时也会自动回到未开启状态并给出提示。304 项单测全过，包 1.27.3（126），签名与历版一致。</p></li>
           <li><div class="v">1.27.2<small>versionCode 125</small></div><p>修刷题「答案获取失败 / 一直准备作答」。原因有三：一是学习通把选项渲染成「A 对」「B 错」这种字母空格正文，旧逻辑认不出选项，题干里反而混进「温馨提示：选项随机排序…」和「上一题 题卡 下一题 javascript:void(0)」；二是去重用的是整屏文本签名，页脚与提示语一变就算新题，读屏每秒刷新就重发一次；三是失败后没有冷却，请求卡住时看门狗收尾又立刻重发。三条叠在一起会在一段时间里持续消耗上游额度，界面又只显示「正在作答」。现在选项按「字母 + 空格」识别；题目指纹只取题干并去掉空白标点，页脚与提示语另有过滤；同一道题失败后冷静 15 秒、最多自动试三次，重按「作答」可立即重试；手动重按后晚到的旧回包直接丢弃；失败原因写在答案行，订阅到期、网络不通、接口超时各有具体提示；接口读取 60 秒、总时长 70 秒硬超时。301 项单测全过，包 1.27.2（125），签名与历版一致。</p></li>
