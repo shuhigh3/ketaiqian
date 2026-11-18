@@ -1,7 +1,7 @@
 {
-  "versionCode": 129,
-  "versionName": "1.27.6",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.6/ketai-1.27.6.apk",
+  "versionCode": 130,
+  "versionName": "1.27.7",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.7/ketai-1.27.7.apk",
   "minVersionCode": 116,
-  "notes": "作答变快：改为流式读取，收到「1. B」就先显示并断开，不再等整段生成完；输出上限 80 token、提示词只要答案不写理由，首字节 12 秒、整体 30 秒超时。同时减少限流误触发：上游判「请求过快」时不再接着打备用通道（额度类才换通道），客户端每题自动补发一次，响应带 retryAfter。需同时更新 Worker（同名文件替换后部署）。"
+  "notes": "作答超时修复：流式请求 15 秒没等到首字节就自动改用普通请求再试一次，不再一个字都拿不到；整体仍 30 秒收尾。新增悬浮窗不透明度设置（设置 → 刷题，30–100%，收起与展开两态同时生效），识别到题目时悬浮窗背景变半透明绿色渐变，没题目回到深蓝。服务端无需更新。"
 }
