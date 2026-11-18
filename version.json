@@ -1,7 +1,7 @@
 {
-  "versionCode": 125,
-  "versionName": "1.27.2",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.2/ketai-1.27.2.apk",
+  "versionCode": 126,
+  "versionName": "1.27.3",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.3/ketai-1.27.3.apk",
   "minVersionCode": 116,
-  "notes": "刷题答案链路修复：判断题「A 对／B 错」这类选项不再漏识别，题干不再混入「温馨提示」与页脚按钮；同一道题失败后先冷静 15 秒且最多自动重试三次，不再一秒一请求把额度打光；重按「作答」后晚到的旧回包会被丢弃；失败原因直接显示在答案行（订阅到期、网络不通、接口超时各有提示）；接口增加硬超时，卡住的请求不会一直转圈。"
+  "notes": "界面修复：主页顶部栏展开时不再多画一条横线（细线只在顶栏收起后出现），顶部栏底部的 1dp 分割条已去掉；刷题页「开始/停止读屏」按钮改为跟读屏服务真实连接状态走，服务没开启时不会再显示「停止读屏」，点它会直接引导到系统无障碍设置。"
 }
