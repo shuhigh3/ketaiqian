@@ -1,7 +1,7 @@
 {
-  "versionCode": 133,
-  "versionName": "1.27.10",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.10/ketai-1.27.10.apk",
+  "versionCode": 134,
+  "versionName": "1.27.11",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.11/ketai-1.27.11.apk",
   "minVersionCode": 116,
-  "notes": "提速改成从源头省时间：服务端新增题目缓存（同一道题第二次问直接回，流式仍原样透传不缓冲）；客户端识别到题目稳定 1.2 秒就自动预取，点「作答」多数立即可出（设置可关，每题多一次调用）。修悬浮窗消失：改为判断视图是否仍附着，被系统摘掉时自动重建，不再出现悬浮窗没了却还写「停止读屏」。需服务端加 ANSWER_CACHE=1 并建表。"
+  "notes": "学习通前台常驻刷课：无障碍识别任务点与播放/继续/关闭弹窗，自动点选、按任务点推进，进度连续不动会重试；仅在学习通前台生效，切后台仍会停计时。设置→刷题新增开关（默认关）与风险提示。"
 }
