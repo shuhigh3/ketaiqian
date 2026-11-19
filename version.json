@@ -1,7 +1,7 @@
 {
-  "versionCode": 132,
-  "versionName": "1.27.9",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.9/ketai-1.27.9.apk",
+  "versionCode": 133,
+  "versionName": "1.27.10",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.10/ketai-1.27.10.apk",
   "minVersionCode": 116,
-  "notes": "修设置闪退：不透明度滑块步进 5，默认值 94 不在档位上直接抛异常；现保留步进 5、范围 20–100、默认 85（仍比 94 更透），旧值自动吸附到 20+5n。收起态收紧到 214×46dp、内边距 8/4/6/4、作答键 50×36。服务端无需更新。"
+  "notes": "提速改成从源头省时间：服务端新增题目缓存（同一道题第二次问直接回，流式仍原样透传不缓冲）；客户端识别到题目稳定 1.2 秒就自动预取，点「作答」多数立即可出（设置可关，每题多一次调用）。修悬浮窗消失：改为判断视图是否仍附着，被系统摘掉时自动重建，不再出现悬浮窗没了却还写「停止读屏」。需服务端加 ANSWER_CACHE=1 并建表。"
 }
