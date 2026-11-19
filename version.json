@@ -1,7 +1,7 @@
 {
-  "versionCode": 136,
-  "versionName": "1.27.13",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.13/ketai-1.27.13.apk",
+  "versionCode": 137,
+  "versionName": "1.27.14",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.14/ketai-1.27.14.apk",
   "minVersionCode": 116,
-  "notes": "查寝接入兰州理工统一身份认证：应用内账密登录（RSA 加密、需要时短信安全验证），登录后拉当天任务并一键签到，会话自动记住。学习通刷课支持 1.5X 倍速、暂停自动恢复，切章节改为学完 95% 才切。"
+  "notes": "查寝登录新增手机动态码：密码忘了或被锁时，用绑定手机号收动态码即可登录；与账号密码、短信安全验证共用同一会话，登录后照样拉任务并一键签到。"
 }
