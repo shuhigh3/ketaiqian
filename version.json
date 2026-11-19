@@ -1,7 +1,7 @@
 {
-  "versionCode": 134,
-  "versionName": "1.27.11",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.11/ketai-1.27.11.apk",
+  "versionCode": 136,
+  "versionName": "1.27.13",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.13/ketai-1.27.13.apk",
   "minVersionCode": 116,
-  "notes": "学习通前台常驻刷课：无障碍识别任务点与播放/继续/关闭弹窗，自动点选、按任务点推进，进度连续不动会重试；仅在学习通前台生效，切后台仍会停计时。设置→刷题新增开关（默认关）与风险提示。"
+  "notes": "查寝接入兰州理工统一身份认证：应用内账密登录（RSA 加密、需要时短信安全验证），登录后拉当天任务并一键签到，会话自动记住。学习通刷课支持 1.5X 倍速、暂停自动恢复，切章节改为学完 95% 才切。"
 }
