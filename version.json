@@ -1,7 +1,7 @@
 {
-  "versionCode": 137,
-  "versionName": "1.27.14",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.14/ketai-1.27.14.apk",
+  "versionCode": 138,
+  "versionName": "1.27.15",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.15/ketai-1.27.15.apk",
   "minVersionCode": 116,
-  "notes": "查寝登录新增手机动态码：密码忘了或被锁时，用绑定手机号收动态码即可登录；与账号密码、短信安全验证共用同一会话，登录后照样拉任务并一键签到。"
+  "notes": "学习通自动刷课的开关放进刷课页的学习通卡片，旁边有「打开无障碍服务设置」与状态提示；原来「学习通在电脑端操作」的文案改为手机前台可刷，电脑端作为另一条路保留。1.5X 倍速、暂停自恢复、学完 95% 才切章节同前。"
 }
