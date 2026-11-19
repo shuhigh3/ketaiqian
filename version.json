@@ -1,7 +1,7 @@
 {
-  "versionCode": 141,
-  "versionName": "1.27.18",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.18/ketai-1.27.18.apk",
+  "versionCode": 142,
+  "versionName": "1.27.19",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.19/ketai-1.27.19.apk",
   "minVersionCode": 116,
-  "notes": "新增学习通「网页版刷课（实验）」：内置 WebView 用桌面 UA 打开网页版，注入脚本做 1.5X 与播完切下一节，进度回传悬浮窗。修掉 95% 不切节：优先点播放页「下一节」，否则返回目录点未完成项。"
+  "notes": "学习通无障碍刷课已下线，手机端只保留「网页版刷课（实验）」；仓库 Xuexitong_shuake 评估：Selenium/PyAutoGUI 的 Windows 程序，手机内嵌不可行，电脑可跑，非商用许可。"
 }
