@@ -1,7 +1,7 @@
 {
-  "versionCode": 140,
-  "versionName": "1.27.17",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.17/ketai-1.27.17.apk",
+  "versionCode": 141,
+  "versionName": "1.27.18",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.18/ketai-1.27.18.apk",
   "minVersionCode": 116,
-  "notes": "学习通页面识别改用不依赖播放器控件的特征（时间文本、倍速、视频容器），控件隐藏也不再掉判，并给 8 秒宽限消除状态跳变；控件藏起来时先点画面唤出控件，再真正点播放与 1.5X 倍速。刷课页精简为开关 + 开始/停止托管；首页三张独立卡并入状态中心，按刷课→远程→查寝排列。"
+  "notes": "新增学习通「网页版刷课（实验）」：内置 WebView 用桌面 UA 打开网页版，注入脚本做 1.5X 与播完切下一节，进度回传悬浮窗。修掉 95% 不切节：优先点播放页「下一节」，否则返回目录点未完成项。"
 }
