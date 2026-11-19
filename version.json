@@ -1,7 +1,7 @@
 {
-  "versionCode": 139,
-  "versionName": "1.27.16",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.16/ketai-1.27.16.apk",
+  "versionCode": 140,
+  "versionName": "1.27.17",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.17/ketai-1.27.17.apk",
   "minVersionCode": 116,
-  "notes": "学习通刷课新增状态悬浮窗：未识别页面 / 识别到页面等待播放 / 正在刷课 xx% / 已暂停，四种状态分明，只有真在刷才变绿；可拖动、可收起，点 × 连开关一起关掉。刷课页拆成手机版与电脑版两张卡，步骤与局限各自成块，开关单独一行与文字对齐。"
+  "notes": "学习通页面识别改用不依赖播放器控件的特征（时间文本、倍速、视频容器），控件隐藏也不再掉判，并给 8 秒宽限消除状态跳变；控件藏起来时先点画面唤出控件，再真正点播放与 1.5X 倍速。刷课页精简为开关 + 开始/停止托管；首页三张独立卡并入状态中心，按刷课→远程→查寝排列。"
 }
