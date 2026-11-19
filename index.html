@@ -482,7 +482,7 @@
       <a href="#download">下载</a>
       <a href="projects.html">我的项目</a>
     </nav>
-    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.11/ketai-1.27.11.apk">手机端下载</a>
+    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.13/ketai-1.27.13.apk">手机端下载</a>
   </div>
 </header>
 
@@ -516,11 +516,11 @@
           自制图标与启动页，配色也从单一靛蓝换成多色体系。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.11/ketai-1.27.11.apk">手机端下载</a>
+          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.13/ketai-1.27.13.apk">手机端下载</a>
           <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases/download/pc-1.1.4/ketai-pc-1.1.4.exe">电脑端下载</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.27.11</b>（134）</span>
+          <span>当前版本 <b>1.27.13</b>（136）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -697,12 +697,12 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.27.11</h2>
+            <h2>下载课态签 1.27.13</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
-            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.11（134）· 95.4 MB。
+            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.13（136）· 95.4 MB。
             安装包从 GitHub Releases 直接下载；国内网络慢时，应用内「检查更新」会走版本清单的镜像。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.11/ketai-1.27.11.apk">下载安装包（95.3 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.13/ketai-1.27.13.apk">下载安装包（95.3 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -721,6 +721,7 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.13" style="text-decoration:none">v1.27.13 · 查寝改成兰州理工统一认证登录</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.11" style="text-decoration:none">v1.27.11 · 学习通前台常驻自动刷课</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.10" style="text-decoration:none">v1.27.10 · 题目缓存与预取提速，修悬浮窗消失</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.9" style="text-decoration:none">v1.27.9 · 闪退修法改为步进 5 + 默认 85，收起态更紧</a></div>
@@ -828,6 +829,8 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.27.13<small>versionCode 136</small></div><p>查寝改成走学校统一身份认证：应用内填学号和密码即可登录（密码 RSA 加密，遇到安全验证会提示发短信验证码），登录后直接拉当天任务并一键签到，会话会自动记住。学习通刷课补上 1.5 倍速与暂停自动恢复，切章节改成学完 95% 才切，避免刚开播就被切走。</p></li>
+          <li><div class="v">1.27.12<small>versionCode 135</small></div><p>上一版把学习通自动刷课的开关只放在「设置 → 刷题」，刷课页面看不到，容易以为功能没做。现在首页状态中心 → 刷课面板直接有「学习通自动刷课（仅前台）」，附一行说明；它和设置页是同一个值，改哪边都同步，且只在这一个标签下显示，不干扰远程与查寝。</p></li>
           <li><div class="v">1.27.11<small>versionCode 134</small></div><p>学习通前台常驻刷课。无障碍服务识别任务点图标、当前/总时长与播放、继续学习、关闭弹窗，按「关弹窗 &gt; 继续 &gt; 播放 &gt; 下一个任务点」的顺序点选；进度连续三次不动就判定卡住并重新点播放，学完 95% 自动切下一个任务点。只在学习通处于前台时工作（切后台它自己停计时，绕不过去），设置 → 刷题里新增开关，默认关闭并标注平台规则风险。361 项单测全过，包 1.27.11（134），签名与历版一致。</p></li>
           <li><div class="v">1.27.10<small>versionCode 133</small></div><p>提速换了思路：不再只压超时，而是让多数题不必等上游。服务端新增 answer_cache 表，题目文字去掉空白标点后取指纹做键，同一道题第二次问直接回答案（流式用一个 SSE 片段，非流式给标准结构），流式请求仍原样透传上游字节、旁路累积写入，不缓冲不聚合；缓存 7 天，超过 1000 字或含「不确定」的不缓存。客户端识别到题目稳定 1.2 秒后自动预取一次，点「作答」时命中缓存立刻出答案；设置页新增开关，可关掉以省额度。另修悬浮窗消失：判断是否显示改为看视图是否仍附着在窗口，被系统摘掉时清理引用并自动重建，展开高度限制在屏幕六成，展示过后回到刷题页会自动贴回，不再出现悬浮窗没了却还写「停止读屏」。331 项单测与 12 项服务端测试全过，包 1.27.10（133），签名与历版一致。</p></li>
           <li><div class="v">1.27.9<small>versionCode 132</small></div><p>1.27.8 把滑块步进改成 1 来绕开崩溃，偏离了「默认值应落在 stepSize=5 档位上」。本版改回步进 5，范围仍 20–100，默认值取 85（在 20+5n 上，且比 94 更透），并新增吸附函数：任何旧值先按 20+5n 四舍五入再赋给滑块，94 会变 95、84 会变 85，越界钳到 20/100。收起态保持 214×46dp、内边距 8/4/6/4、作答键 50×36。328 项单测全过，包 1.27.9（132），签名与历版一致。</p></li>
