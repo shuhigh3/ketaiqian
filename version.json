@@ -1,7 +1,7 @@
 {
-  "versionCode": 138,
-  "versionName": "1.27.15",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.15/ketai-1.27.15.apk",
+  "versionCode": 139,
+  "versionName": "1.27.16",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.16/ketai-1.27.16.apk",
   "minVersionCode": 116,
-  "notes": "学习通自动刷课的开关放进刷课页的学习通卡片，旁边有「打开无障碍服务设置」与状态提示；原来「学习通在电脑端操作」的文案改为手机前台可刷，电脑端作为另一条路保留。1.5X 倍速、暂停自恢复、学完 95% 才切章节同前。"
+  "notes": "学习通刷课新增状态悬浮窗：未识别页面 / 识别到页面等待播放 / 正在刷课 xx% / 已暂停，四种状态分明，只有真在刷才变绿；可拖动、可收起，点 × 连开关一起关掉。刷课页拆成手机版与电脑版两张卡，步骤与局限各自成块，开关单独一行与文字对齐。"
 }
