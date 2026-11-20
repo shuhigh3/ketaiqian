@@ -1,7 +1,7 @@
 {
-  "versionCode": 152,
-  "versionName": "1.27.29",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.29/ketai-1.27.29.apk",
+  "versionCode": 153,
+  "versionName": "1.27.30",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.30/ketai-1.27.30.apk",
   "minVersionCode": 116,
-  "notes": "修正触摸坐标换算（按视口比例而非像素密度），并按目录章节号直接导航到下一节；页顶新增诊断按钮。"
+  "notes": "切节直接执行页面自带的 PCount.next，只认可见的下一节控件，并支持在 iframe 内探测视频进度。"
 }
