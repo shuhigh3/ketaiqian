@@ -1,7 +1,7 @@
 {
-  "versionCode": 142,
-  "versionName": "1.27.19",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.19/ketai-1.27.19.apk",
+  "versionCode": 143,
+  "versionName": "1.27.20",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.20/ketai-1.27.20.apk",
   "minVersionCode": 116,
-  "notes": "学习通无障碍刷课已下线，手机端只保留「网页版刷课（实验）」；仓库 Xuexitong_shuake 评估：Selenium/PyAutoGUI 的 Windows 程序，手机内嵌不可行，电脑可跑，非商用许可。"
+  "notes": "网页版注入脚本移植切节逻辑：ended 后按目录树定位未完成任务点、倍速改为点播放器菜单、暂停自动补播、切节前先点掉弹窗；进度回传不变。"
 }
