@@ -1,7 +1,7 @@
 {
-  "versionCode": 148,
-  "versionName": "1.27.25",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.25/ketai-1.27.25.apk",
+  "versionCode": 149,
+  "versionName": "1.27.26",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.26/ketai-1.27.26.apk",
   "minVersionCode": 116,
-  "notes": "切节改为按目录下一个节点点并校验结果，失败会明说；倍速最多试两次、菜单只点一次、补播限次，减少与站点暂停检测的来回拉扯。"
+  "notes": "切节再修：先执行元素 onclick 再补鼠标序列、逐层展开内层元素、补点弹窗确定、指纹纳入 iframe 地址、末位按章节号换地址跳转。"
 }
