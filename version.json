@@ -1,7 +1,7 @@
 {
-  "versionCode": 143,
-  "versionName": "1.27.20",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.20/ketai-1.27.20.apk",
+  "versionCode": 144,
+  "versionName": "1.27.21",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.21/ketai-1.27.21.apk",
   "minVersionCode": 116,
-  "notes": "网页版注入脚本移植切节逻辑：ended 后按目录树定位未完成任务点、倍速改为点播放器菜单、暂停自动补播、切节前先点掉弹窗；进度回传不变。"
+  "notes": "学习通模块重做：倍速点按切换、自动切节、静音三个选项；网页版页顶状态条显示未识别到视频/刷课中进度/暂停恢复/切节中；注入覆盖同源 iframe。"
 }
