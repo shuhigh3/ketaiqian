@@ -482,7 +482,7 @@
       <a href="#download">下载</a>
       <a href="projects.html">我的项目</a>
     </nav>
-    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.29/ketai-1.27.29.apk">手机端下载</a>
+    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.30/ketai-1.27.30.apk">手机端下载</a>
   </div>
 </header>
 
@@ -516,11 +516,11 @@
           自制图标与启动页，配色也从单一靛蓝换成多色体系。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.29/ketai-1.27.29.apk">手机端下载</a>
+          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.30/ketai-1.27.30.apk">手机端下载</a>
           <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases/download/pc-1.1.4/ketai-pc-1.1.4.exe">电脑端下载</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.27.29</b>（152）</span>
+          <span>当前版本 <b>1.27.30</b>（153）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -697,12 +697,12 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.27.29</h2>
+            <h2>下载课态签 1.27.30</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
-            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.29（152）· 95.4 MB。
+            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.30（153）· 95.4 MB。
             安装包从 GitHub Releases 直接下载；国内网络慢时，应用内「检查更新」会走版本清单的镜像。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.29/ketai-1.27.29.apk">下载安装包（95.3 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.30/ketai-1.27.30.apk">下载安装包（95.3 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -721,7 +721,7 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
-              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.29" style="text-decoration:none">v1.27.29 · 请求层注入，跨域 iframe 里的视频也能接管</a></div>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.30" style="text-decoration:none">v1.27.30 · 请求层注入，跨域 iframe 里的视频也能接管</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.22" style="text-decoration:none">v1.27.22 · 修多层 iframe 视频识别</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.11" style="text-decoration:none">v1.27.11 · 学习通前台常驻自动刷课</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.10" style="text-decoration:none">v1.27.10 · 题目缓存与预取提速，修悬浮窗消失</a></div>
@@ -830,7 +830,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
-          <li><div class="v">1.27.29<small>versionCode 152</small></div><p>改成请求层注入：不再靠页面内 JS 钻进 iframe，而是在 shouldInterceptRequest 里把每个 chaoxing 的 HTML 响应自己取一遍（带 Cookie、identity 编码、转写 Set-Cookie），在 &lt;/body&gt; 前塞入控制器再交回 WebView，跨子域 iframe（mooc1-1 等）里的视频因此也能被接管。层间用 postMessage 逐级上报：视频层报进度与「播完」，带目录树的父层负责切节，顶层汇总到状态条。倍速改为直接设 playbackRate，菜单点击仅作兜底；状态条新增接管层数，便于判断注入是否生效。重放请求不再自动跟随跳转：3xx 一律交回 WebView，避免把 302 后的登录页当成本页内容、相对路径按旧地址解析而把页面弄散。切节改为按目录里当前高亮项的下一个节点去点，点完 3.5 秒内校验 title/地址/视频源是否变化，没变就换下一个候选，全试完直接报「切节失败」，不再一直显示正在切节。再修一轮：点击先执行元素自己的 onclick（页面监听常挂在它上面），再补 click 与完整鼠标序列，并逐层展开到节点内的 a/span；点击后 1.5 秒补点弹窗里的「确定」；判断是否切成功时把 iframe 的 src 一并纳入指纹（学习通切节常常只换 iframe，主文档地址不变）；全部无效时从目录节点的 onclick 里取章节号直接换地址跳一次。失败提示会带上试过的处数。再修状态互跳：状态条只认「正在播的那一层」，别的页面报「没有视频」不再把它顶掉；切节后的 8 秒窗口里文案锁定在切节态。切节也加了仲裁：动手前广播让子页面停手，只有一层点，切过去后 20 秒内不再点第二下，避免来回跳。再进一步：JS 合成点击在这页面上不生效，改为把候选元素坐标交给 App，用 WebView 的真实触摸事件（按下再抬起）去点；点不动时还可从目录节点的 toChapter 里取章节号直接换地址跳转。失败提示会区分「没找到可点的项」「点了没反应」「跳转没生效」。又修一轮：桌面版页面是缩放显示的，之前按 devicePixelRatio 换算触摸坐标会点偏一倍，现改成按「WebView 宽度 ÷ 页面视口宽度」换算；同时把目录里读到的章节号按顺序排好，直接导航到当前章节的下一个，不再只依赖点击。页顶新增「诊断」按钮，一次拿到页面结构。倍速最多顶两次，被站点改回就认输，菜单也只点一次；暂停补播最多 4 次，避免和站点的暂停检测来回拉锯。</p></li>
+          <li><div class="v">1.27.30<small>versionCode 153</small></div><p>改成请求层注入：不再靠页面内 JS 钻进 iframe，而是在 shouldInterceptRequest 里把每个 chaoxing 的 HTML 响应自己取一遍（带 Cookie、identity 编码、转写 Set-Cookie），在 &lt;/body&gt; 前塞入控制器再交回 WebView，跨子域 iframe（mooc1-1 等）里的视频因此也能被接管。层间用 postMessage 逐级上报：视频层报进度与「播完」，带目录树的父层负责切节，顶层汇总到状态条。倍速改为直接设 playbackRate，菜单点击仅作兜底；状态条新增接管层数，便于判断注入是否生效。重放请求不再自动跟随跳转：3xx 一律交回 WebView，避免把 302 后的登录页当成本页内容、相对路径按旧地址解析而把页面弄散。切节改为按目录里当前高亮项的下一个节点去点，点完 3.5 秒内校验 title/地址/视频源是否变化，没变就换下一个候选，全试完直接报「切节失败」，不再一直显示正在切节。再修一轮：点击先执行元素自己的 onclick（页面监听常挂在它上面），再补 click 与完整鼠标序列，并逐层展开到节点内的 a/span；点击后 1.5 秒补点弹窗里的「确定」；判断是否切成功时把 iframe 的 src 一并纳入指纹（学习通切节常常只换 iframe，主文档地址不变）；全部无效时从目录节点的 onclick 里取章节号直接换地址跳一次。失败提示会带上试过的处数。再修状态互跳：状态条只认「正在播的那一层」，别的页面报「没有视频」不再把它顶掉；切节后的 8 秒窗口里文案锁定在切节态。切节也加了仲裁：动手前广播让子页面停手，只有一层点，切过去后 20 秒内不再点第二下，避免来回跳。再进一步：JS 合成点击在这页面上不生效，改为把候选元素坐标交给 App，用 WebView 的真实触摸事件（按下再抬起）去点；点不动时还可从目录节点的 toChapter 里取章节号直接换地址跳转。失败提示会区分「没找到可点的项」「点了没反应」「跳转没生效」。又修一轮：桌面版页面是缩放显示的，之前按 devicePixelRatio 换算触摸坐标会点偏一倍，现改成按「WebView 宽度 ÷ 页面视口宽度」换算；同时把目录里读到的章节号按顺序排好，直接导航到当前章节的下一个，不再只依赖点击。页顶新增「诊断」按钮，一次拿到页面结构。按诊断数据又改了一轮：切节先直接执行页面自带的 PCount.next(...)（从可见「下一节」控件的 onclick 里取，隐藏的那两个不参与），不行再试点选、最后按章节号导航；「下一节」候选只认尺寸非零的可见元素；播放检测在主文档没有 video 时进入同源 iframe 里找。倍速最多顶两次，被站点改回就认输，菜单也只点一次；暂停补播最多 4 次，避免和站点的暂停检测来回拉锯。</p></li>
           <li><div class="v">1.27.22<small>versionCode 145</small></div><p>修视频识别：注入脚本改为递归遍历多层 iframe（课程页 → 视频 iframe 常为两层），并在“未识别到视频”时带上 iframe 总数与可访问数，便于判断是嵌套还是跨域。</p></li>
           <li><div class="v">1.27.21<small>versionCode 144</small></div><p>学习通模块重做：倍速点按切换（1.0X/1.25X/1.5X/2.0X）、播完自动切下一节、静音播放三个选项，网页版页顶新增运行状态条（未识别到视频 / 刷课中带进度 / 已暂停恢复 / 已播完切节）；注入脚本改为覆盖同源 iframe，解决之前取不到课程内视频的问题。</p></li>
           <li><div class="v">1.27.20<small>versionCode 143</small></div><p>学习通网页版注入脚本换成移植版：播完监听 ended，先在目录树找「未完成」任务点再点，找不到才按「下一节」文本兜底；倍速改成点播放器菜单选 1.5X；暂停自动补播、切节前先点掉提示弹窗。</p></li>
