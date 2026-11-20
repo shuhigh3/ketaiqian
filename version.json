@@ -1,7 +1,7 @@
 {
-  "versionCode": 156,
-  "versionName": "1.27.33",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.33/ketai-1.27.33.apk",
+  "versionCode": 157,
+  "versionName": "1.27.34",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.34/ketai-1.27.34.apk",
   "minVersionCode": 116,
-  "notes": "学习通网页版支持后台与息屏刷课：前台服务常驻通知 + 唤醒锁，App 每 3 秒推页面心跳保持节奏。"
+  "notes": "刷课页去掉多余小字、电脑版移到学习通与知到之下；设置引导栏新增刷题，刷题卡片不再重复出现在总设置与刷课。"
 }
