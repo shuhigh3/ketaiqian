@@ -1,7 +1,7 @@
 {
-  "versionCode": 144,
-  "versionName": "1.27.21",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.21/ketai-1.27.21.apk",
+  "versionCode": 145,
+  "versionName": "1.27.22",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.22/ketai-1.27.22.apk",
   "minVersionCode": 116,
-  "notes": "学习通模块重做：倍速点按切换、自动切节、静音三个选项；网页版页顶状态条显示未识别到视频/刷课中进度/暂停恢复/切节中；注入覆盖同源 iframe。"
+  "notes": "修视频识别：递归遍历多层 iframe 安装控制脚本；未识别到视频时显示 iframe 总数与可访问数，便于判断嵌套或跨域。"
 }
