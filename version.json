@@ -1,7 +1,7 @@
 {
-  "versionCode": 155,
-  "versionName": "1.27.32",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.32/ketai-1.27.32.apk",
+  "versionCode": 156,
+  "versionName": "1.27.33",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.33/ketai-1.27.33.apk",
   "minVersionCode": 116,
-  "notes": "修正子页面上报后未转给主文档的问题：播完只上报，切节统一由主文档执行，自动切节与手动切节走同一条路径。"
+  "notes": "学习通网页版支持后台与息屏刷课：前台服务常驻通知 + 唤醒锁，App 每 3 秒推页面心跳保持节奏。"
 }
