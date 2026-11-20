@@ -1,7 +1,7 @@
 {
-  "versionCode": 151,
-  "versionName": "1.27.28",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.28/ketai-1.27.28.apk",
+  "versionCode": 152,
+  "versionName": "1.27.29",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.29/ketai-1.27.29.apk",
   "minVersionCode": 116,
-  "notes": "切节改用 WebView 原生触摸事件点击，并支持按章节号直接跳转；失败原因分三类显示。"
+  "notes": "修正触摸坐标换算（按视口比例而非像素密度），并按目录章节号直接导航到下一节；页顶新增诊断按钮。"
 }
