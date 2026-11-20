@@ -1,7 +1,7 @@
 {
-  "versionCode": 146,
-  "versionName": "1.27.23",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.23/ketai-1.27.23.apk",
+  "versionCode": 147,
+  "versionName": "1.27.24",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.24/ketai-1.27.24.apk",
   "minVersionCode": 116,
-  "notes": "改成请求层注入：跨域 iframe 里的视频也能接管；层间 postMessage 上报，视频层报进度、带目录树的父层切节，状态条显示接管层数。"
+  "notes": "请求层注入：跨域 iframe 里的视频也能接管；视频层报进度与播完，带目录树的父层切节，状态条显示接管层数。重定向不再自行跟随，避免页面错乱。"
 }
