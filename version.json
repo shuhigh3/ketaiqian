@@ -1,7 +1,7 @@
 {
-  "versionCode": 153,
-  "versionName": "1.27.30",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.30/ketai-1.27.30.apk",
+  "versionCode": 154,
+  "versionName": "1.27.31",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.31/ketai-1.27.31.apk",
   "minVersionCode": 116,
-  "notes": "切节直接执行页面自带的 PCount.next，只认可见的下一节控件，并支持在 iframe 内探测视频进度。"
+  "notes": "切节改为调用控件自身 onclick，新增目录节点通道与「切节」按钮（带步骤日志），失败原因不再被覆盖。"
 }
