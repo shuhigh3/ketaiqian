@@ -1,7 +1,7 @@
 {
-  "versionCode": 150,
-  "versionName": "1.27.27",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.27/ketai-1.27.27.apk",
+  "versionCode": 151,
+  "versionName": "1.27.28",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.28/ketai-1.27.28.apk",
   "minVersionCode": 116,
-  "notes": "状态条只认在播的那一层，切节窗口期锁定文案；切节加 veto/probe 仲裁与 20 秒冷却，避免多页面抢着切造成来回跳。"
+  "notes": "切节改用 WebView 原生触摸事件点击，并支持按章节号直接跳转；失败原因分三类显示。"
 }
