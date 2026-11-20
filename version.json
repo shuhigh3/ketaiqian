@@ -1,7 +1,7 @@
 {
-  "versionCode": 145,
-  "versionName": "1.27.22",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.22/ketai-1.27.22.apk",
+  "versionCode": 146,
+  "versionName": "1.27.23",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.23/ketai-1.27.23.apk",
   "minVersionCode": 116,
-  "notes": "修视频识别：递归遍历多层 iframe 安装控制脚本；未识别到视频时显示 iframe 总数与可访问数，便于判断嵌套或跨域。"
+  "notes": "改成请求层注入：跨域 iframe 里的视频也能接管；层间 postMessage 上报，视频层报进度、带目录树的父层切节，状态条显示接管层数。"
 }
