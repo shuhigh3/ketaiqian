@@ -1,7 +1,7 @@
 {
-  "versionCode": 154,
-  "versionName": "1.27.31",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.31/ketai-1.27.31.apk",
+  "versionCode": 155,
+  "versionName": "1.27.32",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.32/ketai-1.27.32.apk",
   "minVersionCode": 116,
-  "notes": "切节改为调用控件自身 onclick，新增目录节点通道与「切节」按钮（带步骤日志），失败原因不再被覆盖。"
+  "notes": "修正子页面上报后未转给主文档的问题：播完只上报，切节统一由主文档执行，自动切节与手动切节走同一条路径。"
 }
