@@ -2065,6 +2065,34 @@ if watch_state == 1 and self.end_thre <= 1.0:
    顺带修掉「正文写 95.4 MB、按钮写 95.3 MB」的自相矛盾。构建还会校验「版本更替第一条」与
    「最近版本第一条」是否等于清单，不一致直接报错不写产物——发版时忘改版本列表会被立刻拦住。
 
+### 65.18 1.27.52：查寝三处硬伤的修复
+
+用户报的三件事（账号密码登录 401、验证码「已发送」却报失败、登录后永远「没有查寝任务」），根因都在协议细节上，不在网络。
+
+#### 1) 401：登录表单过期，自动换一次再交
+
+- CAS 的 `execution` 藏在 `#fm1` 里，页面一刷新就作废；旧代码拿它直接提交，学校回 **401** 时就只剩一句「登录失败（HTTP 401）」。
+- 现在：401/403 时重新 GET 一次登录页、换新的 `execution`，把已加密的密码填回去再提交一次；仍失败才报错，且把学校的原话带出来（最多 120 字）。
+- 顺带把「密码错」和「被临时限制」也分开了：学校回 200 错误页时读 `CpCas.errorOf` 的中文文案，回 401 且没有正文时提示核对密码或改用手机动态码。
+
+#### 2) 验证码：「已发送」其实发成功过，但我们判错了
+
+- 学校页面的 JS 用**类型名**拼路径：`/cas/mfa/initByType/securephone?state=…`；旧代码写的是 `/initByType/1`，学校一律回 `{"code":-1,"error":{"message":"fail_0"}}`。
+- 发送 `/api/guard/securephone/send` 的成功判据是 `code == 0`（`data.result == 'expired'` 是过期）；校验 `/valid` 的成功判据是 `code == 0 && data.status == 2`——`status` 在 `data` 里，不在顶层。
+- 现在按这套判据重写，并保留 `/initByType/1` 的兜底（少数部署仍认数字通道）；提交前补 `trustAgent=false`，与浏览器行为一致。
+
+#### 3) 「没有查寝任务」：租户值填成了别校
+
+- `CpDorm.DEFAULT_TENANT` 以前是 Qjrxy 的兜底值 `dbbbb15d-…`，实测那是**大连大学**的租户；学校解析失败时拿它去查任务，学校只会回空列表或 401。
+- 兰州理工的租户是 `28fbe96b-cb5e-44a1-b31a-e6a44a556fe8`（tenantCode 10731，`idsUrl https://fdm.lut.edu.cn/iap`，2026-11-21 从 `mobile.campushoy.com/v6/config/guest/tenant/list` 实测）。
+- 现在：`CpDorm.LUT_TENANT` 作为唯一兜底；设备上存过旧兜底值的当废值换掉；`lookupTenantId()` 查不到也回落到兰州理工。
+- 列表解析同时认 `data.attendances / data.rows / data.list / data.records / 顶层数组`，字段兼容 `signInstanceWid|wid|signInstanceId`、`taskName|signTaskName|title`。
+- 空列表不再只说「今天没有查寝任务」：会写「今日校园返回 0 条 · 租户 xxxx…」，并提示先在今日校园 App 确认有这个任务、再重登一次。
+
+#### 4) 会话判定补一条
+
+`CpAuth.isExpired` 除了 401/302 与登录页特征，也认 `200 + {"code":401}`——有的部署这样回，旧逻辑会把它当业务失败，于是把 401 当成「没有任务」。
+
 ### 65.17 1.27.51：登录/注册防刷 + 状态中心能看学习通托管
 
 这一版做两件事：一是把「换个用户名/邮箱就能再领一次试用」的路堵上，二是首页状态中心的刷课列表终于同时显示学习通。
