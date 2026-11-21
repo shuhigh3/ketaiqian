@@ -1,8 +1,8 @@
 {
-  "versionCode": 173,
-  "versionName": "1.27.50",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.50/ketai-1.27.50.apk",
+  "versionCode": 174,
+  "versionName": "1.27.51",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.51/ketai-1.27.51.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "更新对话框去掉「关闭」，只留「最小化」：下载中按它转到后台，其它状态按它直接关掉；主页顶栏「课态签」下面那行小字去掉了。"
+  "notes": "防刷加固：同一网络每天最多 2 个试用、同一设备每天最多 2 个账号、邮箱自动建号每 IP 每天 2 个、一次性邮箱不送试用、同网络互填邀请码直接拒；首页状态中心新增「学习通：托管中 N% · 章节 · 已挂时长」一行。"
 }
