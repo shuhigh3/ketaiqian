@@ -1,8 +1,8 @@
 {
-  "versionCode": 169,
-  "versionName": "1.27.46",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.46/ketai-1.27.46.apk",
+  "versionCode": 170,
+  "versionName": "1.27.47",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.47/ketai-1.27.47.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "更新机制改造：每次回到应用都会检查一次更新（20 秒节流），不再「一次运行只查一次」。下载改成前台服务，点「最小化」或直接退出页面都会继续下，通知栏有百分比和取消按钮；回到应用时如果包已下好会直接问要不要安装。修复「点击更新后一直卡在正在连接下载地址」：先对每个候选源做一次 1 字节探测（5 秒连接 / 6 秒读），活的源才真下；直连 GitHub 之外再排 gh-proxy / ghproxy / ghfast 三个镜像；超时后用 Range 断点续传，不再把已下进度清零；镜像返回网页时直接判死，不会把 HTML 当 APK 下完。"
+  "notes": "登录可改用邮箱验证码（不再需要微信授权）；每账号自带邀请码，新账号注册 14 天内填邀请码，双方各得 60 积分；新增「活动中心」页（邀请码 / 积分兑换会员 / 购买入口）；管理页账号按登录时间排、卡密分类型分天数并支持一键复制；站点头像图标与软件一致，顶部加了积分购买入口。"
 }
