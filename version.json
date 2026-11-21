@@ -1,8 +1,8 @@
 {
-  "versionCode": 175,
-  "versionName": "1.27.52",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.52/ketai-1.27.52.apk",
+  "versionCode": 176,
+  "versionName": "1.27.53",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.53/ketai-1.27.53.apk",
   "minVersionCode": 116,
-  "apkSizeMB": 95.4,
-  "notes": "查寝修复：统一身份认证 401 时自动换一次登录页重试；短信验证改走 /cas/mfa/initByType/securephone，发送与校验都按学校页面的 code/data.status 判；兰州理工租户值改正（旧版兜底成了别校，拿错租户查任务只会得到空列表）；任务列表兼容 rows/list 几种回包，空列表会写清原因。"
+  "apkSizeMB": 95.5,
+  "notes": "查寝签到改回内置 jrxy-auto-sign 引擎：登录、短信安全验证、查任务、提交都由引擎按学校协议完成，界面与夜间自动都走同一条引擎链路；账号与定位由页面喂进去，设备号固定复用"
 }
