@@ -483,7 +483,7 @@
       <a href="#download">下载</a>
       <a href="projects.html">我的项目</a>
     </nav>
-    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.45/ketai-1.27.45.apk">手机端下载</a>
+    <a class="dl" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.46/ketai-1.27.46.apk">手机端下载</a>
   </div>
 </header>
 
@@ -517,11 +517,11 @@
           自制图标与启动页，配色也从单一靛蓝换成多色体系。课表、登录态与密码只留在这台手机里。
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.45/ketai-1.27.45.apk">手机端下载</a>
+          <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.46/ketai-1.27.46.apk">手机端下载</a>
           <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases/download/pc-1.1.4/ketai-pc-1.1.4.exe">电脑端下载</a>
         </div>
         <div class="meta-row">
-          <span>当前版本 <b>1.27.45</b>（168）</span>
+          <span>当前版本 <b>1.27.46</b>（169）</span>
           <span>需 <b>Android 8.0+</b></span>
           <span>固定签名，<b>覆盖升级不丢数据</b></span>
         </div>
@@ -713,12 +713,12 @@
       <div class="get reveal reveal--scale">
         <div class="get-grid">
           <div>
-            <h2>下载课态签 1.27.45</h2>
+            <h2>下载课态签 1.27.46</h2>
             <p class="lead" style="font-size:16px">安卓手机直接安装；首次需要允许「安装未知应用」。之后每次新版在应用里点「检查更新」即可覆盖升级。</p>
-            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.45（168）· 95.4 MB。
+            <p class="lead" style="font-size:14px">安装包标识：com.dumate.classstatus（工程 WeChatClassStatus）· 1.27.46（169）· 95.4 MB。
             安装包从 GitHub Releases 直接下载；国内网络慢时，应用内「检查更新」会走版本清单的镜像。</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.45/ketai-1.27.45.apk">下载安装包（95.4 MB）</a>
+              <a class="btn btn-primary" href="https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.46/ketai-1.27.46.apk">下载安装包（95.4 MB）</a>
               <a class="btn btn-ghost" href="https://github.com/shuhigh3/ketaiqian/releases">下载历史版本</a>
             </div>
             <div class="links">
@@ -737,6 +737,7 @@
             </div>
             <div class="rail-card" style="margin-top:16px">
               <h4>最近版本</h4>
+              <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.46" style="text-decoration:none">v1.27.46 · 更新机制：每次进入检查、后台下载、修「卡在连接下载地址」</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.45" style="text-decoration:none">v1.27.45 · 查寝收敛到一条链路：首页与夜间自动终于能跑</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.44" style="text-decoration:none">v1.27.44 · 学习通后台刷课加固：续租唤醒锁、内核回收自动重建、卡死看门狗</a></div>
               <div class="rail-dot"><i style="background:var(--ok)"></i><a href="https://github.com/shuhigh3/ketaiqian/releases/tag/v1.27.43" style="text-decoration:none">v1.27.43 · 积分会员与卡密体系，购买改到店铺</a></div>
@@ -859,6 +860,7 @@
           <p>按时间从新到旧；下面每一个版本都对应一个可直接安装的完整包。</p>
         </div>
         <ul class="versions" data-stagger>
+          <li><div class="v">1.27.46<small>versionCode 169</small></div><p>更新机制改造。检查更勤：每次回到应用都会查一次更新（20 秒节流），不再「一次运行只查一次」；同一个版本仍然只弹一次提示。下载移到前台服务：点「最小化（后台下载）」或直接退出对话框都会继续下，通知栏显示百分比并提供「取消下载」，退到后台也不中断；包下好并校验通过后，回到应用会直接问要不要覆盖安装。修掉「点击更新后一直卡在正在连接下载地址」：原来状态文案要等第一个数据块才更新，而且第一个候选是直连 GitHub（国内常连得上却极慢或被重置），要等满 15 秒连接超时或 25 秒读超时才换镜像，三个源全挂就是 45–75 秒干等，中途任何超时还会把已下进度删掉重来。现在每个候选源先用 1 字节探测（5 秒连接 / 6 秒读）确认是活的才真下，直连之外依次排 gh-proxy、ghproxy、ghfast 三个镜像，并逐个源显示「第 2/4 个源」；超时后按 Range 断点续传；镜像若返回网页（text/html）直接判死，不会把拦截页当安装包下完。</p></li>
           <li><div class="v">1.27.45<small>versionCode 168</small></div><p>查寝收敛到一条链路：以前首页「一键查寝」和每晚自动走内置 Python，而 Python 侧读不到 App 里存的账号（从没有代码写过 jrxy_config.json），所以那两条入口从来没成功过。现在查寝页、首页、夜间服务统一走 Kotlin 的一份实现：会话从本地读，过期用保存的学号密码自动重登一次；结果分档提示（没登录 / 要短信验证 / 会话失效 / 读不到定位 / 没有任务 / 已签到 / 要拍照 / 接口拒绝 / 网络不通），不再只有一句「失败」。查寝页新增「每晚自动签到」开关并显示上次登录时间；删掉内置 Python 查寝引擎（约 2600 行）与只为它装的三个依赖。边界：学校统一认证要求短信二次验证，夜里没人输码——只要白天登录后的会话仍有效，夜间可直接签到，失效又遇到验证码会明确提示，不会假装成功。</p></li>
           <li><div class="v">1.27.44<small>versionCode 167</small></div><p>学习通后台刷课加固：唤醒锁改成每 10 分钟续租（原来 6 小时到期就悄悄失效，状态行却还写着「已持有」）；浏览器内核被系统回收时自动重建页面，不再连累 App 一起退出；返回键改成退到后台继续刷，真的要停点左上角返回；播完判定从「进度 95%」改成「真到结尾」，切节冷却从 20 秒降到 4 秒；一页多个 video 时挑正在播的那个；卡死看门狗：60 秒没进度先补播、再重载视频、最后重载整页；每 9 秒清一次「继续学习」类弹层；通知栏显示「刷课中 45% · 章节 · 已挂 12:30」，状态行带自检；新增「防挂机」开关（默认关，只动指针轻滚，不点视频）。</p></li>
           <li><div class="v">1.27.43<small>versionCode 166</small></div><p>积分会员与卡密体系：积分和月卡可以同时持有，积分能兑换一天会员；刷题改为按屏计费——管理员不限次，月卡/体验每天有免费屏数、超出按题扣积分，只有积分的账号每屏都扣，没出答案自动退回。服务端新增积分卡密、管理员发放积分、收费设置（每题积分、兑换一天会员所需积分、会员每日答题上限）；个人页去掉兑换码只留「输入卡密」，软件内购买页下线，购买统一到店铺 https://www.kufaka.com/shop/JUKSY1BI 。</p></li><li><div class="v">1.27.42<small>versionCode 165</small></div><p>刷题三处：进刷题页不再自动开读屏（按钮回到「开始读屏」，要读由你按），模型回「不确定」时自动再问一次并明确禁止给「不确定」，悬浮窗的识别文字现在跟着当前题目走，快速翻页不再停在上一题（读屏不再丢事件，空闲时也会兜底重读）。</p></li>
