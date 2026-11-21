@@ -2065,6 +2065,33 @@ if watch_state == 1 and self.end_thre <= 1.0:
    顺带修掉「正文写 95.4 MB、按钮写 95.3 MB」的自相矛盾。构建还会校验「版本更替第一条」与
    「最近版本第一条」是否等于清单，不一致直接报错不写产物——发版时忘改版本列表会被立刻拦住。
 
+### 65.20 1.27.54：查寝页按引擎流程重做
+
+页面不再是一个「登录框 + 一个按钮」，而是照内置引擎（jrxy-auto-sign）的执行顺序排成五步，
+每一步一张卡、各自说明自己什么时候会用到；所有状态以引擎返回的 `DormState` 为准。
+
+| 步骤 | 页面上的卡 | 谁在背后干活 |
+| --- | --- | --- |
+| 0 | 引擎状态总览：相态胶囊（待开始/需要安全验证/已登录/签到成功…）、登录态、会话是否可复用、任务数、设备号、最近签到 | `JrxyEngine.snapshot()` |
+| 1 | 账号与定位：学号、密码、当前定位 + 「刷新定位」、保存并登录、清空登录态 | `DormEngine.prepare` → `set_config`，`login()` |
+| 2 | 短信安全验证：只有学校要验证时才展开（平时收成一行说明，编号不跳） | `send_mfa_code` / `submit_mfa_code` |
+| 3 | 手机动态码登录：密码忘了或账号被锁时的第二条路 | `send_sms_token` / `submit_sms_login` |
+| 4 | 今天的查寝：任务列表（标题 / 时间 / 状态）、刷新任务、一键签到、最近结果 | `tasks()` / `sign()` |
+| 5 | 每晚自动签到：开关、时间（可改，默认 22:00）、上次登录时间 | `DormAutoScheduler` + `DormRunner` |
+| 6 | 引擎日志：`recentLog` 原文 + 复制按钮（排障直接发给开发） | `JrxyEngine.recent_log` |
+| 7 | 备用：甲子在线（接口彻底不通时手动点掉） | `JiaziWebActivity` |
+
+配套改动：
+
+- `dorm/DormGeo.kt` 新增 `granted/current/warmUp`：主动要一次定位（GPS + 网络各一次单点更新，5 秒兜底 lastKnown），
+  界面上的「刷新定位」就是它；`DormEngine.prepare` 改成优先用这份新位置。
+- `dorm/DormEngine.kt` 暴露 `config()` / `deviceId()` / `clearState()`，页面才能显示设备号与「清空登录态」。
+- 按钮可用性集中在一个 `syncEnabled()`：busy 时全禁；短信那两步只有 `waitMfa` 时才可点；
+  「一键签到」只有引擎确认 `loggedIn` 才亮，「刷新任务」至少要填了学号。
+- 新增样式 `CsChipMeta`（状态小胶囊），`activity_dorm_check.xml` 整体重写。
+
+升级：覆盖安装即可，账号、定位、课表、设置都保留（账号密码本来就只在这台手机里）。
+
 ### 65.19 1.27.53：查寝签到改回内置 jrxy-auto-sign 引擎
 
 1.27.45 把查寝收敛成 Kotlin 一条链路，但学校那套（统一认证 + 今日校园）细节太多：
