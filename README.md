@@ -2065,6 +2065,23 @@ if watch_state == 1 and self.end_thre <= 1.0:
    顺带修掉「正文写 95.4 MB、按钮写 95.3 MB」的自相矛盾。构建还会校验「版本更替第一条」与
    「最近版本第一条」是否等于清单，不一致直接报错不写产物——发版时忘改版本列表会被立刻拦住。
 
+### 65.7 1.27.40：答题「接口返回里没有答案内容」
+
+1.27.39 把主通道从下架的 `DeepSeek-V4-Flash-0731` 自愈到了 `DeepSeek-V4.1-Flash-1017`，这个模型是**带思考**的：它先把推理写进 `reasoning_content`，再写正文。客户端为了出答案快，只给 80 个 token（`AnswerClient.MAX_TOKENS`），思考就把额度吃光了——流结束时只有思考、没有正文，界面于是显示「答案：接口返回里没有答案内容（可能被截断）」。
+
+服务端修（不用更新 App 也生效）：
+
+- 答题请求默认关闭思考：客户端没显式指定 `enable_thinking` / `chat_template_kwargs` / `reasoning_effort` 时，Worker 统一补 `enable_thinking: false`；上游不认这个字段（400 里出现 unrecognized / unknown field / 不支持 等字样）就自动去掉再打一次。
+- 答案缓存真正生效：缓存开关原来是「不配 `ANSWER_CACHE` 就关」，线上一直没配，等于没缓存；现在默认开，显式设 `0/false/no/off` 才关。另外 `cacheWhileStreaming` / `cacheWhilePlain` 的 `flush` 原来把写库 Promise 丢掉了（`void` 掉），Worker 一收工就被取消，永远写不进 D1——改成把 Promise 交回去，缓存才落地。
+
+客户端修（1.27.40）：
+
+- 请求体显式带 `enable_thinking: false`，不依赖服务端兜底；
+- 流式读取记录「有没有收到 reasoning 内容」，正文为空时分别提示「上游只想不答：输出额度被『思考』吃完了」和原来的「可能被截断」，不再让人猜；
+- 新增 `AnswerClientThinkingTest`（5 个用例）覆盖 `reasoningOf` / `hasReasoning` / 断流容错。
+
+线上实测：同一道题第一次 5.4s（写缓存），第二次 2.4s、第三次 1.4s（命中缓存，`x-ketai-cache: hit`）；非流式请求 3.2s 返回 `1. 错误`。
+
 ### 65.6 1.27.39：刷题悬浮窗的两处修复
 
 1. **展开态拖动必闪退**：展开后的拖动绑在 header 上，`onDrag` 却把回调传进来的 view（header）交给 `updateViewLayout`。
