@@ -1,8 +1,8 @@
 {
-  "versionCode": 161,
-  "versionName": "1.27.38",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.38/ketai-1.27.38.apk",
+  "versionCode": 162,
+  "versionName": "1.27.39",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.39/ketai-1.27.39.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "更新自检改为整段签名比对；电脑端配对串自动保存与重连、MQTT client_id 不再撞车、日志不再被清空；站点版本号改由 version.json 注入。"
+  "notes": "刷题悬浮窗：展开态拖动不再闪退（改用窗口根视图更新位置）；作答不再误报「上游限流」，服务端修好主通道模型下架导致的 400，并自动换到真正可用的模型（首答 8.6s、后续 2.4–3.6s）。"
 }
