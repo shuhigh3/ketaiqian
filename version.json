@@ -1,8 +1,8 @@
 {
-  "versionCode": 162,
-  "versionName": "1.27.39",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.39/ketai-1.27.39.apk",
+  "versionCode": 163,
+  "versionName": "1.27.40",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.40/ketai-1.27.40.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "刷题悬浮窗：展开态拖动不再闪退（改用窗口根视图更新位置）；作答不再误报「上游限流」，服务端修好主通道模型下架导致的 400，并自动换到真正可用的模型（首答 8.6s、后续 2.4–3.6s）。"
+  "notes": "刷题作答修复：上一版主通道换成会「先想再答」的模型后，思考文字把输出额度吃光、正文为空，界面才会显示「接口返回里没有答案内容」。现在服务端对答题请求统一关闭思考，客户端也显式声明并给出看得懂的提示；同一道题第二次问命中缓存，基本秒回。"
 }
