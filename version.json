@@ -1,8 +1,8 @@
 {
-  "versionCode": 165,
-  "versionName": "1.27.42",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.42/ketai-1.27.42.apk",
+  "versionCode": 166,
+  "versionName": "1.27.43",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.43/ketai-1.27.43.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "刷题三处修：进刷题页不再自动开读屏（按钮回到「开始读屏」，要读由你按）；模型回「不确定」时自动再问一次并明确禁止给「不确定」；悬浮窗的识别文字现在跟着当前题目走，快速翻页不再停在上一题（读屏不再丢事件，空闲时也会兜底重读）。"
+  "notes": "积分会员与卡密体系：积分与月卡可以同时持有；月卡/体验每天有免费答题屏数，超出后按屏扣积分，没出答案自动退回；积分可兑换一天会员；管理员可发放积分、生成积分卡密，并可调整每题积分、兑换一天会员所需积分与会员每日答题上限；个人页去掉兑换码入口，只留输入卡密；购买统一到店铺 https://www.kufaka.com/shop/JUKSY1BI"
 }
