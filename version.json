@@ -1,8 +1,8 @@
 {
-  "versionCode": 181,
-  "versionName": "1.27.58",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.58/ketai-1.27.58.apk",
+  "versionCode": 182,
+  "versionName": "1.27.59",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.59/ketai-1.27.59.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "查寝页整理：删除甲子在线整条方案；把「安全手机短信」与「手机动态码」并进同一张第 2 步卡片；点任何按钮都会在卡顶状态行写出「正在做什么 → 结果」"
+  "notes": "查寝：验证码登录收进第 1 步，点一行展开；今天的查寝把已完成的也算进来（不再把做完的任务当成没有）"
 }
