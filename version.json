@@ -1,8 +1,8 @@
 {
-  "versionCode": 178,
-  "versionName": "1.27.55",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.55/ketai-1.27.55.apk",
+  "versionCode": 179,
+  "versionName": "1.27.56",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.56/ketai-1.27.56.apk",
   "minVersionCode": 116,
-  "apkSizeMB": 96.9,
-  "notes": "代跑内置工具升级到 0.9.1：修了上游「打卡点 isFixed 写死」「跑过点位漏报」两处缺陷，换包不改包名与流程；装了 0.3.x 的会先提示卸载旧版再装"
+  "apkSizeMB": 63.9,
+  "notes": "代跑工具合进课态签本体：一个安装包、一个图标，点开就在应用内跑，不再另装第二个 App；内置版本 0.9.1（修了打卡点判定与点位漏报）"
 }
