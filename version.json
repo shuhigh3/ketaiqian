@@ -1,8 +1,8 @@
 {
-  "versionCode": 163,
-  "versionName": "1.27.40",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.40/ketai-1.27.40.apk",
+  "versionCode": 164,
+  "versionName": "1.27.41",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.41/ketai-1.27.41.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "刷题作答修复：上一版主通道换成会「先想再答」的模型后，思考文字把输出额度吃光、正文为空，界面才会显示「接口返回里没有答案内容」。现在服务端对答题请求统一关闭思考，客户端也显式声明并给出看得懂的提示；同一道题第二次问命中缓存，基本秒回。"
+  "notes": "刷题作答更快：主通道换成实测出字更快的模型（同样是这台机器、同一句提问，首字从 4.7 秒降到 2 秒上下）；服务端缓存真正生效后同题秒回；客户端点「作答」时如果预取正好在路上就直接等它、不再发第二次请求，本机还记最近的答案，连网都不用等。"
 }
