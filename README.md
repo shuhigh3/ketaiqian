@@ -2064,3 +2064,24 @@ if watch_state == 1 and self.end_thre <= 1.0:
    改成 `{{VERSION_NAME}}` 之类的占位，由 `build_site.py` 从 `ketai-site/version.json` 注入；
    顺带修掉「正文写 95.4 MB、按钮写 95.3 MB」的自相矛盾。构建还会校验「版本更替第一条」与
    「最近版本第一条」是否等于清单，不一致直接报错不写产物——发版时忘改版本列表会被立刻拦住。
+
+### 65.6 1.27.39：刷题悬浮窗的两处修复
+
+1. **展开态拖动必闪退**：展开后的拖动绑在 header 上，`onDrag` 却把回调传进来的 view（header）交给 `updateViewLayout`。
+   WindowManagerGlobal 会先把这个子 View 的 LayoutParams 换成 `WindowManager.LayoutParams` 再抛异常——异常被
+   `runCatching` 吞了，但 LayoutParams 已经变脏，下一帧 LinearLayout 布局时 `ClassCastException`，整个进程闪退。
+   收起态绑的是窗口根视图，所以以前只有「展开后再拖」会崩。现在不管从哪个视图触发，都只用窗口根视图去更新位置。
+
+2. **「上游限流：上游返回429，但没写明是额度还是频率」**：这是两件事叠在一起。
+   - 主通道 ModelScope 的 `deepseek-ai/DeepSeek-V4-Flash-0731` 已经下架（目录里还挂着，没有 provider 承接），
+     每次请求都回 400 `has no provider supported`，于是全部流量掉到备用通道智谱的免费 `glm-4.7-flash`；
+     该模型高峰期回 429 `1305 使用人数过多`，而分类只认 rate/quota 关键词，就落到 other，出现那句「没写明」。
+     实测能答时也要 23.9s / 28.7s，这就是「卡顿一段时间」。
+   - 服务端：`classifyUpstream` 增加 busy 类（人数过多 / 繁忙 / 排队 / 稍后再试…）；429 里只有「真发太快」才放弃换通道，
+     额度或挤满继续试备用；错误文案拆成「上游限流：请求过快 / 额度用完 / 上游繁忙：模型挤满了 / 上游拒绝了请求（400）」；
+     所有响应带 `x-ketai-attempts`（中文转义，含每次尝试的 detail），成功也带，出问题时能直接看到主通道为什么失败。
+   - 模型自愈：主通道 400 命中「模型没有 provider」时，从上游 `/models` 目录按偏好挑一个没试过的换上去重打
+     （最多 3 个），答成功后把模型名写进 D1 的 `kv_config`，后续请求直接用，不再白打 400。
+     实测：冷启动首答 8.65s（含两次探路），之后 3.64s、2.44s，provider 固定为 primary。
+
+3. 版本 1.27.39 / versionCode 162；Worker 单元测试 16 项（security 8 + classify 8）。
