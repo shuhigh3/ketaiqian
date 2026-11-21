@@ -1,7 +1,8 @@
 {
-  "versionCode": 158,
-  "versionName": "1.27.35",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.35/ketai-1.27.35.apk",
+  "versionCode": 161,
+  "versionName": "1.27.38",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.38/ketai-1.27.38.apk",
   "minVersionCode": 116,
-  "notes": "播放页新增后台保活开关（关掉即停服务并释放唤醒锁）与状态行（服务是否运行、唤醒锁是否持有）。"
+  "apkSizeMB": 95.4,
+  "notes": "更新自检改为整段签名比对；电脑端配对串自动保存与重连、MQTT client_id 不再撞车、日志不再被清空；站点版本号改由 version.json 注入。"
 }
