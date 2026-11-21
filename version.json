@@ -1,8 +1,8 @@
 {
-  "versionCode": 166,
-  "versionName": "1.27.43",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.43/ketai-1.27.43.apk",
+  "versionCode": 167,
+  "versionName": "1.27.44",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.44/ketai-1.27.44.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "积分会员与卡密体系：积分与月卡可以同时持有；月卡/体验每天有免费答题屏数，超出后按屏扣积分，没出答案自动退回；积分可兑换一天会员；管理员可发放积分、生成积分卡密，并可调整每题积分、兑换一天会员所需积分与会员每日答题上限；个人页去掉兑换码入口，只留输入卡密；购买统一到店铺 https://www.kufaka.com/shop/JUKSY1BI"
+  "notes": "学习通后台刷课加固：唤醒锁每 10 分钟续租，不再六小时后悄悄失效；浏览器内核被系统回收时自动重建页面；返回键改成退到后台继续刷（真的要停点左上角返回）；补播上限提高并加了卡死看门狗（60 秒无进度先补播、再重载视频、最后重载整页）；播完判定从「95%」改成「真到结尾」，切节冷却从 20 秒降到 4 秒；一页多个 video 时挑正在播的那个；每 9 秒清一次「继续学习」类弹层；通知栏显示进度与挂机时长；可选「防挂机」开关（默认关）：每两三分钟轻滚一下页面，不点视频"
 }
