@@ -1,8 +1,8 @@
 {
-  "versionCode": 176,
-  "versionName": "1.27.53",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.53/ketai-1.27.53.apk",
+  "versionCode": 177,
+  "versionName": "1.27.54",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.54/ketai-1.27.54.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.5,
-  "notes": "查寝签到改回内置 jrxy-auto-sign 引擎：登录、短信安全验证、查任务、提交都由引擎按学校协议完成，界面与夜间自动都走同一条引擎链路；账号与定位由页面喂进去，设备号固定复用"
+  "notes": "查寝页按 jrxy-auto-sign 引擎的执行顺序重做：账号与定位、短信安全验证、手机动态码、今天的任务、每晚自动签到各一张卡，另加引擎日志与甲子兜底；页面只消费引擎状态，不再自己猜登录态"
 }
