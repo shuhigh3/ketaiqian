@@ -1,8 +1,8 @@
 {
-  "versionCode": 180,
-  "versionName": "1.27.57",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.57/ketai-1.27.57.apk",
+  "versionCode": 181,
+  "versionName": "1.27.58",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.58/ketai-1.27.58.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "短信安全验证修好了：安全手机那步改用学校真正在用的 initByType/securephone；拿不到 mfaState 时自动重探一次，再拿不到就直接把你引到「手机动态码登录」，不会再卡在一句报错上。"
+  "notes": "查寝页整理：删除甲子在线整条方案；把「安全手机短信」与「手机动态码」并进同一张第 2 步卡片；点任何按钮都会在卡顶状态行写出「正在做什么 → 结果」"
 }
