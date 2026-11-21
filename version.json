@@ -1,8 +1,8 @@
 {
-  "versionCode": 179,
-  "versionName": "1.27.56",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.56/ketai-1.27.56.apk",
+  "versionCode": 180,
+  "versionName": "1.27.57",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.57/ketai-1.27.57.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "代跑工具合进课态签本体：一个安装包、一个图标，点开就在应用内跑，不再另装第二个 App；内置版本 0.9.1（修了打卡点判定与点位漏报）"
+  "notes": "短信安全验证修好了：安全手机那步改用学校真正在用的 initByType/securephone；拿不到 mfaState 时自动重探一次，再拿不到就直接把你引到「手机动态码登录」，不会再卡在一句报错上。"
 }
