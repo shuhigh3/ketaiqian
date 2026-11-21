@@ -1,8 +1,8 @@
 {
-  "versionCode": 170,
-  "versionName": "1.27.47",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.47/ketai-1.27.47.apk",
+  "versionCode": 171,
+  "versionName": "1.27.48",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.48/ketai-1.27.48.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "登录可改用邮箱验证码（不再需要微信授权）；每账号自带邀请码，新账号注册 14 天内填邀请码，双方各得 60 积分；新增「活动中心」页（邀请码 / 积分兑换会员 / 购买入口）；管理页账号按登录时间排、卡密分类型分天数并支持一键复制；站点头像图标与软件一致，顶部加了积分购买入口。"
+  "notes": "活动入口改成个人主页右下角的圆形图标（登录后显示）；更新对话框的「最小化（后台下载）」改成单独一行、整行按钮，不再和「关闭」挤在一起。这一版只改界面。"
 }
