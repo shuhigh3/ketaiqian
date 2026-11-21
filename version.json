@@ -1,8 +1,8 @@
 {
-  "versionCode": 171,
-  "versionName": "1.27.48",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.48/ketai-1.27.48.apk",
+  "versionCode": 172,
+  "versionName": "1.27.49",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.49/ketai-1.27.49.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "活动入口改成个人主页右下角的圆形图标（登录后显示）；更新对话框的「最小化（后台下载）」改成单独一行、整行按钮，不再和「关闭」挤在一起。这一版只改界面。"
+  "notes": "生成卡密时多问一句使用方式：只能兑一次，或者 N 天内不限人数（同一个 IP 只能兑一次）。多用途卡会在列表里显示「已用几次、还剩几天」。"
 }
