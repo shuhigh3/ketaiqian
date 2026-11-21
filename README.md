@@ -2065,6 +2065,24 @@ if watch_state == 1 and self.end_thre <= 1.0:
    顺带修掉「正文写 95.4 MB、按钮写 95.3 MB」的自相矛盾。构建还会校验「版本更替第一条」与
    「最近版本第一条」是否等于清单，不一致直接报错不写产物——发版时忘改版本列表会被立刻拦住。
 
+### 65.22 1.27.56：代跑工具合进课态签本体
+
+上一版还是「内置 APK → 交给系统安装器」，用户得先允许安装未知应用、再装出第二个图标。
+这一版直接把工具**合进课态签本体**：同一份安装包、同一个图标，点开就在应用内跑。
+
+| 项 | 做法 |
+| --- | --- |
+| 原生库 | `app/src/main/jniLibs/arm64-v8a/libnekosportsworldtool.so`（29.2 MB，来自 antiban 0.9.1 的 APK） |
+| Java 胶水 | `app/src/main/java/org/nekosportsworld/tool/MainActivity.java`（继承 `NativeActivity`）+ `ApkProvider.java`（只给它自己的自更新用，authority 改成 `com.dumate.classstatus.swtool.apk`） |
+| 清单 | 注册 `<activity android:name="org.nekosportsworld.tool.MainActivity">` + `meta-data android.app.lib_name=nekosportsworldtool`；`android:extractNativeLibs="true"` 与 `packaging { jniLibs { useLegacyPackaging = true } }` 必须同时成立，否则 `NativeActivity` 找不到库 |
+| 入口 | 代跑页「开始跑步（应用内打开）」→ `startActivity` 打开那个 Activity，不再走安装器 |
+| 架构 | 上游只出 arm64：页面按**主 ABI** 判断，非 arm64 直接显示「当前设备不支持」（x86_64 模拟器 abilist 里也带 arm64，按 abilist 判断会误判并直接崩） |
+| 迁移 | 之前单独装过 `org.nekosportsworld.tool` 的，页面提示并给一键卸载（同包名两套设备号容易触发风控）；内置 APK 资源已删除 |
+
+体积反而小了一点：从 96.9 MB 降到 63.9 MB（原来的 16.6 MB 内置 APK 是「已压缩的 zip 再打包」，改成原生库后压缩率更高）。
+
+风险不变：上游已归档 / 分支自述仍会被封记录；学校有事后复检与清算。上游是 CC BY-NC 4.0（非商用），代跑入口保持免费。
+
 ### 65.21 1.27.55：内置代跑工具升级到 0.9.1
 
 代跑页从来都是「入口 + 引导」，真正干活的 `neko-sportsworld-arm64.apk` 内置在 assets 里。
