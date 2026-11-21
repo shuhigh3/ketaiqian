@@ -1,8 +1,8 @@
 {
-  "versionCode": 172,
-  "versionName": "1.27.49",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.49/ketai-1.27.49.apk",
+  "versionCode": 173,
+  "versionName": "1.27.50",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.50/ketai-1.27.50.apk",
   "minVersionCode": 116,
   "apkSizeMB": 95.4,
-  "notes": "生成卡密时多问一句使用方式：只能兑一次，或者 N 天内不限人数（同一个 IP 只能兑一次）。多用途卡会在列表里显示「已用几次、还剩几天」。"
+  "notes": "更新对话框去掉「关闭」，只留「最小化」：下载中按它转到后台，其它状态按它直接关掉；主页顶栏「课态签」下面那行小字去掉了。"
 }
