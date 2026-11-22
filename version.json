@@ -1,8 +1,8 @@
 {
-  "versionCode": 192,
-  "versionName": "1.27.69",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.69/ketai-1.27.69.apk",
+  "versionCode": 193,
+  "versionName": "1.27.70",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.70/ketai-1.27.70.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "签到照片不再被「保存并登录」清空：提交前会重新推一次，引擎端也不会覆盖；进查寝页若账号已保存会自动登录一次。"
+  "notes": "提交被判「版本过低」时改走 iOS 的 first_v4（deviceType=2、iOS UA、会话票明文进头和 Cookie），并补上 ckey/raw 三种密钥候选；复制日志改为复制全量 200 条；已登录时不再误以为没自动登录。"
 }
