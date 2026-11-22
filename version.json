@@ -1,8 +1,8 @@
 {
-  "versionCode": 193,
-  "versionName": "1.27.70",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.70/ketai-1.27.70.apk",
+  "versionCode": 194,
+  "versionName": "1.27.71",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.71/ketai-1.27.71.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "提交被判「版本过低」时改走 iOS 的 first_v4（deviceType=2、iOS UA、会话票明文进头和 Cookie），并补上 ckey/raw 三种密钥候选；复制日志改为复制全量 200 条；已登录时不再误以为没自动登录。"
+  "notes": "8 字节的 secret 原值不能当 AES 密钥，以前会让整轮提交抛 Incorrect AES key length 直接中断；现在按长度过滤，并让单条组合出错只记一笔、继续试后面的。"
 }
