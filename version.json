@@ -1,8 +1,8 @@
 {
-  "versionCode": 184,
-  "versionName": "1.27.61",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.61/ketai-1.27.61.apk",
+  "versionCode": 185,
+  "versionName": "1.27.62",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.62/ketai-1.27.62.apk",
   "minVersionCode": 116,
   "apkSizeMB": 67.0,
-  "notes": "代跑页重做：只留一个主动作「进入跑步工具」，下面按四步讲清怎么用（登录 → 违规自查 → 起跑 → 隔天回查），第一次进来自动弹引导；风险提示收成三句话。"
+  "notes": "界面与署名调整：作者署名改为 shuigh3；查寝页学校改为自己填写（不再固定某一所学校）；把「刷课 / 刷题 / 代跑 / 代签」这类说法统一换成「跟播 / 看屏解题 / 跑步记录 / 签到」，使用声明与站点文案同步改写，功能一字未减。"
 }
