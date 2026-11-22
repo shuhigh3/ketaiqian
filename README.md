@@ -2837,3 +2837,19 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
 - 已登录时把「学校全称 / 学号 / 密码」三行整体收起（`tvSchoolLabel/etDormSchool/tvUserLabel/etDormUser/tvPassLabel/etDormPass` 一起 `GONE`），只留一行「✅ 已登录：学号」。
 - 自动登录改为以**本机存的账号**为准（`store.dormCpUser/dormCpPass/dormSchool`），引擎配置被 reset 过也能自动登录；用户点过「退出登录」后本次停留不再自动登录（`autoLoginSuppressed`）。
 
+### 65.41 1.27.85：学习通后台真播（把网页挪进系统小窗）
+
+上一版只是把 JS 看到的 `document.hidden` 骗成 false，回到前台视频仍从暂停处继续——说明暂停不是脚本决定的，是 **Chromium 自己**：页面所在窗口一旦不可见，渲染进程就把 `<video>` 暂停。
+
+这一版换了做法：进后台时把 `WebView` 从页面里**挪进一个 3px×3px、alpha 0.01 的系统悬浮窗**（`TYPE_APPLICATION_OVERLAY`，不可触摸、不可聚焦），回前台再挪回原来的位置（`webLp` 保存原 `LayoutParams`，避免变成 wrap_content）。
+
+| 环节 | 现在的做法 |
+| --- | --- |
+| 进后台 | `onPause()` 里 `moveWebToFloat()`：`webHolder.removeView(web)` → `WindowManager.addView(web, 3px, alpha=0.01)` → `web.onResume()/resumeTimers()` |
+| 回前台 | `onResume()` 里 `moveWebBack()`：`removeView` → 按原 `LayoutParams` 放回 `webHolder` |
+| 权限 | `SYSTEM_ALERT_WINDOW` 已在清单里；没授权时 Toast 提示并打开「显示在其他应用上层」设置（只自动弹一次） |
+| 通知栏 | `updateNoteProgress()` 不再受「后台保活」开关限制；进页面时补申请 `POST_NOTIFICATIONS`（Android 13+） |
+| 自检 | 保活状态行多一段「小窗托底：已挂到悬浮窗 / 待命 / 未授权」 |
+
+边界：个别 ROM 会限制悬浮窗（省电策略或「后台弹出界面」权限），这种机型上仍会退回「只有前台播放」；此时状态行会显示「小窗托底：未授权」或迟迟没有「已挂到悬浮窗」。
+
