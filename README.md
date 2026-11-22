@@ -2817,3 +2817,23 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
 - `validate` 的 `sceneCode` 用 `checkValidation` 那一份；`scenesImageCode` 用 `create` 返回的会话码。
 - 没有逐格 code 的部署（合成图）仍会把格子号当码试一次，日志里留痕。
 - 验证码 ticket 一次性，换一组图要重取。
+
+### 65.39 1.27.84：学习通通知栏进度条 + 查寝页精简
+
+**学习通跟播**：常驻通知从「一行字」升级成带进度条的卡片。
+
+| 位置 | 内容 |
+| --- | --- |
+| 标题 | `课态签 · 学习通 跟播中 47%`（拿不到百分比时不写数字，改回不确定进度条） |
+| 正文 | `章节名 · 课程名 · 已挂 12:30` |
+| 刷新节奏 | 百分比变化时 5 秒一刷，不变时 30 秒续一次（`setOnlyAlertOnce`，不响不闪） |
+| 课程名来源 | 注入脚本按 `.course-title/.courseTitle/.prev_title/#prev/.chapter-title/.subTitle/.tit/.course_name` 依次尝试，取到就缓存在 `COURSE` 里 |
+
+**查寝页精简**：
+
+- 删掉第 1 步、验证码块、第 3 步的长段说明文字（保留必要的一行提示）。
+- 「清空登录态（换账号、或反复登录失败时用）」→「退出登录」，确认框也改成「退出登录？」。
+- 「验证码登录（短信 / 动态码）」→「验证码登录」（展开时「▴ 收起」，收起时「▾」）。
+- 已登录时把「学校全称 / 学号 / 密码」三行整体收起（`tvSchoolLabel/etDormSchool/tvUserLabel/etDormUser/tvPassLabel/etDormPass` 一起 `GONE`），只留一行「✅ 已登录：学号」。
+- 自动登录改为以**本机存的账号**为准（`store.dormCpUser/dormCpPass/dormSchool`），引擎配置被 reset 过也能自动登录；用户点过「退出登录」后本次停留不再自动登录（`autoLoginSuppressed`）。
+
