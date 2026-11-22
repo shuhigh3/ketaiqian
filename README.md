@@ -1,3 +1,13 @@
+### 65.37 1.27.75：九宫格题目兼容三种形态
+
+| 现象 | 真实原因 | 现在怎么做 |
+| --- | --- | --- |
+| 九宫格页标题正常，图片区全空，状态行「题目是空的」 | `create/scenesImage` 的返回里图片不在 `result.imageInfos[].image`，可能叫 `images` / `pics`，也可能只给一张拼好的大图 `image`，还可能是 base64 | `captcha.create()` 依次尝试 `imageInfos`/`images`/`pics`/`captchaImages`/`data`，元素可以是字符串或字典（取 `image|img|url|pic|base64|src`），仍没有就退到单张 `image|img|pic|base64` 并标 `layout=composite`；`base64` 统一转 `data:` 再给界面解码 |
+| 拼好的大图没法点 | 界面只按「9 张独立图」渲染 | `DormCaptchaGridActivity` 支持两种题面：9 张图直接排 3×3；合成图用 `boxComposite` + 透明覆盖格子，按图片实际宽高算格子尺寸，点哪格高亮哪格 |
+| 取题失败没有任何线索 | 解析异常时信息被吞掉 | 解析失败先 `Utils.log("验证码题目没解析出图片：<原始片段>")`，桥接层日志写「这次要求人机验证：目标物「X」，N 张图（layout）」；界面空图时提示「点换一组图，还不行把日志发我」 |
+
+边界：`validate` 需要的是每一格的 `code`，若学校返回里没有 code，就退回用格子编号（1–9）提交并记日志；ticket 仍然一次性，失败要重新取题。
+
 ### 65.36 1.27.74：2210060000 立刻转人机验证
 
 上一版接了九宫格，但触发条件写错了：`_markCaptcha()` 靠关键词认「人机 / 验证码」，
