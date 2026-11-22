@@ -1,8 +1,8 @@
 {
-  "versionCode": 188,
-  "versionName": "1.27.65",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.65/ketai-1.27.65.apk",
+  "versionCode": 189,
+  "versionName": "1.27.66",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.66/ketai-1.27.66.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "查寝提交前先现取一次高精度定位：精度、来源、多久之前都写在结果里；定位太差或太旧会先问你一句，不再拿旧点硬提。"
+  "notes": "查寝卡在人机验证时会弹窗说明，并自动跳到学校登录页让你过图形码/滑块；过完回来自动重试一次。"
 }
