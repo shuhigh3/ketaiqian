@@ -2757,3 +2757,42 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
 - 只是「预选」，不会替你提交；验证通过与否仍以学校返回为准。
 - 图片是 https 地址时由 Worker 下载（服务端抓不到会被挡住的图，例如需要登录态的地址）。
 - 视觉模型可换：请求里可带 `model`，或设 `VL_MODEL`；文本模型会明确回「不支持图片」，照它提示换一个能看图的模型即可。
+
+### 65.36 1.27.79 补丁：`/vl/pick` 收 data URI、`max_tokens` 放到 800（Worker 侧，App 不变）
+
+免费视觉模型接上之后暴露了两个服务端问题，已修好并部署（worker sha256 `a0ab73c8…`）：
+
+| 问题 | 表现 | 改法 |
+| --- | --- | --- |
+| 只收 http(s) 图片 | 学校给的是 base64，App 已转成 `data:image/…`，Worker 却按「不是 http」过滤掉 → 永远「图片少于 2 张」 | `urls` 同时接受 `data:image/`；循环里 data URI 直接用，不下载 |
+| `max_tokens: 64` | 免费思考型视觉模型（`glm-4.1v-thinking-flash`）把 64 个 token 全用在 `<think>` 里，正文为空 → 解析不到 `cells` | 提到 800 |
+
+自测结论（`quiz.ketaiqian.top/vl/pick`，9 张 120×120 图、目标「红色方块」、正确答案 2/5/8）：
+
+| 模型 | 结果 |
+| --- | --- |
+| `glm-4.1v-thinking-flash`（免费） | ✅ 200，`{"cells":[2,5,8]}`，约 5–13 秒 |
+| `glm-4v-flash`（免费，只收 1 张图） | 9 张时报 `1210 输入图片数量超过限制`；单张合成图能答但会答错（2/4），只适合兜底 |
+| `glm-4.6v-flash`（免费） | 常回 `1305 该模型当前访问量过大`，需要重试 |
+| `glm-4.5v`（收费） | 能答对，但同样先推理，需要更大额度 |
+
+结论：`VL_MODEL` 用 `glm-4.1v-thinking-flash`，免费、能看 9 张图；慢一点（5–13 秒）但换格子这一步本来就要人核对。
+
+### 65.37 1.27.80：修「九宫格选对了也提交失败」（validate 接口缺失）
+
+| 现象 | 根因 | 改法 |
+| --- | --- | --- |
+| 手选正确格子后仍报「验证码没通过：module 'jrxy.captcha' has no attribute 'validate'」 | `app/src/main/python/jrxy/captcha.py` 当时只写了第 1、2 步（`check_validation`、`create`），第 4 步 `validate` 根本没实现，`bridge.captcha_finish()` 一调就 `AttributeError` | 补 `validate(session, host, device_id, challenge, session_code, codes)`：`POST {host}/captcha-open-api/v1/captcha/validate/scenesImage`，multipart 带 `accountKey/sceneCode/tenantId/userId/scenesImageCode` 与多个 `scenesImageCodes`；返回体里依次找 `result.ticket/captchaTicket/captcha/code/token`，拿不到就把学校原话带回 |
+| 自动选图给错格子，且看不出它选了哪几格 | 提示词太笼统（只说「明显包含」） | Worker 侧提示词加严：只有确实是目标物才算，外形相近的（找摩托车时的自行车/电动滑板车/汽车）不算；App 侧状态行直接写「模型预选：第 3、8 格」并记 `StatusLogger` |
+
+实测（拿用户截图里的真实九宫格，目标「摩托车」，真值第 3、8 格）：
+
+| 形态 | 结果 |
+| --- | --- |
+| 9 张独立图（当前实现） | ✅ `{"cells":[3,8]}`，约 5.4 秒 |
+| 编号拼图（备选，未启用） | ✅ `{"cells":[3,8]}`，约 5.5 秒 |
+
+边界：
+- `validate` 的 `sceneCode` 用 `checkValidation` 那一份；`scenesImageCode` 用 `create` 返回的会话码。
+- 没有逐格 code 的部署（合成图）仍会把格子号当码试一次，日志里留痕。
+- 验证码 ticket 一次性，换一组图要重取。
