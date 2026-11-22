@@ -1,8 +1,8 @@
 {
-  "versionCode": 190,
-  "versionName": "1.27.67",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.67/ketai-1.27.67.apk",
+  "versionCode": 191,
+  "versionName": "1.27.68",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.68/ketai-1.27.68.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "查寝加了「签到照片」选择（可多选，每次随机传一张）；学校回非 0 但短信其实已发出时不再误报失败；复用上次登录更积极，少一次验证码。"
+  "notes": "查寝提交改成先按「网关回话里的版本号」重试，并把五种签名写法都试一遍；以前只试 android 一种，版本一换就没别的组合。"
 }
