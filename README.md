@@ -2065,6 +2065,23 @@ if watch_state == 1 and self.end_thre <= 1.0:
    顺带修掉「正文写 95.4 MB、按钮写 95.3 MB」的自相矛盾。构建还会校验「版本更替第一条」与
    「最近版本第一条」是否等于清单，不一致直接报错不写产物——发版时忘改版本列表会被立刻拦住。
 
+### 65.32 1.27.66：查寝要人机验证时弹窗并自动跳转
+
+引擎从头到尾没有处理图形码 / 滑块：`submitForm()` 把服务端原文抛回来，界面只显示一句
+「验证码验签失败」这类话，用户不知道该去哪过验证，只能自己去翻今日校园 App。
+
+| 改动 | 做法 | 效果 |
+|---|---|---|
+| 引擎标出「要人验证」 | `bridge.py` 新增 `CAPTCHA_HINTS`（人机 / 滑块 / 图形验证码 / 验证码验签 / captcha / geetest…）与 `_markCaptcha()`；登录异常与签到失败命中时置 `needCaptcha=True`、`captchaUrl=<学校登录页>`（`_LAST_LOGIN_URL` 记在 `getLoginUrlBySchoolName()` 之后） | 状态里第一次能表达「这次卡在人机验证」 |
+| 状态透传 | `DormState` 加 `needCaptcha` / `captchaUrl` 并在 `parse()` 里读；`DormRunner.Stage.NEED_CAPTCHA` 与 `isCaptcha()` 用同一套词，自动签到失败也能分档 | 界面与夜间自动任务都能识别 |
+| 弹窗 + 自动跳转 | 新增 `ui/DormCaptchaActivity`（应用内 WebView，右上角「过完了，回去重试」）；`DormCheckActivity.maybeCaptcha()` 弹出说明框，3 秒不操作自动打开验证页，回来后 `captchaRetry` 自动重试一次登录或签到 | 少一步「自己去哪过验证」的猜谜 |
+| 提交阶段说实话 | 登录成功之后的人机校验在今日校园 App 里，网页给不了：`_markCaptcha()` 命中后把 `captchaUrl` 清空，界面只弹说明（去 App 手动签到一次再回来），不乱跳 | 不假装能替人过 App 里的校验 |
+
+边界：`captchaUrl` 只在「登录阶段」拿得到；`needCaptcha` 在登录成功与签到成功时都会清零，
+不会把上一次的结论留到下一次。
+
+验证：`:app:testDebugUnitTest` 375 项全过；`:app:compileDebugKotlin` 无错；`python -m py_compile` 过。
+
 ### 65.31 1.27.65：查寝提交前现取高精度定位
 
 之前「保存并登录／签到」不会为提交再取一次定位：`DormGeo.current()` = `cached ?: lastKnown`，
