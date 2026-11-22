@@ -1,8 +1,8 @@
 {
-  "versionCode": 203,
-  "versionName": "1.27.80",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.80/ketai-1.27.80.apk",
+  "versionCode": 204,
+  "versionName": "1.27.81",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.81/ketai-1.27.81.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "修人机验证提交：补上缺失的 validate 接口（之前手选对了也报 module 'jrxy.captcha' has no attribute 'validate'）；自动选图的提示更严，模型预选哪几格直接写在状态行。"
+  "notes": "手动签到早于 22:00 会先提示风险；自动签到遇到人机验证时发通知，点进去选完图自动补签。"
 }
