@@ -1,8 +1,8 @@
 {
-  "versionCode": 186,
-  "versionName": "1.27.63",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.63/ketai-1.27.63.apk",
+  "versionCode": 187,
+  "versionName": "1.27.64",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.64/ketai-1.27.64.apk",
   "minVersionCode": 116,
   "apkSizeMB": 67.0,
-  "notes": "路网下载内置：按定位圈范围，从三个 Overpass 镜像拉 OSM，存成 .osm；失败能一键复制查询语句去 overpass-turbo 导出"
+  "notes": "跑步工具改到独立进程运行：它自己退出或被杀，课态签本体不会再跟着没了；运行期间通知栏留一条「回到课态签」，随时能回来。"
 }
