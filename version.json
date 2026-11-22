@@ -1,7 +1,7 @@
 {
-  "versionCode": 197,
-  "versionName": "1.27.74",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.74/ketai-1.27.74.apk",
+  "versionCode": 198,
+  "versionName": "1.27.75",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.75/ketai-1.27.75.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
   "notes": "8 字节的 secret 原值不能当 AES 密钥，以前会让整轮提交抛 Incorrect AES key length 直接中断；现在按长度过滤，并让单条组合出错只记一笔、继续试后面的。"
