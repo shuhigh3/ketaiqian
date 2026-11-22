@@ -1,3 +1,12 @@
+### 65.39 1.27.77：九宫格的图片字段叫 path
+
+| 现象 | 真实原因 | 现在怎么做 |
+| --- | --- | --- |
+| 日志「验证码题目没解析出图片：{"code": "…", "imageInfos": [{"code": "…", "path": "https://wecloud-captcha.campusphere.net/…"}]}」 | 学校返回的图片地址字段叫 **`path`**，而解析器只认 `image|img|url|pic|base64|src`，于是列表里每项都被判为「没有图」，最后报「验证码接口没给出图片」 | `captcha.create()` 的图片键补上 `path`（以及 `imageUrl`/`imgUrl`）；单张图兜底同样补 `path`/`url` |
+| 日志被这一行原始返回刷满 | 失败时把整段 JSON 直接写日志 | 新增 `_brief(value, limit=300)`，日志里只留前 300 字 |
+
+边界：`path` 是 https 地址，直接下；若哪天换成 base64，仍走 `data:` 解码那条路。
+
 ### 65.38 1.27.76：点「去选图」没反应
 
 | 现象 | 真实原因 | 现在怎么做 |
