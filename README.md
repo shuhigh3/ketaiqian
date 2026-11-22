@@ -2905,3 +2905,19 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
 | 首页 | 底部提示条空课表文案改「导入课表后这里会显示下一节课」；FAB `marginBottom 96→120dp` | 原来与「今日概览」空态文案重复，且 FAB 会压住提示条 |
 
 测试：375 项全过（`OverlayStyleTest` 的「有题目时两色不同」约束保留，所以深色里仍留了一点青绿渐变）。
+
+### 65.46 1.27.89：设计令牌落地（圆角 / 间距 / 字号）
+
+以前每个页面各自写 `16dp`、`13sp`、`12.5sp`，同一类东西在不同页面长得不一样。这一版把三样收成一套，全部落在 `res/values/dimens.xml`：
+
+| 令牌组 | 取值 | 用在哪 |
+| --- | --- | --- |
+| 圆角 | `radius_card 16dp`、`radius_input 14dp`、`radius_pill 999dp` | 卡片、输入框、胶囊按钮/标签 |
+| 间距 | `space_xs 4`、`space_s 8`、`space_m 12`、`space_l 16`、`space_xl 24`、`space_xxl 32`，外加 `card_pad_h/v`、`card_gap` | 卡片内边距、卡片间距、页面留白 |
+| 字号 | `text_caption 12sp`、`text_body 14sp`、`text_title 17sp`、`text_head 21sp`、`text_display 26sp` | 全部文字 |
+
+机械改动量：**165 处**布局里的硬编码 `textSize` 归到五档；**12 个** `bg_*.xml` 的圆角改成 `@dimen` 引用（`bg_card`/`bg_card_hero`/`bg_card_soft`/`bg_status_strip` → `radius_card`，`bg_input*` → `radius_input`，`bg_chip*` → `radius_pill`）；`CsCard` 的 padding/间距、`CsInput` 的字号、`CsButton` 的圆角都改成令牌。
+
+顺带确认：深色模式本来就有（`values-night` + `Theme.Material3.DayNight`），令牌化之后深色依旧正常，没有出现「浅色对了深色崩」的情况。
+
+边界：这是「统一」，不是「重设计」，所以布局位置没动，只是把同类元素对齐到同一组数值；`21/22sp` 的数字与 `17sp` 的标题现在分别是 21 与 17，视觉上更整齐。
