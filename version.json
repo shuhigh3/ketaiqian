@@ -1,8 +1,8 @@
 {
-  "versionCode": 199,
-  "versionName": "1.27.76",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.76/ketai-1.27.76.apk",
+  "versionCode": 200,
+  "versionName": "1.27.77",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.77/ketai-1.27.77.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "点「去选图」没反应已修：题目改成在引擎里直接交接，不再用 Intent 传几 MB 的 base64（那会触发 Binder 上限让界面起不来）；取题失败会弹提示。"
+  "notes": "九宫格图片地址认 path 字段了（学校返回 imageInfos[{code,path}]，以前只认 image/url，所以一直说「没给出图片」）。"
 }
