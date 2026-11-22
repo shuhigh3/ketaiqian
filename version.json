@@ -1,8 +1,8 @@
 {
-  "versionCode": 204,
-  "versionName": "1.27.81",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.81/ketai-1.27.81.apk",
+  "versionCode": 205,
+  "versionName": "1.27.82",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.82/ketai-1.27.82.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "手动签到早于 22:00 会先提示风险；自动签到遇到人机验证时发通知，点进去选完图自动补签。"
+  "notes": "九宫格默认自动选图并自动提交，失败自动换组重试；撞限流 20000015 进 60 秒倒计时；换图 10 秒冷却；ticket 8 分钟内复用；签到成功/失败都进通知栏。"
 }
