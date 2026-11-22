@@ -1,8 +1,8 @@
 {
-  "versionCode": 205,
-  "versionName": "1.27.82",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.82/ketai-1.27.82.apk",
+  "versionCode": 206,
+  "versionName": "1.27.83",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.83/ketai-1.27.83.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "九宫格默认自动选图并自动提交，失败自动换组重试；撞限流 20000015 进 60 秒倒计时；换图 10 秒冷却；ticket 8 分钟内复用；签到成功/失败都进通知栏。"
+  "notes": "修学习通后台跟播：把页面的可见性判断钉死成「可见」并在捕获阶段吞掉 visibilitychange/pagehide/blur，后台模式不再限制抢播次数；心跳每 15 秒再叫醒一次内核计时器。"
 }
