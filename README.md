@@ -1,3 +1,12 @@
+### 65.38 1.27.76：点「去选图」没反应
+
+| 现象 | 真实原因 | 现在怎么做 |
+| --- | --- | --- |
+| 弹窗点「去选图」，屏幕没变化 | 题目（9 张图，可能是几 MB 的 base64）被塞进 Intent 传给 `DormCaptchaGridActivity`；Android 的 Binder 事务上限约 1 MB，超了会直接抛 `TransactionTooLargeException`，目标页起不来，看起来就是「点了没反应」 | `JrxyEngine.captchaBegin()` 把成功的题目留在内存里（`@Volatile var pendingCaptcha`），界面从 `DormEngine.pendingCaptcha()` 读；`DormCaptchaGridActivity.intent(context)` 不再带任何图片参数 |
+| 取题失败时也像「没反应」 | 失败只写状态行 | 失败时 `Toast` 弹出「取题目失败：<原因>」，状态行同步；`task.ok` 但没图时进页面也有明确提示「点换一组图」 |
+
+边界：ticket 一次性；「换一组图」会重新 `captcha_begin` 并刷新内存里的题目，界面自动重画。
+
 ### 65.37 1.27.75：九宫格题目兼容三种形态
 
 | 现象 | 真实原因 | 现在怎么做 |
