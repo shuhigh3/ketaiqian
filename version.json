@@ -4,5 +4,5 @@
   "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.75/ketai-1.27.75.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "8 字节的 secret 原值不能当 AES 密钥，以前会让整轮提交抛 Incorrect AES key length 直接中断；现在按长度过滤，并让单条组合出错只记一笔、继续试后面的。"
+  "notes": "人机验证的题目不再空着：取图兼容 imageInfos / images / 单张合成大图 / base64，拼好的大图直接在大图上点格子，取不到图会记录学校原始字段。"
 }
