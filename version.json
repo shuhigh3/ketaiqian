@@ -1,8 +1,8 @@
 {
-  "versionCode": 202,
-  "versionName": "1.27.79",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.79/ketai-1.27.79.apk",
+  "versionCode": 203,
+  "versionName": "1.27.80",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.80/ketai-1.27.80.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "九宫格人机验证支持自动选图：把这个目标物和 9 张图交给服务端的视觉模型预选，界面上仍可手动增减；默认关，服务端没配视觉模型时会提示怎么配。"
+  "notes": "修人机验证提交：补上缺失的 validate 接口（之前手选对了也报 module 'jrxy.captcha' has no attribute 'validate'）；自动选图的提示更严，模型预选哪几格直接写在状态行。"
 }
