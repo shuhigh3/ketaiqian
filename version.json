@@ -1,8 +1,8 @@
 {
-  "versionCode": 187,
-  "versionName": "1.27.64",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.64/ketai-1.27.64.apk",
+  "versionCode": 188,
+  "versionName": "1.27.65",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.65/ketai-1.27.65.apk",
   "minVersionCode": 116,
-  "apkSizeMB": 67.0,
-  "notes": "跑步工具改到独立进程运行：它自己退出或被杀，课态签本体不会再跟着没了；运行期间通知栏留一条「回到课态签」，随时能回来。"
+  "apkSizeMB": 63.9,
+  "notes": "查寝提交前先现取一次高精度定位：精度、来源、多久之前都写在结果里；定位太差或太旧会先问你一句，不再拿旧点硬提。"
 }
