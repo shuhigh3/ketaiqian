@@ -1,8 +1,8 @@
 {
-  "versionCode": 201,
-  "versionName": "1.27.78",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.78/ketai-1.27.78.apk",
+  "versionCode": 202,
+  "versionName": "1.27.79",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.79/ketai-1.27.79.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "「检查更新」改成同时比对 Pages、jsDelivr、raw 三处取最新，不再被 Pages 构建慢或 jsDelivr 缓存拖住说「已是最新」；默认地址不再被记成自定义。"
+  "notes": "九宫格人机验证支持自动选图：把这个目标物和 9 张图交给服务端的视觉模型预选，界面上仍可手动增减；默认关，服务端没配视觉模型时会提示怎么配。"
 }
