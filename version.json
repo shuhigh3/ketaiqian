@@ -1,8 +1,8 @@
 {
-  "versionCode": 200,
-  "versionName": "1.27.77",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.77/ketai-1.27.77.apk",
+  "versionCode": 201,
+  "versionName": "1.27.78",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.78/ketai-1.27.78.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "九宫格图片地址认 path 字段了（学校返回 imageInfos[{code,path}]，以前只认 image/url，所以一直说「没给出图片」）。"
+  "notes": "「检查更新」改成同时比对 Pages、jsDelivr、raw 三处取最新，不再被 Pages 构建慢或 jsDelivr 缓存拖住说「已是最新」；默认地址不再被记成自定义。"
 }
