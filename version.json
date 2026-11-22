@@ -1,8 +1,8 @@
 {
-  "versionCode": 198,
-  "versionName": "1.27.75",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.75/ketai-1.27.75.apk",
+  "versionCode": 199,
+  "versionName": "1.27.76",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.76/ketai-1.27.76.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "人机验证的题目不再空着：取图兼容 imageInfos / images / 单张合成大图 / base64，拼好的大图直接在大图上点格子，取不到图会记录学校原始字段。"
+  "notes": "点「去选图」没反应已修：题目改成在引擎里直接交接，不再用 Intent 传几 MB 的 base64（那会触发 Binder 上限让界面起不来）；取题失败会弹提示。"
 }
