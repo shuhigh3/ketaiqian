@@ -2778,6 +2778,27 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
 
 结论：`VL_MODEL` 用 `glm-4.1v-thinking-flash`，免费、能看 9 张图；慢一点（5–13 秒）但换格子这一步本来就要人核对。
 
+### 65.38 1.27.83：学习通后台跟播（锁屏也能推进）
+
+**问题**：网页版只有放前台才刷得动，切后台/锁屏进度就停。
+
+**根因**：学习通播放器把「页面可见」当播放前提。WebView 一进后台就派发 `visibilitychange`
+（`document.hidden = true`），播放器收到就 `pause()`；我们之前只在 `onPause()` 里调
+`web.onResume() / resumeTimers()`，那只保住 JS 计时器，管不了页面自己的可见性判断。
+
+**改法**（`study/XxtWebActivity.kt`）：
+
+| 位置 | 做法 |
+| --- | --- |
+| 注入脚本开头 | `Object.defineProperty(document, 'hidden'/'visibilityState'/'webkitHidden'/'webkitVisibilityState')` 钉死成「可见」，`document.hasFocus()` 恒 `true` |
+| 事件层 | 对 `visibilitychange / webkitvisibilitychange / pagehide / freeze / blur` 在 `window` 与 `document` 上用捕获阶段 `stopImmediatePropagation()` 吞掉，播放器收不到 |
+| 抢播次数 | `resumeLimit()`：前台 12 次封顶，后台模式 100000 次（`window.__ketaiSetBg(true)` 由 `onPause()` 打开、`onResume()` 关闭） |
+| Java 心跳 | `beatTask` 每 5 拍（约 15 秒）再 `web.onResume(); web.resumeTimers()`，应对「onPause 之后才真正挂起内核计时器」的机型 |
+
+**边界**：学习通若在服务端判定「异常播放」（例如长时间零交互），仍可能不给进度；这时打开设置里的
+「防挂机（每 2–3 分钟动一下页面）」。锁屏后如果系统把整个进程冻结（省电策略），前台服务 + 唤醒锁已在
+`XxtWebKeepService` 里，但仍建议把课态签加进电池白名单。
+
 ### 65.37 1.27.80：修「九宫格选对了也提交失败」（validate 接口缺失）
 
 | 现象 | 根因 | 改法 |
