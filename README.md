@@ -2681,3 +2681,14 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
      实测：冷启动首答 8.65s（含两次探路），之后 3.64s、2.44s，provider 固定为 primary。
 
 3. 版本 1.27.39 / versionCode 162；Worker 单元测试 16 项（security 8 + classify 8）。
+
+### 65.34 1.27.70：提交被判「版本过低」时改走 iOS 的 first_v4
+
+| 现象 | 原因 | 这一版怎么改 |
+| --- | --- | --- |
+| 提交 18 次全失败：`cat+* 2210060000→2210060000 验签失败`、`cpdaily+* 2210060000~9999999999→4 版本过低` | `2210060000` 不是「网关要求的版本」，而是网关自己的验签失败码；安卓那套「DES 头 + 头部 sign:1」在这台网关上已经不被接受 | 新增两个请求家族：`ios`（deviceType=2、systemName=iOS、iOS UA、会话票明文进 `sessionTokenKey` 与 Cookie）与 `appn`（安卓原生全头），由 `submit_with_retry` 先走 iOS 的 6 种密钥，再回到原有 v4 组合 |
+| 密钥用错也会表现成「验签失败」 | 只试了 `fkey_cat` / `fkey_cpdaily` 两种派生 | `fkey_variants` 扩到 6 种：`fkey_cat`、`ckey_cpdaily`、`fkey_cpdaily`、`ckey_cat`、`cat_raw`、`cpdaily_raw`（ckey 用 `f9akfyUe` 前缀交错，raw 直接用 secret） |
+| 「复制日志」只复制了屏幕上那一段 | `copyLog()` 复制的是 `tvLog` 里已经截断的 `lastLog` | 改成复制时重新读 `recentLog(200)`（引擎缓冲上限 300 条）并带上 phase/loggedIn/taskCount/device 一行 |
+| 明明已登录还说「没自动登录」 | `maybeAutoLogin()` 在 `state.loggedIn` 时静默返回 | 已登录时给一句「会话还有效，直接点一键签到；要重登点清空登录态」 |
+
+注意：iOS 家族用的是上游 `merged_ios_v4_submit.py`（2026-10-26 仍在维护）的协议形状；若这台网关仍然拒，日志里会显示 `ios+…` 的失败明细，把那一行发我即可继续收窄。
