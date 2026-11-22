@@ -1,8 +1,8 @@
 {
-  "versionCode": 189,
-  "versionName": "1.27.66",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.66/ketai-1.27.66.apk",
+  "versionCode": 190,
+  "versionName": "1.27.67",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.67/ketai-1.27.67.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "查寝卡在人机验证时会弹窗说明，并自动跳到学校登录页让你过图形码/滑块；过完回来自动重试一次。"
+  "notes": "查寝加了「签到照片」选择（可多选，每次随机传一张）；学校回非 0 但短信其实已发出时不再误报失败；复用上次登录更积极，少一次验证码。"
 }
