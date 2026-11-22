@@ -2853,3 +2853,18 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
 
 边界：个别 ROM 会限制悬浮窗（省电策略或「后台弹出界面」权限），这种机型上仍会退回「只有前台播放」；此时状态行会显示「小窗托底：未授权」或迟迟没有「已挂到悬浮窗」。
 
+### 65.42 1.27.86：学习通后台改走小窗（画中画），修上一版黑屏
+
+1.27.85 把 `WebView` 从一个窗口挪进悬浮窗再挪回来，结果渲染面丢了——回到 App 是一整片白，状态行「已暂停，正在恢复」。**结论：WebView 不能跨窗口搬**。
+
+这一版不再搬窗口，改成「让页面一直可见」的另一条官方路子：**画中画（PiP）**。
+
+| 环节 | 现在的做法 |
+| --- | --- |
+| 点 Home / 切走 | `onUserLeaveHint()` → `enterPictureInPictureMode(16:9)`，Activity 缩成系统小窗继续渲染 |
+| 按返回键 | `OnBackPressedCallback`（新分发器）里同样进小窗，不再 `finish` |
+| 小窗里 | `onPictureInPictureModeChanged()` 里 `web.onResume()/resumeTimers()`，并把脚本切回「前台模式」 |
+| 不支持 PiP 的机型 | `enterMiniWindow()` 返回 false，退回 `moveTaskToBack(true)`（旧的「后台可能暂停」行为） |
+| 通知栏 | 沿用 1.27.85 的改动：`updateNoteProgress()` 不受保活开关影响、进页面补申请 `POST_NOTIFICATIONS` |
+
+边界：PiP 需要系统支持（`android.software.picture_in_picture`），且省电策略极严的 ROM 可能直接把小窗收掉；这时行为退回「前台才播」。真要完全后台无窗口，只能抓视频直链用本地播放器播（下一步）。
