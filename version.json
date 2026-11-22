@@ -1,8 +1,8 @@
 {
-  "versionCode": 182,
-  "versionName": "1.27.59",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.59/ketai-1.27.59.apk",
+  "versionCode": 183,
+  "versionName": "1.27.60",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.60/ketai-1.27.60.apk",
   "minVersionCode": 116,
-  "apkSizeMB": 63.9,
-  "notes": "查寝：验证码登录收进第 1 步，点一行展开；今天的查寝把已完成的也算进来（不再把做完的任务当成没有）"
+  "apkSizeMB": 67.0,
+  "notes": "查寝页两处小修：账号卡顶部直接写清「已登录 / 未登录」（登录后变绿并带学号）；「验证码登录」从一截被裁掉一半的文字换成完整按钮，点开/收起都有明确箭头。"
 }
