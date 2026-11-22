@@ -1,8 +1,8 @@
 {
-  "versionCode": 191,
-  "versionName": "1.27.68",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.68/ketai-1.27.68.apk",
+  "versionCode": 192,
+  "versionName": "1.27.69",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.69/ketai-1.27.69.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "查寝提交改成先按「网关回话里的版本号」重试，并把五种签名写法都试一遍；以前只试 android 一种，版本一换就没别的组合。"
+  "notes": "签到照片不再被「保存并登录」清空：提交前会重新推一次，引擎端也不会覆盖；进查寝页若账号已保存会自动登录一次。"
 }
