@@ -1,8 +1,8 @@
 {
-  "versionCode": 206,
-  "versionName": "1.27.83",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.83/ketai-1.27.83.apk",
+  "versionCode": 207,
+  "versionName": "1.27.84",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.84/ketai-1.27.84.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
-  "notes": "修学习通后台跟播：把页面的可见性判断钉死成「可见」并在捕获阶段吞掉 visibilitychange/pagehide/blur，后台模式不再限制抢播次数；心跳每 15 秒再叫醒一次内核计时器。"
+  "notes": "学习通跟播加通知栏进度条（章节 · 课程 · 已挂时长，进度一动就刷新）；查寝页精简：去掉多余说明、有保存账号就自动登录、登录后收起学号密码、清空登录态改为退出登录。"
 }
