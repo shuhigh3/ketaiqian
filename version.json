@@ -1,7 +1,7 @@
 {
-  "versionCode": 214,
-  "versionName": "1.27.91",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.91/ketai-1.27.91.apk",
+  "versionCode": 215,
+  "versionName": "1.27.92",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.92/ketai-1.27.92.apk",
   "minVersionCode": 116,
   "apkSizeMB": 63.9,
   "notes": "学习通跟播加通知栏进度条（章节 · 课程 · 已挂时长，进度一动就刷新）；查寝页精简：去掉多余说明、有保存账号就自动登录、登录后收起学号密码、清空登录态改为退出登录。"
