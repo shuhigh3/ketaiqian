@@ -2933,6 +2933,19 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
 | 相态与说明 | 胶囊与下面一行经常是同一句话 | 两句一样时下面那行自动隐藏，不重复占高度 |
 
 边界：状态中心三行的展开/收起仍各自独立；查寝页只是「合并了容器」，`tvPhase/tvStage/tvMeta*/tvDormLog/btnLogToggle` 等 id 全部保留，逻辑代码照旧。
+### 65.49 1.27.92：路网下载默认不带建筑、镜像给足时间
+
+2026-11 实测（家宽 + 手机网络各测一遍）暴露了三件事，这一版逐个改：
+
+| 问题 | 实测 | 改法 |
+| --- | --- | --- |
+| 带建筑必超时 | 800 米范围带 `way["building"]` 在 overpass-api.de 回 502（0.8–2.1 秒就拒），不带建筑则 34 秒成功、43 条 way、288 个 node | `Area.withBuildings` 默认 `false`，开关默认关并注明「开了体积大 3–5 倍」 |
+| 90 秒读超时不够 | 主服务器高峰期光道路就要 34 秒，建筑更久 | `READ_MS` 90s → **150s**，并加 `TOTAL_MS = 240s` 总时限，不让用户干等十几分钟 |
+| 两个镜像本来就废 | `kumi.systems`、`private.coffee` 110 秒以上仍 ReadTimeout；`openstreetmap.fr` 403「white-listed usages」；`osm.ch` 只有瑞士数据 | `MIRRORS` 只留 api.de → kumi → private.coffee，每个最多试 2 次（仅 5xx/超时/重置重试） |
+| 失败只说一句话 | 以前只报「所有镜像都失败了」 | 汇总每个镜像的原因 + 四条建议（隔一两小时、换 Wi-Fi、半径 800→500、去 overpass-turbo 导出后手动导入） |
+
+另外：查询里不再重复列 `footway/path`（它们是 `highway` 的子类），UA 改 `Ketai-RoadNet/1.1 (Android)`；Worker 的 `/roadnet` 代理这条经实测无效（部署后 api.de 回 521/502、其余在 12 秒被 abort），App 侧不依赖它。
+
 ### 65.48 1.27.91：状态摘要两档字重 + 查寝信息归到顶部
 
 两处「信息密度」整理：
