@@ -1,8 +1,8 @@
 {
-  "versionCode": 218,
-  "versionName": "1.27.95",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.95/ketai-1.27.95.apk",
+  "versionCode": 219,
+  "versionName": "1.27.96",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.96/ketai-1.27.96.apk",
   "minVersionCode": 116,
-  "apkSizeMB": 63.9,
-  "notes": "学习通跟播加通知栏进度条（章节 · 课程 · 已挂时长，进度一动就刷新）；查寝页精简：去掉多余说明、有保存账号就自动登录、登录后收起学号密码、清空登录态改为退出登录。"
+  "apkSizeMB": 64.0,
+  "notes": "代跑页新增「兰理工预设」：学校/城市/锚点(36.054126,103.735791)/海拔1520/距离配速/经典算法 一屏可见；可一键复制参数；可读内置工具 identity.json 与 config.json 并导出到下载目录；「写入工具」按预设改城市与锚点、海拔，改前自动 .ketaibak 备份。"
 }
