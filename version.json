@@ -1,8 +1,8 @@
 {
-  "versionCode": 220,
-  "versionName": "1.27.97",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.97/ketai-1.27.97.apk",
+  "versionCode": 221,
+  "versionName": "1.27.98",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.98/ketai-1.27.98.apk",
   "minVersionCode": 116,
   "apkSizeMB": 64.0,
-  "notes": "查寝会话保活：后台每 2 小时用已保存的账号密码轻打一次业务接口（取任务），让学校 CAS 会话一直处于活动状态并顺手把新 cookie 落盘；登录成功、签到成功、每次取任务都会续期一次，白天登录过的账号隔夜再签到通常不用再输短信验证码。失败只在需要验证码/短信时才发通知。另：代跑「兰理工预设」距离改为随机 2–4 km。"
+  "notes": "查寝页加「试运行自检（不提交）」：登录、任务、详情、照片、定位逐项检查，不产生签到记录"
 }
