@@ -2933,6 +2933,56 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
 | 相态与说明 | 胶囊与下面一行经常是同一句话 | 两句一样时下面那行自动隐藏，不重复占高度 |
 
 边界：状态中心三行的展开/收起仍各自独立；查寝页只是「合并了容器」，`tvPhase/tvStage/tvMeta*/tvDormLog/btnLogToggle` 等 id 全部保留，逻辑代码照旧。
+### 65.55 1.27.98：查寝「试运行自检（不提交）」
+
+用户诉求：想在**不真的签到**的前提下，确认「现在这套还能不能正常查寝」——尤其是任务读得到、但当天不想签、或怕签失败留一条坏记录的时候。
+
+做法：新增一条**只读**链路，从登录一路走到提交前的最后一步，然后停下：
+
+| 检查项 | 怎么判 |
+| --- | --- |
+| 登录会话 | `_ensureLogin()` 成功即通过，失败直接返回（不再往下走） |
+| 提交票据 | `_CONFIG["sessionToken"]` 非空 / `_valid_token()` 为真；缺了会提示「提交时可能被判验证码失败」 |
+| 待签到任务 | `AutoSign.getUnSignTask()`，没有未签任务就停在这里并说明 |
+| 任务详情 | `getDetailTask()` 拿到 `taskName` / `signStartTime~signEndTime` |
+| 签到照片 | `isPhoto=="1"` 时要求 `info["photo"]` 文件存在，否则报「这次要照片，但本机没选」 |
+| 额外表单 | `isNeedExtra=="1"` 判为阻塞（只能去今日校园 App 手动填） |
+| 定位距离 | 本地 `_CONFIG` 的 lat/lon 与任务点算 haversine；`radius>0` 按学校半径，否则按 500 米估 |
+
+实现：
+
+- `app/src/main/python/jrxy/bridge.py`：新增 `_task_point(task)`（依次试 `signLat/signLon`、`latitude/longitude`、`lat/lon`、`pointLat/pointLon`、`signPoint|point` 字典，不同学校字段名不一样）、`_distance_m()`（haversine）、`dry_run()`。**绝不调用 `fillForm()`/`submitForm()`**，因此不产生签到记录、不影响学校那边任何状态。
+- 返回 `{"ok":true,"canSign":bool,"title":…,"checks":[{name,ok,detail}]}`；`dorm/JrxyEngine.kt` 透传 `dryRun()` 并新增 `DryCheck`/`DryRunResult`（含 `summary()` 把结果拼成「✅/⚠️ 项：说明」），`dorm/DormEngine.kt` 与 `dorm/DormRunner.kt` 各加一层，`DormRunner.dryRun()` 复用 `gate()`/登录/验证码判定，最后把 `canSign` 映射成 `Outcome.ok`。
+- 界面：`activity_dorm_check.xml` 在「一键签到」下面加 `btnDormDryRun`（「试运行自检（不提交）」），点击后状态行显示「正在试运行自检（不会提交）…」，结果整段写到第 2 步的 `tvDormResult`，同时写 `StatusLogger`（首页状态中心可见）。
+
+边界：①自检会真的登录一次（复用已保存会话，不重复发短信）；②它会调用「任务详情」接口，属于只读 GET/POST，不会签到；③定位距离只是本地估算，学校若用别的判定（如基站/WiFi）仍可能拒签。
+
+### 65.54 1.27.97：查寝会话自动保活（不用反复输验证码）+ 兰理工距离改 2–4 km
+
+学校门户的 CAS 会话寿命只有几小时：放半天不动就过期，一过期就得重走登录页——而兰州理工的登录页要**短信动态码**，所以用户体感是「不到半天又让我验证一次」。
+
+这一版不改协议，改「让会话一直有活动」：
+
+| 触发点 | 做什么 | 频率 |
+| --- | --- | --- |
+| 登录成功 | `DormKeepAlive.schedule()` 排上自续闹钟 | 一次 |
+| 每次取任务 / 签到成功 | python `_keepAliveTouch()`：新 cookie 落盘 + `savedAt` 刷新 | 每次操作 |
+| 后台闹钟 | `DormKeepAliveReceiver` → `DormAutoService`（`EXTRA_KEEPALIVE=true`）调一次 `DormRunner.refresh()` | 每 2 小时 |
+| 开机 / 应用更新 | `BootReceiver` 与 `ClassStatusApp.onCreate` 补排 | 每次启动 |
+
+实现要点：
+
+- 新增 `dorm/DormKeepAlive.kt`：`AlarmManager.setAndAllowWhileIdle`（不必精确闹钟权限）＋ 自续链（每次触发由接收器排下一次）；`schedule()` 只在「主开关开 + 保活开 + 已有账号密码」时排；`statusText()` 给界面显示「上次 HH:mm · 下次约 HH:mm」。
+- 新增 `service/DormKeepAliveReceiver.kt`：先 `scheduleNext()` 再 `startForegroundService(DormAutoService + EXTRA_KEEPALIVE)`，系统不许后台启动时只记日志。
+- `DormAutoService`：`EXTRA_KEEPALIVE` 走 `executeKeepAlive()`——只 `refresh()`（不签到、不进场），成功写 `store.dormKeepAliveAt`；失败仅在 `NEED_CAPTCHA`（发九宫格通知）/`NEED_MFA`（发「需要短信验证」通知）时提醒，其余静默。
+- `data/AppStore.kt`：新增 `dormKeepAliveAt` / `dormKeepAliveEnabled`（默认开）。
+- `ui/DormCheckActivity.kt`：`renderMeta()` 末尾显示「保活 HH:mm」，登录成功提示改成「会话会自动保活（每 2 小时一次），不必反复输验证码」。
+- python `bridge.py`：新增 `_keepAliveTouch(svc, info)`，在 `tasks()` 与 `sign()` 成功后调用——业务接口一调，服务端通常给 cookie 续期，顺手把最新 cookie 存下来，下次（甚至几小时后）还能复用。
+
+另：`daipao/ToolProfile.kt` 的预设距离由 1.00–1.50 改为 **2.00–4.00 km**（每天只交一条，单次做长更划算；配速不变 360–480）。
+
+边界：①保活依赖「至少登录过一次并保存了学号密码」；②学校若对**每次新会话**都强制短信，保活只能减少次数、不能归零；③闹钟被厂商省电策略杀掉时，靠开机/启动 App 补排（与自动签到同一套机制）。
+
 ### 65.53 1.27.96：代跑页「兰理工预设」+ 本地跑步账本
 
 工具是 Rust 原生、数据在私有目录，它的「学期完成度」又把学校接口的返回值当成脏数据（`semesterValid=1264 不像次数 → 按 0 处理`，页面永远 0/0）。这一版把两件事从工具里搬回课态签：**参数预置**和**里程记账**。
