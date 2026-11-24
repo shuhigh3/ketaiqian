@@ -1,8 +1,8 @@
 {
-  "versionCode": 221,
-  "versionName": "1.27.98",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.98/ketai-1.27.98.apk",
+  "versionCode": 222,
+  "versionName": "1.27.99",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.99/ketai-1.27.99.apk",
   "minVersionCode": 116,
   "apkSizeMB": 64.0,
-  "notes": "查寝页加「试运行自检（不提交）」：登录、任务、详情、照片、定位逐项检查，不产生签到记录"
+  "notes": "试运行自检现在也会报「活动/扫码签到」：任务是列表下发的，多数学校不扫码也能提交（动态口令型才真需要扫码）"
 }
