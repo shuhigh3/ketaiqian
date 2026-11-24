@@ -2933,6 +2933,23 @@ Kotlin 只保留界面；账号、密码、定位、会话、设备号都交给�
 | 相态与说明 | 胶囊与下面一行经常是同一句话 | 两句一样时下面那行自动隐藏，不重复占高度 |
 
 边界：状态中心三行的展开/收起仍各自独立；查寝页只是「合并了容器」，`tvPhase/tvStage/tvMeta*/tvDormLog/btnLogToggle` 等 id 全部保留，逻辑代码照旧。
+### 65.53 1.27.96：代跑页「兰理工预设」+ 本地跑步账本
+
+工具是 Rust 原生、数据在私有目录，它的「学期完成度」又把学校接口的返回值当成脏数据（`semesterValid=1264 不像次数 → 按 0 处理`，页面永远 0/0）。这一版把两件事从工具里搬回课态签：**参数预置**和**里程记账**。
+
+| 卡片 | 内容 | 按钮 |
+| --- | --- | --- |
+| 兰理工预设 | 学校 兰州理工大学 · 城市 兰州市 · 锚点 36.054126/103.735791（东区田径场）· 海拔 1520 米 · 距离 1.00–1.50 km · 配速 360–480 秒/km · 算法 经典 | 「复制参数」写剪贴板；「导出工具配置」把 `identity.json`/`config.json` 复制到系统下载目录；「写入工具（先备份）」按字段名改城市/锚点/海拔 |
+| 跑步数据 | `已跑 X / 60 km · 还差 Y（约 N 次 × 1.2 km）`、本机 N 次 · X.XX km（达标 N 次）、上次时间与里程 | 「记一笔」「目标/起始」「撤销一笔」 |
+
+实现要点：
+
+- 新增 `daipao/ToolProfile.kt`：工具以 `NativeActivity` 跑在课态签进程里，配置就在本 App 私有目录，所以 `findConfigs()` 有界递归（深度 4）找 `identity.json` / `config.json`，写前一律 `copyTo(.ketaibak)`；改字段用「键名白名单 + 只改本来就存在的键」——`city`、`lat|latitude|anchor_lat|start_lat`、`lon|lng|longitude|anchor_lon|start_lon`、`altitude|base_altitude|school_base_altitude`，一个都不匹配就如实回「没有可改字段」，不制造半坏状态。
+- 新增 `daipao/RunStats.kt`：本地账本存在 `SharedPreferences("daipao")` 的 `stats_runs`（JSON 数组，元素 `{at,km,ok}`）+ `stats_target_km`（默认 60）+ `stats_base_km`（起始已跑，用来把官方 App 里已有的里程并进来）；`summary()` 只输出三行，达标里程才算进「已跑」。
+- `DaipaoActivity`：进工具时 `pendingRun = true`，回到页面 `onResume` 延迟 500 ms 弹「记一笔」（默认 1.20 km、达标默认勾上），避免跑完还要自己找入口；记错可「撤销一笔」。
+
+边界：账本只统计「你点了记一笔」的那些，不含官方 App 里跑的；起始值就是为了补这部分。工具的城市/锚点字段若与白名单不一致，写入会空跑——这时先点「导出工具配置」，把 JSON 发我按真实字段名适配。
+
 ### 65.52 1.27.95：导入 KML 生成 .osm（Bigemap 等工具导出的路网）
 
 Overpass 常年 502 时，还有一条稳的路：在电脑上用 Bigemap 之类工具把矢量路网导成 KML，传到手机，在这里转成工具认识的 OSM XML。
