@@ -4,5 +4,6 @@
   "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.99/ketai-1.27.99.apk",
   "minVersionCode": 116,
   "apkSizeMB": 64.0,
-  "notes": "试运行自检现在也会报「活动/扫码签到」：任务是列表下发的，多数学校不扫码也能提交（动态口令型才真需要扫码）"
+  "notes": "璇曡繍琛岃嚜妫€鐜板湪涔熶細鎶ャ€屾椿鍔?鎵爜绛惧埌銆嶏細浠诲姟鏄垪琛ㄤ笅鍙戠殑锛屽鏁板鏍′笉鎵爜涔熻兘鎻愪氦锛堝姩鎬佸彛浠ゅ瀷鎵嶇湡闇€瑕佹壂鐮侊級",
+  "apkMirror": "https://quiz.ketaiqian.top/dl"
 }
