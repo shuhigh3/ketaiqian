@@ -1,9 +1,9 @@
 {
-  "versionCode": 223,
-  "versionName": "1.27.100",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.100/ketai-1.27.100.apk",
+  "versionCode": 224,
+  "versionName": "1.27.101",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.101/ketai-1.27.101.apk",
   "minVersionCode": 116,
   "apkSizeMB": 64.0,
-  "notes": "查寝会话保活改用系统 JobScheduler：Android 12 起「后台广播里启动前台服务」会被系统拦下，旧链路可能一直没真正跑起来；现在由系统按约 2 小时的周期直接叫起任务续一次会话，设备重启后也保留。学校会话本身有绝对寿命，跨天仍可能需要一次短信验证。",
+  "notes": "账号名放宽到 2-24 位中文/字母/数字/下划线；管理页显示「登录 / 活跃 / 最近用的功能」；查寝进页面自动刷一次定位，并支持手填一个「虚拟定位」直接签到",
   "apkMirror": "https://quiz.ketaiqian.top/dl"
 }
