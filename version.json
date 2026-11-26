@@ -1,9 +1,9 @@
 {
-  "versionCode": 222,
-  "versionName": "1.27.99",
-  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.99/ketai-1.27.99.apk",
+  "versionCode": 223,
+  "versionName": "1.27.100",
+  "apkUrl": "https://github.com/shuhigh3/ketaiqian/releases/download/v1.27.100/ketai-1.27.100.apk",
   "minVersionCode": 116,
   "apkSizeMB": 64.0,
-  "notes": "下载改走国内直连（quiz.ketaiqian.top/dl，GitHub 只作备用）；查寝新增「试运行自检」：签到前把登录、票据、任务、照片、定位逐项查一遍，不提交、不产生记录；扫码签到探路：先读活动族任务，判断二维码只是个入口还是必须现场扫；修若干小问题。",
+  "notes": "查寝会话保活改用系统 JobScheduler：Android 12 起「后台广播里启动前台服务」会被系统拦下，旧链路可能一直没真正跑起来；现在由系统按约 2 小时的周期直接叫起任务续一次会话，设备重启后也保留。学校会话本身有绝对寿命，跨天仍可能需要一次短信验证。",
   "apkMirror": "https://quiz.ketaiqian.top/dl"
 }
