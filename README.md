@@ -3046,6 +3046,23 @@ Overpass 常年 502 时，还有一条稳的路：在电脑上用 Bigemap 之类
 
 删除：整块「进去之后按这四步走」说明卡、学校路网卡的长段解释、「要知道的三件事」正文、重复的「可以在应用内直接打开」提示。
 
+### 65.51 1.27.100：查寝保活改走系统调度（JobScheduler）
+
+「过了一天还是要短信验证码登录」这次查到的是**保活根本没跑起来**，不是会话没续上。
+
+| 环节 | 旧做法 | 问题 |
+| --- | --- | --- |
+| 定时 | `AlarmManager.setAndAllowWhileIdle` 每 2 小时一次 | 它不是精确闹钟，系统在省电模式下可以一直往后推 |
+| 执行 | 广播接收器里 `startForegroundService(DormAutoService)` | **Android 12 起后台启动前台服务默认被拦**（`ForegroundServiceStartNotAllowedException`），异常被 `runCatching` 吞掉，只在日志里留一句「系统不允许后台启动」 |
+| 结果 | 日志里看起来「排了下次」，实际每次都没执行 → 会话过期 → 隔天要短信 | 用户侧表现为「登录态保不住」 |
+
+这一版：
+
+- 新增 `service/DormKeepAliveJob.kt`（`JobService`）：`onStartJob` 里校验开关与账号密码 → 起守护线程跑 `DormRunner.refresh()`（只打业务接口，不签到）→ 成功写 `store.dormKeepAliveAt` → 线程末尾 `DormKeepAlive.schedule(ctx)` 自续 + `jobFinished(params, false)`；`onStopJob` 中断线程并返回 `true`（系统会重排）。
+- `dorm/DormKeepAlive.kt` 整体改为 JobScheduler：`JobInfo.Builder(JOB_ID=4203, ComponentName(ctx, DormKeepAliveJob)).setPersisted(true).setPeriodic(INTERVAL_MS, FLEX_MS).setRequiredNetworkType(NETWORK_TYPE_ANY)`；`schedule()` 先 `cancel` 再重排，并顺手 `cancelLegacyAlarm()` 清掉升级前遗留的 AlarmManager 闹钟（避免重复打接口）；`statusText()` 不再承诺精确时刻，改成「每 2 小时自动续一次」。
+- `AndroidManifest.xml` 注册 `.service.DormKeepAliveJob`，带 `android:permission="android.permission.BIND_JOB_SERVICE"`、`android:exported="false"`（缺权限会在 `schedule()` 时抛 `SecurityException`）。
+- 边界：学校 CAS 会话有**绝对寿命**，保活只能在寿命内「续活动」，不能无限延长；跨天仍可能需要一次短信验证。区别在于：以前是「一天一次必弹」，现在只要手机没被厂商清理后台、且学校没到绝对上限，就可以连着几天不弹。
+
 ### 65.50 1.27.93：操场环线 + 路网复用 + 瓦片矢量化入口
 
 「路网下载」在 OSM 主站 502 时没有任何回旋余地，而多数人真正想要的就是「绕操场跑圈」。这一版补了三条不依赖 Overpass 的路：
